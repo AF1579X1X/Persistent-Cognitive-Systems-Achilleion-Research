@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equivalenti mondiali dei sistemi cognitivi operativi persistenti</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --paper: #ffffff;
+      --paper-2: #f0f3f8;
+      --text: #1f2937;
+      --muted: #667085;
+      --line: #d9e0ea;
+      --accent: #2454a6;
+      --accent-2: #7c3aed;
+      --green: #087f5b;
+      --amber: #b7791f;
+      --red: #b42318;
+      --shadow: 0 18px 45px rgba(20, 30, 55, .10);
+      --radius: 16px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    :root[data-theme="dark"] {
+      --bg: #0b1020;
+      --paper: #121a2b;
+      --paper-2: #182238;
+      --text: #e8edf7;
+      --muted: #9aa7bd;
+      --line: #283550;
+      --accent: #7db5ff;
+      --accent-2: #c4a7ff;
+      --green: #5ee0ac;
+      --amber: #ffd166;
+      --red: #ff8f88;
+      --shadow: 0 18px 45px rgba(0, 0, 0, .35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(36,84,166,.14), transparent 26rem),
+        radial-gradient(circle at 82% 12%, rgba(124,58,237,.12), transparent 24rem),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 72px; }
+    .hero {
+      background: linear-gradient(135deg, color-mix(in srgb, var(--paper) 88%, var(--accent) 12%), var(--paper));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    h1, h2, h3 { line-height: 1.16; margin: 0; letter-spacing: -.01em; }
+    h1 { font-size: clamp(32px, 5vw, 58px); max-width: 980px; }
+    .subtitle { max-width: 900px; margin: 16px 0 0; color: var(--muted); font-size: 18px; }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 22px;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+      border-radius: 999px;
+      padding: 6px 11px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .toolbar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; gap: 8px; flex-wrap: wrap;
+      align-items: center; justify-content: flex-end;
+      padding: 10px 0;
+      backdrop-filter: blur(10px);
+    }
+    button {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font: 700 13px var(--sans);
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(20,30,55,.07);
+    }
+    button:hover { border-color: var(--accent); color: var(--accent); }
+    .layout {
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+    nav.toc {
+      position: sticky; top: 62px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .toc h2 { font-size: 14px; margin-bottom: 10px; }
+    .toc a {
+      display: block;
+      padding: 7px 8px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .toc a:hover { background: var(--paper-2); color: var(--accent); text-decoration: none; }
+    .content { min-width: 0; }
+    section.card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .section-head {
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 20px 22px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--paper) 86%, var(--paper-2) 14%);
+    }
+    .section-head h2 { font-size: 22px; }
+    .chev { color: var(--muted); font-family: var(--mono); transition: transform .18s ease; }
+    section.card.collapsed .section-body { display: none; }
+    section.card.collapsed .chev { transform: rotate(-90deg); }
+    .section-body { padding: 22px; }
+    .section-body p { margin: 0 0 15px; }
+    .lead { font-size: 17px; color: color-mix(in srgb, var(--text) 90%, var(--accent) 10%); }
+    .note, .achilleion-box {
+      border-left: 4px solid var(--accent);
+      background: color-mix(in srgb, var(--paper-2) 72%, var(--accent) 10%);
+      padding: 16px 18px;
+      border-radius: 12px;
+      margin: 18px 0;
+    }
+    .achilleion-box { border-left-color: var(--accent-2); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 14px 0;
+    }
+    .mini {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .mini strong { display: block; margin-bottom: 4px; color: var(--accent); }
+    .scroll-table {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin: 16px 0;
+      background: var(--paper);
+    }
+    table {
+      border-collapse: collapse;
+      min-width: 1180px;
+      width: 100%;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: var(--paper-2);
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      position: sticky;
+      top: 0;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .svg-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--paper-2);
+      padding: 12px;
+      margin: 18px 0;
+    }
+    svg { max-width: 100%; height: auto; font-family: var(--sans); }
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      margin: 18px 0;
+      padding-left: 18px;
+    }
+    .timeline:before {
+      content: "";
+      position: absolute;
+      left: 5px; top: 4px; bottom: 4px;
+      width: 2px;
+      background: linear-gradient(var(--accent), var(--accent-2));
+    }
+    .tl-item {
+      position: relative;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+    .tl-item:before {
+      content: "";
+      position: absolute;
+      left: -19px; top: 18px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+    }
+    .tl-year { font: 800 13px var(--mono); color: var(--accent); margin-bottom: 4px; }
+    .sources ol { padding-left: 22px; }
+    .sources li { margin-bottom: 8px; word-break: break-word; }
+    code { font-family: var(--mono); background: var(--paper-2); padding: 2px 5px; border-radius: 6px; }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      nav.toc { position: static; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 24px; }
+    }
+    @media print {
+      body { background: white; }
+      .toolbar, nav.toc { display: none !important; }
+      .layout { display: block; }
+      section.card { break-inside: avoid; box-shadow: none; }
+      section.card.collapsed .section-body { display: block; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="toolbar" aria-label="Azioni report">
+      <button onclick="window.print()">Stampa / Salva PDF</button>
+      <button onclick="toggleTheme()">Tema chiaro/scuro</button>
+      <button onclick="toggleAll()" id="toggleAllBtn">Espandi tutto / Comprimi tutto</button>
+    </div>
+
+    <header class="hero">
+      <div class="eyebrow">Report tecnico interattivo</div>
+      <h1>Equivalenti mondiali dei sistemi cognitivi operativi persistenti</h1>
+      <p class="subtitle">
+        Ricostruzione HTML standalone del report, con indice navigabile, sezioni collassabili,
+        diagrammi ricostruiti e tabella comparativa scrollabile.
+      </p>
+      <div class="meta">
+        <span class="pill">Locale / standalone</span>
+        <span class="pill">CSS embedded</span>
+        <span class="pill">JavaScript embedded</span>
+        <span class="pill">Responsive</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="toc">
+        <h2>Indice</h2>
+        <a href="#sintesi">Sintesi esecutiva</a>
+        <a href="#definizione">Definizione operativa</a>
+        <a href="#genealogia">Diagramma genealogico</a>
+        <a href="#accademici">Precedenti accademici</a>
+        <a href="#progetti">Progetti industriali e open source</a>
+        <a href="#timeline">Timeline 2013-2026</a>
+        <a href="#comparativa">Tabella comparativa</a>
+        <a href="#achilleion">Corrispondenze con Achilleion/Q_ANIMA</a>
+        <a href="#raccomandazioni">Raccomandazioni</a>
+        <a href="#fonti">Fonti principali</a>
+      </nav>
+
+      <main class="content">
+        <section class="card" id="sintesi">
+          <div class="section-head"><h2>Sintesi esecutiva</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <p class="lead">Non emerge, tra architetture accademiche, progetti open source e piattaforme commerciali analizzate, un equivalente pienamente sovrapponibile a un sistema cognitivo operativo persistente nel senso forte del termine.</p>
+            <p>Il criterio forte richiede un sistema che sia insieme runtime persistente, memoria riflessiva, autonomia permissioned, validazione shadow, governo metacognitivo e nodo locale multi-superficie. Il panorama attuale è frammentato in quattro famiglie: architetture cognitive classiche come Soar e ACT-R; framework di agenti stateful come Letta, LangGraph, AutoGPT e BabyAGI; nodi operativi persistenti locali come Home Assistant, openpilot e Freqtrade; piattaforme agentiche commerciali e cloud come Claude con MCP e Microsoft Copilot Studio.</p>
+            <p>I match più vicini sono cinque: Letta per persistenza e memoria; LangGraph per esecuzione durevole e stato ispezionabile; Home Assistant per nodo locale sempre acceso e privacy-first; Freqtrade per separazione shadow/dry-run e produzione reale; openpilot per logica di permesso e sicurezza davanti all'azione.</p>
+            <p>Nessuno di questi integra però nativamente un layer riflessivo del tipo Tau, una memoria qualitativa/genealogica come NCO e una economia dell'azione basata su edge/friction come primo cittadino dell'architettura.</p>
+            <div class="note">
+              <strong>Posizionamento consigliato.</strong> Non presentare Achilleion/Q_ANIMA come trading bot, chatbot con memoria o dashboard AI. La categoria più credibile è <em>nodo cognitivo operativo riflessivo locale</em>, oppure <em>persistent operational cognitive node</em>.
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="definizione">
+          <div class="section-head"><h2>Definizione operativa e attributi nucleari</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <p>Un sistema cognitivo operativo persistente soddisfa contemporaneamente sei condizioni:</p>
+            <div class="grid">
+              <div class="mini"><strong>1. Continuità</strong>Mantiene stato nel tempo invece di esistere come sessione effimera.</div>
+              <div class="mini"><strong>2. Operatività</strong>Resta attivo mentre percepisce ambiente o flusso di eventi.</div>
+              <div class="mini"><strong>3. Memoria riusabile</strong>La memoria guida decisioni future, non è solo archivio consultabile.</div>
+              <div class="mini"><strong>4. Azione o astensione</strong>Decide se agire, non produce soltanto output.</div>
+              <div class="mini"><strong>5. Governo runtime</strong>Può essere osservato, corretto o governato durante l'esecuzione.</div>
+              <div class="mini"><strong>6. Resilienza</strong>Sopravvive a riavvii, guasti, riconnessioni e cambi di superficie.</div>
+            </div>
+            <p>Queste proprietà emergono separatamente in Home Assistant, LangGraph, Letta, MCP e Freqtrade. Il punto difficile è averle tutte insieme in un unico organismo operativo.</p>
+            <p>Gli attributi chiave di Achilleion/Q_ANIMA si allineano con una mappa internazionale precisa: runtime persistente come state objects, attori stateful e durable execution; layer metacognitivo come architetture cognitive classiche; memoria NCO come ponte verso memoria episodica, semantica e procedurale; shadow validation come dry-run e paper trading; gate/permission come safety model; UI biforcata e accesso mobile come Home Assistant, Letta e Freqtrade; watchdog, tunnel e fault tolerance come orchestrazione operativa.</p>
+          </div>
+        </section>
+
+        <section class="card" id="genealogia">
+          <div class="section-head"><h2>Diagramma genealogico dei sistemi cognitivi persistenti</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <p>Il diagramma sintetizza la genealogia architetturale del campo e mostra perché Achilleion/Q_ANIMA non ricade comodamente in una sola categoria esistente.</p>
+            <div class="svg-wrap">
+              <svg viewBox="0 0 1120 620" role="img" aria-label="Diagramma genealogico dei sistemi cognitivi persistenti">
+                <defs>
+                  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6b7280"/></marker>
+                  <linearGradient id="centerG" x1="0" x2="1"><stop stop-color="#2454a6"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+                </defs>
+                <rect x="430" y="240" width="260" height="110" rx="20" fill="url(#centerG)"/>
+                <text x="560" y="283" text-anchor="middle" fill="white" font-size="20" font-weight="800">Achilleion / Q_ANIMA</text>
+                <text x="560" y="310" text-anchor="middle" fill="white" font-size="13">nodo cognitivo operativo riflessivo</text>
+                <g fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)">
+                  <path d="M430 270 C330 250 270 180 215 125"/>
+                  <path d="M515 240 C495 160 470 110 415 78"/>
+                  <path d="M690 270 C790 250 850 180 905 125"/>
+                  <path d="M604 350 C655 430 720 490 815 530"/>
+                </g>
+                <g>
+                  <rect x="40" y="58" width="290" height="132" rx="16" fill="var(--paper)" stroke="var(--line)"/>
+                  <text x="185" y="92" text-anchor="middle" fill="var(--accent)" font-size="16" font-weight="800">Architetture cognitive classiche</text>
+                  <text x="65" y="124" fill="var(--text)" font-size="13">• Memoria modulare</text>
+                  <text x="65" y="150" fill="var(--text)" font-size="13">• Decision cycle</text>
+                  <text x="65" y="176" fill="var(--text)" font-size="13">• Substate, impasse, deliberazione</text>
+                </g>
+                <g>
+                  <rect x="340" y="28" width="290" height="132" rx="16" fill="var(--paper)" stroke="var(--line)"/>
+                  <text x="485" y="62" text-anchor="middle" fill="var(--accent)" font-size="16" font-weight="800">Framework agenti stateful</text>
+                  <text x="365" y="94" fill="var(--text)" font-size="13">• Tool use</text>
+                  <text x="365" y="120" fill="var(--text)" font-size="13">• Workflow persistenti</text>
+                  <text x="365" y="146" fill="var(--text)" font-size="13">• Memoria lunga</text>
+                </g>
+                <g>
+                  <rect x="790" y="58" width="290" height="132" rx="16" fill="var(--paper)" stroke="var(--line)"/>
+                  <text x="935" y="92" text-anchor="middle" fill="var(--accent)" font-size="16" font-weight="800">Nodi operativi locali</text>
+                  <text x="815" y="124" fill="var(--text)" font-size="13">• Stato continuo</text>
+                  <text x="815" y="150" fill="var(--text)" font-size="13">• Automazione</text>
+                  <text x="815" y="176" fill="var(--text)" font-size="13">• UI remota / mobile</text>
+                </g>
+                <g>
+                  <rect x="690" y="462" width="330" height="132" rx="16" fill="var(--paper)" stroke="var(--line)"/>
+                  <text x="855" y="496" text-anchor="middle" fill="var(--accent)" font-size="16" font-weight="800">Sistemi safety o shadow</text>
+                  <text x="720" y="528" fill="var(--text)" font-size="13">• Gate e permission</text>
+                  <text x="720" y="554" fill="var(--text)" font-size="13">• Dry-run / paper</text>
+                  <text x="720" y="580" fill="var(--text)" font-size="13">• Controllo del rischio</text>
+                </g>
+                <g>
+                  <rect x="112" y="404" width="150" height="54" rx="14" fill="var(--paper-2)" stroke="var(--line)"/>
+                  <text x="187" y="438" text-anchor="middle" fill="var(--accent-2)" font-size="16" font-weight="800">Tau</text>
+                  <rect x="310" y="462" width="150" height="54" rx="14" fill="var(--paper-2)" stroke="var(--line)"/>
+                  <text x="385" y="496" text-anchor="middle" fill="var(--accent-2)" font-size="16" font-weight="800">NCO</text>
+                  <rect x="112" y="520" width="250" height="54" rx="14" fill="var(--paper-2)" stroke="var(--line)"/>
+                  <text x="237" y="554" text-anchor="middle" fill="var(--accent-2)" font-size="16" font-weight="800">Friction / edge economics</text>
+                </g>
+                <g fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)">
+                  <path d="M262 431 C340 410 405 350 430 315"/>
+                  <path d="M460 489 C505 450 540 390 555 350"/>
+                  <path d="M362 547 C430 500 500 410 540 350"/>
+                </g>
+              </svg>
+            </div>
+            <p>Questo schema è una sintesi comparativa derivata da Soar, ACT-R, CoALA, Letta, LangGraph, Home Assistant, Freqtrade, openpilot e MCP.</p>
+          </div>
+        </section>
+
+        <section class="card" id="accademici">
+          <div class="section-head"><h2>Precedenti accademici</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <p><strong>Soar</strong> è il precedente accademico più forte. Organizza la cognizione in topstate e substates, crea un substate quando si verifica un'impasse decisionale, mantiene memoria di lavoro, memoria episodica, memoria semantica e memoria procedurale, e usa il chunking per trasformare la deliberazione in conoscenza riutilizzabile. È il miglior antenato teorico di un sistema che sa sostare su un blocco, trattarlo come oggetto cognitivo e apprendere dalla sua risoluzione.</p>
+            <p><strong>ACT-R</strong> rappresenta un'altra radice fondamentale. Distingue moduli percettivo-motori e moduli di memoria, usa buffer come interfaccia di stato, separa memoria dichiarativa e procedurale, e fa procedere la cognizione come successione di production firings governate da meccanismi subsimbolici di utilità e recupero.</p>
+            <p><strong>CoALA</strong> è il ponte teorico più utile verso gli agenti linguistici. Propone di comprendere gli agenti come sistemi con componenti di memoria modulari, uno spazio di azioni per interagire con memoria interna e ambiente esterno, e un processo decisionale generalizzato.</p>
+            <p><strong>MemGPT e Letta</strong> rendono esplicito il passaggio dalla sessione stateless all'agente stateful. MemGPT propone tier di memoria e interrupt; Letta porta questa intuizione verso agenti con memoria persistente, apprendimento durante il deployment, portabilità tra modelli e runtime locali multi-device.</p>
+            <p>Le survey recenti su lifelong learning e memoria negli LLM agents convergono su adattamento continuo, mitigazione del catastrophic forgetting, valutazione nel lungo periodo e aggiornamento online del comportamento. Visto da qui, Achilleion/Q_ANIMA è più vicino a una forma di artificial cognition operativa che a un normale agentic stack cloud.</p>
+          </div>
+        </section>
+
+        <section class="card" id="progetti">
+          <div class="section-head"><h2>Progetti industriali, open source e piattaforme commerciali</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <p><strong>Home Assistant</strong> è il riferimento più forte tra i nodi persistenti locali: open source, local-control, privacy-first, state object delle entità e companion apps mobili. È il modello più maturo di computer locale che diventa organismo operativo in un dominio quotidiano.</p>
+            <p><strong>Letta</strong> è il progetto più vicino tra i framework agentici stateful: persistent agents, background memory agents, portabilità della memoria tra provider, ambienti remoti e controllo da telefono a laptop.</p>
+            <p><strong>LangGraph</strong> è il concorrente più forte sul piano infrastrutturale: agenti che persistono attraverso failure, riprendono da dove erano rimasti e supportano ispezione/modifica dello stato da parte dell'umano.</p>
+            <p><strong>BabyAGI</strong> spinge su un loop persistente con event log immutabile, knowledge graph, summary tree, scheduling, background tasks e self-improvement, ma rimane sperimentale e richiede hardening se esce da localhost.</p>
+            <p><strong>openpilot</strong> mostra una logica di gate/sicurezza davanti all'azione. <strong>Freqtrade</strong> è il confronto più vicino lato trading: persistenza, dry-run, backtesting, WebUI, Telegram, REST API e separazione database dry-run/produzione.</p>
+            <p><strong>Edge Impulse</strong> e <strong>NVIDIA Jetson</strong> mostrano la traiettoria della persistenza locale del modello, non della cognizione riflessiva. <strong>Claude + MCP</strong> e <strong>Microsoft Copilot Studio</strong> sono riferimenti commerciali per tool use, orchestration, governance e integrazione enterprise.</p>
+          </div>
+        </section>
+
+        <section class="card" id="timeline">
+          <div class="section-head"><h2>Timeline moderna 2013-2026</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <p>La timeline aggrega milestone documentati in Home Assistant, Edge Impulse, MemGPT, CoALA, MCP, Letta, Copilot Studio e NVIDIA Jetson.</p>
+            <div class="timeline">
+              <div class="tl-item"><div class="tl-year">2013</div>Home Assistant avvia il modello del nodo locale stateful.</div>
+              <div class="tl-item"><div class="tl-year">2019</div>Edge Impulse porta l'edge AI verso una piattaforma MLOps dedicata.</div>
+              <div class="tl-item"><div class="tl-year">2023</div>MemGPT formalizza la memoria multi-tier per agenti LLM.</div>
+              <div class="tl-item"><div class="tl-year">2024</div>CoALA systematizza gli agenti come architetture cognitive; MCP introduce un protocollo aperto per tool e contesto.</div>
+              <div class="tl-item"><div class="tl-year">2025</div>Letta spinge il paradigma degli stateful agents; le survey su lifelong LLM agents e memory agents maturano il campo.</div>
+              <div class="tl-item"><div class="tl-year">2026</div>Letta porta remote environments e memoria condivisa; Copilot Studio rafforza orchestration e governance; NVIDIA mostra assistenti locali completi su Jetson.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="comparativa">
+          <div class="section-head"><h2>Tabella comparativa dei candidati più vicini</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <p>Le etichette di persistenza, autonomia, maturità e fit/gap sono una sintesi analitica basata sulle fonti ufficiali, non rating dichiarati dai vendor.</p>
+            <div class="scroll-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nome</th><th>Tipo</th><th>Persistenza</th><th>Funzioni metacognitive</th><th>Autonomia</th><th>Use-case primario</th><th>Maturità</th><th>Privacy</th><th>Fit / gap</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Soar</td><td>Accademico</td><td>Alta internamente</td><td>Impasse, substates, apprendimento per chunking</td><td>Media</td><td>Modellazione cognitiva, robotica</td><td>Ricerca matura</td><td>Locale/lab</td><td>Fortissimo su memoria e deliberazione; debole su packaging operativo, mobile e governance runtime.</td></tr>
+                  <tr><td>ACT-R</td><td>Accademico</td><td>Media-alta</td><td>Monitoraggio indiretto via buffer e utility</td><td>Media</td><td>Modellazione cognitiva, HCI, tutoring</td><td>Ricerca matura</td><td>Locale/lab</td><td>Molto forte su modularità e memoria; poco orientato a runtime sempre acceso.</td></tr>
+                  <tr><td>Letta</td><td>OSS + commerciale</td><td>Molto alta</td><td>Memory agents, continual learning, stateful agents</td><td>Alta</td><td>Persistent agents, coding agents, personal agents</td><td>Media-alta</td><td>Ibrido, con opzioni locali</td><td>Match più vicino su memoria persistente e multi-device; manca permission economics esplicita e Tau nativo.</td></tr>
+                  <tr><td>LangGraph</td><td>OSS/framework</td><td>Alta</td><td>Human-in-the-loop, ispezione e modifica stato</td><td>Alta</td><td>Agenti long-running, workflow affidabili</td><td>Alta</td><td>Self-host/cloud flessibile</td><td>Molto forte sul runtime durevole; meno forte sulla memoria come teoria e quasi assente sul piano riflessivo forte.</td></tr>
+                  <tr><td>Home Assistant</td><td>OSS</td><td>Molto alta</td><td>Limitate; contesto eventi/stato</td><td>Media</td><td>Automazione locale di ambienti</td><td>Molto alta</td><td>Local-first</td><td>Vicinissimo come nodo locale sempre acceso; quasi senza metacognizione o memoria semantica.</td></tr>
+                  <tr><td>openpilot</td><td>OSS</td><td>Molto alta</td><td>Supervisione safety, monitoraggio conducente</td><td>Alta nel dominio</td><td>ADAS on-device</td><td>Alta</td><td>On-device/vehicle</td><td>Fortissimo come analogia gate/sicurezza; non ha memoria riflessiva o semantica generale.</td></tr>
+                  <tr><td>AutoGPT</td><td>OSS/piattaforma</td><td>Alta</td><td>Analitiche e monitoraggio workflow</td><td>Alta</td><td>Continuous agents e automazioni multi-step</td><td>Media</td><td>Ibrido, spesso cloud</td><td>Utile per builder/deploy/monitoring; più workflow engine che sistema metariflessivo.</td></tr>
+                  <tr><td>BabyAGI</td><td>OSS sperimentale</td><td>Alta</td><td>Event log, knowledge graph, summaries, self-improvement</td><td>Media-alta</td><td>Personal agent automation</td><td>Sperimentale-media</td><td>Self-host/localhost-first</td><td>Molto vicino come loop persistente con memoria strutturata; fragile su hardening e controllo operativo.</td></tr>
+                  <tr><td>Freqtrade</td><td>OSS</td><td>Molto alta</td><td>Nessuna nativa; forte dry-run/live</td><td>Alta nel dominio</td><td>Trading algoritmico</td><td>Alta</td><td>Self-host con exchange APIs</td><td>Match più vicino su shadow validation, control plane e persistenza; manca layer riflessivo e simbolico.</td></tr>
+                  <tr><td>Edge Impulse</td><td>Commerciale/piattaforma</td><td>Media-alta</td><td>Quasi assenti</td><td>Bassa-media</td><td>Sviluppo e deploy edge AI</td><td>Alta</td><td>Edge/local</td><td>Ottimo substrate edge; non è sistema cognitivo operativo autonomo.</td></tr>
+                  <tr><td>Claude + MCP</td><td>Commerciale + standard aperto</td><td>Media-alta</td><td>Notifiche, lifecycle, task wrappers, tool routing</td><td>Alta</td><td>Agenti tool-using, computer use</td><td>Alta</td><td>Ibrido, spesso cloud</td><td>Fortissimo come standard di connessione e tool use; memoria e governance dipendono dall'implementazione.</td></tr>
+                  <tr><td>Microsoft Copilot Studio</td><td>Commerciale</td><td>Alta</td><td>Orchestration, history, memory utente, governance</td><td>Alta</td><td>Agenti enterprise e workflow</td><td>Molto alta</td><td>Cloud enterprise</td><td>Potente su orchestrazione e compliance; lontano da local-first, shadow validation e riflessività esplicita.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>La persistenza più matura oggi vive in sistemi di dominio o framework runtime, mentre la metacognizione esplicita rimane perlopiù accademica o in forme deboli. Il mercato è già avanzato su persistenza e tooling, molto meno su autoconsapevolezza operativa.</p>
+          </div>
+        </section>
+
+        <section class="card" id="achilleion">
+          <div class="section-head"><h2>Corrispondenze con Achilleion/Q_ANIMA</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <div class="achilleion-box">
+              <h3>Achilleion/Q_ANIMA come nodo cognitivo operativo riflessivo locale</h3>
+              <p>La novità non appare primariamente algoritmica in senso stretto, ma composizionale e architetturale: il sistema mette nello stesso nodo linee evolutive che nel panorama mondiale restano quasi sempre separate.</p>
+            </div>
+            <p><strong>Letta</strong> è il match più vicino in assoluto per memoria persistente, apprendimento nel tempo, portabilità della memoria e continuità tra dispositivi. Il gap principale è l'assenza di una economia permissioned dell'azione e di una separazione forte tra piano operativo e piano riflessivo.</p>
+            <p><strong>Home Assistant</strong> è il match infrastrutturale: macchina locale come nodo persistente con stato continuo, canali remoti, superfici multiple e comportamento event-driven. Il gap è la mancanza di teoria della memoria e layer riflessivo.</p>
+            <p><strong>LangGraph</strong> è essenziale per pensare failure recovery, stato ispezionabile e cicli di lavoro lunghi, ma resta un framework: offre il runtime stateful, non l'ontologia operativa del runtime.</p>
+            <p><strong>Freqtrade/openpilot</strong> sono match per metà: Freqtrade per shadow validation e control plane, openpilot per gate/sicurezza. In Achilleion/Q_ANIMA questi due mondi convergono: validazione ombra e gate epistemico-economico che valuta se il sistema abbia diritto ad agire adesso.</p>
+            <p>La cosa rara non è avere un runtime acceso, memoria o mobile access; la cosa rara è far convivere piano operativo, piano riflessivo, piano di permesso e piano di validazione.</p>
+          </div>
+        </section>
+
+        <section class="card" id="raccomandazioni">
+          <div class="section-head"><h2>Raccomandazioni</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <p><strong>Posizionamento.</strong> La formula più forte è “nodo cognitivo operativo riflessivo locale” oppure “local reflective decision runtime”. Evitare il frame riduttivo di trading bot o chatbot con memoria.</p>
+            <p><strong>Benchmarking.</strong> Servono metriche oltre accuracy e PnL: uptime, ripartenza dopo crash, fedeltà replay dello stato, precision/recall dei trigger Tau, divergenza shadow/reale, qualità gate, latenza NCO, quota locale/remota del trattamento dati, coerenza desktop/mobile.</p>
+            <p><strong>Consolidamento tecnico.</strong> Cinque priorità: event schema unico; supervisione dura di stato; replay deterministico e recovery test; packaging riproducibile; hardening di tunnel, API, mobile access e credenziali.</p>
+            <p><strong>Ricerca.</strong> Formalizzare Tau come operatore metacognitivo applicato a runtime reali; mettere NCO in dialogo con memoria classica e agent memory; proporre permissioned autonomy; studiare la differenza tra assistente cloud e organismo cognitivo residente.</p>
+            <p><strong>Monetizzazione.</strong> Vie realistiche: prodotto premium per utenti privacy-sensitive e high-agency; licensing di Tau/NCO/gate-shadow; consulenza per nodi locali verticali; ricerca applicata e grant funding.</p>
+          </div>
+        </section>
+
+        <section class="card sources" id="fonti">
+          <div class="section-head"><h2>Fonti principali</h2><span class="chev">▼</span></div>
+          <div class="section-body">
+            <p>Le fonti sono riportate come nel documento sorgente, raggruppando accademia, framework agentici, nodi operativi, piattaforme commerciali e infrastrutture.</p>
+            <ol>
+              <li><a href="https://arxiv.org/pdf/2205.03854">Soar / architetture cognitive classiche</a></li>
+              <li><a href="https://act-r.psy.cmu.edu/">ACT-R official site</a></li>
+              <li><a href="https://openreview.net/forum?id=1i6ZCvflQJ">CoALA: Cognitive Architectures for Language Agents</a></li>
+              <li><a href="https://arxiv.org/abs/2310.08560">MemGPT</a></li>
+              <li><a href="https://arxiv.org/html/2501.07278v1">Survey su lifelong LLM agents</a></li>
+              <li><a href="https://www.letta.com/">Letta</a></li>
+              <li><a href="https://www.letta.com/blog/agent-memory">Letta: agent memory</a></li>
+              <li><a href="https://github.com/langchain-ai/langgraph">LangGraph</a></li>
+              <li><a href="https://github.com/significant-gravitas/autogpt">AutoGPT</a></li>
+              <li><a href="https://github.com/yoheinakajima/babyagi3">BabyAGI</a></li>
+              <li><a href="https://www.home-assistant.io/">Home Assistant</a></li>
+              <li><a href="https://www.home-assistant.io/docs/configuration/state_object/">Home Assistant state object</a></li>
+              <li><a href="https://www.home-assistant.io/blog/2025/09/17/home-assistant-turns-12/">Home Assistant milestone</a></li>
+              <li><a href="https://docs.comma.ai/concepts/safety/">openpilot safety</a></li>
+              <li><a href="https://www.freqtrade.io/en/stable/configuration/">Freqtrade configuration</a></li>
+              <li><a href="https://github.com/freqtrade/freqtrade">Freqtrade repository</a></li>
+              <li><a href="https://docs.edgeimpulse.com/">Edge Impulse documentation</a></li>
+              <li><a href="https://modelcontextprotocol.io/docs/learn/architecture">Model Context Protocol architecture</a></li>
+              <li><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool">Claude computer use tool</a></li>
+              <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions">Microsoft Copilot Studio orchestration</a></li>
+              <li><a href="https://docs.ray.io/en/latest/ray-core/actors.html">Ray actors</a></li>
+            </ol>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const cards = () => Array.from(document.querySelectorAll("section.card"));
+    document.querySelectorAll(".section-head").forEach(head => {
+      head.addEventListener("click", () => head.parentElement.classList.toggle("collapsed"));
+    });
+    function toggleTheme() {
+      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+      localStorage.setItem("persistentCognitiveReportTheme", root.dataset.theme);
+    }
+    function toggleAll() {
+      const anyCollapsed = cards().some(c => c.classList.contains("collapsed"));
+      cards().forEach(c => c.classList.toggle("collapsed", !anyCollapsed));
+    }
+    const saved = localStorage.getItem("persistentCognitiveReportTheme");
+    if (saved) root.dataset.theme = saved;
+  </script>
+</body>
+</html>
