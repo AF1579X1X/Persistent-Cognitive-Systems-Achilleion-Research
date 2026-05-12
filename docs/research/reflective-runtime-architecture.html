@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reflective Runtime Architecture</title>
+  <style>
+    :root {
+      --bg: #060914;
+      --bg-2: #0b1124;
+      --panel: rgba(16, 24, 48, 0.82);
+      --panel-strong: rgba(21, 31, 62, 0.96);
+      --text: #eef3ff;
+      --muted: #aeb9d2;
+      --line: rgba(172, 194, 255, 0.18);
+      --gold: #d9aa43;
+      --violet: #9b7cff;
+      --blue: #37b7ff;
+      --green: #62e0a8;
+      --red: #ff6b8a;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at 16% 5%, rgba(55, 183, 255, 0.18), transparent 25rem),
+        radial-gradient(circle at 86% 9%, rgba(155, 124, 255, 0.18), transparent 26rem),
+        radial-gradient(circle at 52% 88%, rgba(217, 170, 67, 0.10), transparent 32rem),
+        linear-gradient(180deg, #040714 0%, #081022 54%, #060914 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(172, 194, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(172, 194, 255, 0.08) 1px, transparent 1px),
+        radial-gradient(circle, rgba(217, 170, 67, 0.48) 0 1px, transparent 1.5px);
+      background-size: 54px 54px, 54px 54px, 142px 118px;
+      mask-image: linear-gradient(180deg, black 0%, black 72%, transparent 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.62;
+      background:
+        linear-gradient(116deg, transparent 0 16%, rgba(55, 183, 255, 0.07) 16.1%, transparent 16.5% 46%, rgba(155, 124, 255, 0.07) 46.1%, transparent 46.6%),
+        linear-gradient(64deg, transparent 0 63%, rgba(217, 170, 67, 0.07) 63.1%, transparent 63.6%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    p { color: var(--muted); line-height: 1.7; }
+    .page { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 28px 20px 52px; }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0 30px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font: 700 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .sigil {
+      width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+      border: 1px solid var(--gold); color: var(--gold);
+      box-shadow: 0 0 32px rgba(217, 170, 67, .22), inset 0 0 18px rgba(217, 170, 67, .10);
+    }
+    .nav-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 42px; padding: 0 15px; border-radius: 999px;
+      border: 1px solid var(--line); background: rgba(255,255,255,.045); color: var(--text);
+      font-size: 13px; font-weight: 750; box-shadow: 0 12px 34px rgba(0,0,0,.20);
+      cursor: pointer;
+    }
+    .button.primary { border-color: rgba(217,170,67,.55); background: linear-gradient(135deg, rgba(217,170,67,.94), rgba(155,124,255,.82)); color: #071020; }
+    .button.secondary { color: var(--blue); border-color: rgba(55,183,255,.36); }
+    .button:hover { transform: translateY(-1px); }
+
+    .hero { min-height: 62vh; display: grid; align-items: center; padding: 52px 0 66px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(310px, .95fr); gap: 34px; align-items: center; }
+    .eyebrow { color: var(--gold); font: 800 12px var(--mono); letter-spacing: .18em; text-transform: uppercase; margin-bottom: 18px; }
+    h1 { margin: 0; max-width: 880px; font-size: clamp(42px, 7vw, 92px); line-height: .95; letter-spacing: -.065em; text-transform: uppercase; }
+    .subtitle { max-width: 820px; margin: 22px 0 0; color: #c9d5ee; font-size: clamp(16px, 2vw, 22px); line-height: 1.45; }
+    .definition { margin-top: 24px; padding: 18px 20px; border-left: 4px solid var(--gold); border-radius: 16px; background: rgba(217,170,67,.08); color: #dce6ff; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+    .runtime-card {
+      position: relative; min-height: 450px; border: 1px solid var(--line); border-radius: 30px;
+      background: linear-gradient(145deg, rgba(20,31,61,.76), rgba(8,12,28,.70));
+      box-shadow: var(--shadow); overflow: hidden; padding: 24px;
+    }
+    .runtime-card::before { content: ""; position: absolute; inset: 22px; border: 1px solid rgba(217,170,67,.24); border-radius: 24px; }
+    .runtime-card svg { position: relative; z-index: 1; width: 100%; height: auto; display: block; }
+
+    section { margin: 42px 0; }
+    .section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    h2 { margin: 0; font-size: clamp(25px, 3vw, 42px); letter-spacing: -.035em; }
+    h3 { margin: 0 0 10px; }
+    .section-kicker { color: var(--muted); font: 700 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+
+    .panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow); padding: 24px; }
+    .layers { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+    .layer-card { padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025)); min-height: 160px; }
+    .layer-tag { color: var(--gold); font: 800 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
+    .layer-card p { margin: 0; font-size: 14px; }
+
+    details {
+      border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow); margin: 14px 0; overflow: hidden;
+    }
+    summary {
+      list-style: none; cursor: pointer; padding: 20px 22px; display: flex; justify-content: space-between; align-items: center; gap: 14px;
+      background: rgba(255,255,255,.035);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary h2 { font-size: clamp(21px, 2.2vw, 30px); }
+    summary::after { content: "+"; color: var(--gold); font: 800 24px var(--mono); }
+    details[open] summary::after { content: "-"; }
+    .detail-body { padding: 0 22px 22px; }
+    .detail-body ul { color: var(--muted); line-height: 1.7; padding-left: 20px; }
+
+    .flow { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+    .flow-step { position: relative; padding: 16px 12px; min-height: 104px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.04); }
+    .flow-step:not(:last-child)::after { content: ""; position: absolute; top: 50%; right: -10px; width: 10px; height: 1px; background: var(--gold); }
+    .flow-step strong { display: block; color: var(--blue); margin-bottom: 8px; font-size: 14px; }
+    .flow-step span { color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+    .boundary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .boundary-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: rgba(255,255,255,.035); }
+    .boundary-card.public h3 { color: var(--blue); }
+    .boundary-card.private h3 { color: var(--gold); }
+    .boundary-card ul { color: var(--muted); line-height: 1.75; padding-left: 18px; }
+
+    footer { margin-top: 58px; padding: 26px 0 8px; border-top: 1px solid var(--line); color: var(--muted); font: 700 13px var(--mono); text-align: center; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .boundary-grid { grid-template-columns: 1fr; }
+      .layers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flow-step::after { display: none; }
+      .runtime-card { min-height: auto; }
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-actions { justify-content: flex-start; }
+    }
+    @media (max-width: 580px) {
+      .page { padding: 20px 14px 40px; }
+      .hero { padding-top: 28px; }
+      .layers, .flow { grid-template-columns: 1fr; }
+      .panel, .layer-card, .boundary-card { padding: 18px; }
+      .cta-row .button, .nav-actions .button { width: 100%; }
+      h1 { font-size: clamp(40px, 14vw, 66px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav">
+      <a class="brand" href="../index.html" aria-label="Back to Achilleion Vivens">
+        <span class="sigil">A</span>
+        <span>Achilleion Vivens</span>
+      </a>
+      <nav class="nav-actions" aria-label="Artifact navigation">
+        <a class="button secondary" href="../index.html">Back to Achilleion Vivens</a>
+        <a class="button primary" href="./equivalenti-sistemi-cognitivi-operativi-persistenti.html">Open World Equivalents Artifact</a>
+        <button class="button" type="button" onclick="toggleSections()" id="toggleSectionsBtn">Collapse Sections</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">public architecture artifact</div>
+            <h1 id="hero-title">Reflective Runtime Architecture</h1>
+            <p class="subtitle">Live / Shadow / Paper layers · Tau state · NCO memory · Execution gating · Reflective loops</p>
+            <p class="definition">A reflective runtime is a cognitive operating system that does not merely execute. It observes, suspends, validates and records the conditions under which action becomes permitted.</p>
+            <div class="cta-row">
+              <a class="button primary" href="#runtime-layers">Explore Runtime Layers</a>
+              <a class="button secondary" href="#reflective-loop">View Reflective Loop</a>
+            </div>
+          </div>
+          <div class="runtime-card" aria-label="Reflective runtime layer diagram">
+            <svg viewBox="0 0 640 520" role="img" aria-labelledby="diagram-title diagram-desc">
+              <title id="diagram-title">Reflective runtime architecture layers</title>
+              <desc id="diagram-desc">Live, Shadow, Paper, Memory State and Reflective layers connected through execution gating.</desc>
+              <defs>
+                <linearGradient id="gLive" x1="0" x2="1"><stop stop-color="#d9aa43"/><stop offset="1" stop-color="#37b7ff"/></linearGradient>
+                <linearGradient id="gRef" x1="0" x2="1"><stop stop-color="#9b7cff"/><stop offset="1" stop-color="#37b7ff"/></linearGradient>
+                <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#aeb9d2"/></marker>
+              </defs>
+              <rect x="52" y="44" width="536" height="432" rx="28" fill="rgba(255,255,255,0.03)" stroke="rgba(172,194,255,0.20)"/>
+              <g fill="none" stroke="rgba(174,185,210,0.62)" stroke-width="2" marker-end="url(#arrow)">
+                <path d="M188 142 C252 106 346 106 452 142"/>
+                <path d="M170 240 C238 206 398 206 470 240"/>
+                <path d="M190 340 C258 386 380 386 450 340"/>
+                <path d="M320 186 L320 286"/>
+              </g>
+              <g filter="url(#glow)">
+                <rect x="82" y="92" width="180" height="92" rx="20" fill="rgba(217,170,67,0.13)" stroke="url(#gLive)"/>
+                <text x="172" y="130" text-anchor="middle" fill="#eef3ff" font-size="20" font-weight="800">Live Layer</text>
+                <text x="172" y="156" text-anchor="middle" fill="#aeb9d2" font-size="12">real or potentially real action</text>
+
+                <rect x="378" y="92" width="180" height="92" rx="20" fill="rgba(55,183,255,0.11)" stroke="#37b7ff"/>
+                <text x="468" y="130" text-anchor="middle" fill="#eef3ff" font-size="20" font-weight="800">Shadow Layer</text>
+                <text x="468" y="156" text-anchor="middle" fill="#aeb9d2" font-size="12">non-destructive validation</text>
+
+                <rect x="230" y="214" width="180" height="92" rx="20" fill="rgba(155,124,255,0.12)" stroke="#9b7cff"/>
+                <text x="320" y="252" text-anchor="middle" fill="#eef3ff" font-size="20" font-weight="800">Paper Layer</text>
+                <text x="320" y="278" text-anchor="middle" fill="#aeb9d2" font-size="12">strategic rehearsal field</text>
+
+                <rect x="82" y="336" width="206" height="92" rx="20" fill="rgba(98,224,168,0.10)" stroke="#62e0a8"/>
+                <text x="185" y="374" text-anchor="middle" fill="#eef3ff" font-size="19" font-weight="800">Memory / State</text>
+                <text x="185" y="400" text-anchor="middle" fill="#aeb9d2" font-size="12">events, decisions, traces</text>
+
+                <rect x="352" y="336" width="206" height="92" rx="20" fill="rgba(155,124,255,0.12)" stroke="url(#gRef)"/>
+                <text x="455" y="374" text-anchor="middle" fill="#eef3ff" font-size="19" font-weight="800">Reflective Layer</text>
+                <text x="455" y="400" text-anchor="middle" fill="#aeb9d2" font-size="12">Tau, NCO, metabolization</text>
+              </g>
+              <circle cx="320" cy="260" r="58" fill="rgba(6,9,20,0.78)" stroke="#d9aa43"/>
+              <text x="320" y="254" text-anchor="middle" fill="#d9aa43" font-size="15" font-weight="800">EXECUTION</text>
+              <text x="320" y="276" text-anchor="middle" fill="#d9aa43" font-size="15" font-weight="800">GATING</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="runtime-layers">
+        <div class="section-title">
+          <h2>Main Runtime Layers</h2>
+          <span class="section-kicker">observe · validate · permit · remember</span>
+        </div>
+        <div class="panel layers">
+          <article class="layer-card"><div class="layer-tag">01 Live</div><h3>Live Layer</h3><p>Represents real or potentially real execution, protected by gating, constraints and safety boundaries.</p></article>
+          <article class="layer-card"><div class="layer-tag">02 Shadow</div><h3>Shadow Layer</h3><p>Records what the system would have done without destructive action, including outcome, friction and coherence.</p></article>
+          <article class="layer-card"><div class="layer-tag">03 Paper</div><h3>Paper Layer</h3><p>Intermediate validation surface for strategic rehearsal before live execution becomes eligible.</p></article>
+          <article class="layer-card"><div class="layer-tag">04 Memory</div><h3>Memory / State</h3><p>Persistent state, events, decisions, traces, commits and artifacts that make runtime history inspectable.</p></article>
+          <article class="layer-card"><div class="layer-tag">05 Reflective</div><h3>Reflective Layer</h3><p>Tau state, NCO memory and reflective loops that transform operational events into structured cognition.</p></article>
+        </div>
+      </section>
+
+      <details open id="live-layer">
+        <summary><h2>Live Layer</h2></summary>
+        <div class="detail-body">
+          <p>The live layer represents the level of real or potentially real execution. In a reflective runtime, live action is never treated as a direct consequence of a signal alone. It is placed behind permission structures, safety constraints and runtime checks.</p>
+          <p>This public description intentionally avoids operational parameters, private controls and sensitive execution details. The relevant architectural principle is separation: signal, permission and action are distinct states.</p>
+        </div>
+      </details>
+
+      <details open id="shadow-layer">
+        <summary><h2>Shadow Layer</h2></summary>
+        <div class="detail-body">
+          <p>Shadow mode is non-destructive operational simulation. The system observes what it would have done, records the hypothetical entry and exit conditions, and evaluates outcome, friction, edge and coherence without exposing capital or infrastructure to real action.</p>
+          <p>In this model, shadow is not a toy mode. It is an epistemic layer: a way to accumulate evidence about whether the runtime deserves more permission.</p>
+        </div>
+      </details>
+
+      <details open id="paper-layer">
+        <summary><h2>Paper Layer</h2></summary>
+        <div class="detail-body">
+          <p>The paper layer sits between shadow observation and live execution. It is useful when a strategy or behavior has moved beyond passive simulation but still requires controlled validation before real-world consequences are allowed.</p>
+          <p>Paper execution is framed as a strategic rehearsal field: close enough to operational logic to reveal failure modes, but distant enough from irreversible action to remain safe.</p>
+        </div>
+      </details>
+
+      <details open id="tau-state">
+        <summary><h2>Tau State</h2></summary>
+        <div class="detail-body">
+          <p>Tau is the reflective tension indicator. It names the condition in which the system must ask whether its operational field is coherent enough to continue without self-interrogation.</p>
+          <ul>
+            <li><strong>Metabolic silence:</strong> operational activity continues but no meaningful assimilation is occurring.</li>
+            <li><strong>Activity / portata incoherence:</strong> the system records events without carrying durable difference into memory.</li>
+            <li><strong>Operational assimilation gap:</strong> action, logging and interpretation drift apart.</li>
+            <li><strong>Field tensions:</strong> recurring anomalies indicate that the runtime should pause, inspect or metabolize.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details open id="nco-memory">
+        <summary><h2>NCO Memory</h2></summary>
+        <div class="detail-body">
+          <p>NCO stands for Nota Coagulativa Operativa. It is a structured memory unit that transforms runtime events into persistent, inspectable and reusable operational memory.</p>
+          <p>The distinction between a log and an NCO is qualitative. A log says that something happened. An NCO states what changed, why it matters, what threshold or concept was consolidated, and how future runtime behavior should remember it.</p>
+          <p>In this architecture, NCOs are not merely archives. They are memory coagulations: events that become operational orientation.</p>
+        </div>
+      </details>
+
+      <details open id="runtime-memory">
+        <summary><h2>Runtime Memory</h2></summary>
+        <div class="detail-body">
+          <p>Runtime memory is the persistent state system that allows the architecture to remain continuous across sessions, failures, updates and reflection cycles.</p>
+          <ul>
+            <li><strong>State:</strong> current runtime conditions and readiness signals.</li>
+            <li><strong>Events:</strong> significant occurrences that may affect future behavior.</li>
+            <li><strong>Decisions:</strong> decisions taken, deferred or refused.</li>
+            <li><strong>Trace:</strong> evidence paths that make a decision inspectable.</li>
+            <li><strong>Commit:</strong> explicit transformation points in code, configuration or architecture.</li>
+            <li><strong>Artifact:</strong> public or private documents that preserve structured understanding.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details open id="execution-gating">
+        <summary><h2>Execution Gating</h2></summary>
+        <div class="detail-body">
+          <p>Execution gating is the principle of non-arbitrariness. A reflective runtime does not act simply because a signal exists. It acts only when convergent conditions produce sufficient permission.</p>
+          <ul>
+            <li>Signal, permission and action remain separate.</li>
+            <li>Edge must be executable, not merely present.</li>
+            <li>Friction-aware decision evaluates cost, slippage, uncertainty and buffers.</li>
+            <li>Suspension is an operational outcome, not a failure of the system.</li>
+          </ul>
+        </div>
+      </details>
+
+      <section id="reflective-loop">
+        <div class="section-title">
+          <h2>Reflective Loops</h2>
+          <span class="section-kicker">cycle of operational cognition</span>
+        </div>
+        <div class="panel">
+          <p>The reflective loop describes how a runtime turns activity into disciplined cognition: observe → evaluate → gate → act/suspend → record → metabolize.</p>
+          <div class="flow" aria-label="Reflective runtime loop timeline">
+            <div class="flow-step"><strong>Observe</strong><span>Read signals, state and symbolic operational telemetry.</span></div>
+            <div class="flow-step"><strong>Evaluate</strong><span>Compare coherence, edge, friction and context.</span></div>
+            <div class="flow-step"><strong>Gate</strong><span>Separate signal from permission before action.</span></div>
+            <div class="flow-step"><strong>Act / Suspend</strong><span>Execute only when permission converges; otherwise hold.</span></div>
+            <div class="flow-step"><strong>Record</strong><span>Preserve events, traces, decisions and outcomes.</span></div>
+            <div class="flow-step"><strong>Metabolize</strong><span>Transform meaningful change into persistent memory.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="boundary">
+        <div class="section-title">
+          <h2>Public / Private Boundary</h2>
+          <span class="section-kicker">research surface · protected runtime</span>
+        </div>
+        <div class="boundary-grid">
+          <div class="boundary-card public">
+            <h3>Public artifact</h3>
+            <p>This document is a public architectural description for research communication.</p>
+            <ul>
+              <li>Reflective runtime vocabulary</li>
+              <li>Layered conceptual model</li>
+              <li>Non-sensitive diagrams and explanations</li>
+              <li>Local/cloud AI runtime research framing</li>
+            </ul>
+          </div>
+          <div class="boundary-card private">
+            <h3>Private runtime</h3>
+            <p>The real runtime, sensitive operational parameters and private telemetry remain outside this repository.</p>
+            <ul>
+              <li>No credentials or keys</li>
+              <li>No private automations</li>
+              <li>No sensitive execution details</li>
+              <li>No live operational telemetry</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Achilleion Vivens · Persistent Cognitive Systems Research</footer>
+  </div>
+
+  <script>
+    function toggleSections() {
+      const sections = Array.from(document.querySelectorAll('details'));
+      const shouldOpen = sections.some(section => !section.open);
+      sections.forEach(section => { section.open = shouldOpen; });
+      const btn = document.getElementById('toggleSectionsBtn');
+      if (btn) btn.textContent = shouldOpen ? 'Collapse Sections' : 'Expand Sections';
+    }
+  </script>
+</body>
+</html>
