@@ -372,6 +372,11 @@
       gap: 18px;
     }
     .interface-card {
+      appearance: none;
+      width: 100%;
+      text-align: left;
+      color: var(--text);
+      font: inherit;
       min-height: 300px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -382,6 +387,14 @@
       padding: 26px;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .interface-card:hover,
+    .interface-card:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(184,148,79,0.56);
+      outline: none;
     }
     .interface-card::before {
       content: "";
@@ -447,12 +460,131 @@
       background: var(--gold-soft);
       font: 800 12px var(--mono);
     }
+    .interface-cta {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 13px;
+      color: var(--text);
+      background: rgba(128,128,128,0.08);
+      font: 800 12px var(--mono);
+    }
     .interfaces-note {
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--panel);
       margin-top: 16px;
       padding: 18px 20px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .interface-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      place-items: center;
+      padding: 22px;
+      background: rgba(24, 27, 31, 0.58);
+      backdrop-filter: blur(8px);
+    }
+    .interface-modal.open { display: grid; }
+    .interface-modal-panel {
+      width: min(1040px, 100%);
+      max-height: min(88vh, 960px);
+      overflow-y: auto;
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 0 28px 90px rgba(0,0,0,0.28);
+      position: relative;
+    }
+    [data-theme="neutral"] .interface-modal-panel { background: var(--surface); }
+    .interface-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--panel);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+      z-index: 2;
+    }
+    .interface-modal-body {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1fr);
+      gap: 26px;
+      padding: 28px;
+    }
+    .interface-preview {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--panel);
+      overflow: hidden;
+      min-height: 340px;
+    }
+    .interface-preview img {
+      width: 100%;
+      height: 100%;
+      max-height: 620px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .interface-preview-fallback {
+      display: grid;
+      place-items: center;
+      min-height: 340px;
+      color: var(--muted);
+      font: 800 12px var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .interface-modal-kicker {
+      color: var(--accent);
+      font: 800 12px var(--mono);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .interface-modal-body h3 {
+      margin: 0 0 8px;
+      font-size: clamp(32px, 4vw, 54px);
+      letter-spacing: -0.05em;
+      line-height: 0.98;
+    }
+    .interface-modal-subtitle {
+      color: var(--muted);
+      font: 800 13px var(--mono);
+      margin-bottom: 14px;
+    }
+    .interface-modal-text {
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      margin: 18px 0;
+    }
+    .interface-modal-list {
+      margin: 18px 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .interface-modal-note {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      padding: 14px 16px;
       color: var(--muted);
       line-height: 1.6;
     }
@@ -498,18 +630,23 @@
 
     @media (max-width: 920px) {
       .hero-grid, .artifact, .boundary, .author-card, .interfaces-grid { grid-template-columns: 1fr; }
+      .interface-modal-body { grid-template-columns: 1fr; }
       .field-card { min-height: 310px; }
       .pillars { grid-template-columns: 1fr; }
       header.nav { align-items: flex-start; flex-direction: column; }
       .nav-links { width: 100%; }
       .nav-actions { width: 100%; justify-content: flex-start; }
       .author-photo { max-width: 280px; }
+      .interface-preview img { max-height: 520px; }
     }
 
     @media (max-width: 560px) {
       .page { padding: 20px 14px 36px; }
       .hero { padding-top: 30px; }
       .panel, .pillar { padding: 18px; }
+      .interface-card { min-height: auto; padding: 22px; }
+      .interface-modal { padding: 12px; }
+      .interface-modal-body { padding: 18px; }
       .cta-row .button { width: 100%; }
       h1 { font-size: clamp(42px, 15vw, 72px); }
     }
@@ -599,20 +736,22 @@
         </div>
         <p class="interfaces-intro">Achilleion Vivens is not only a conceptual research architecture. It also includes concrete operational interfaces used for local orchestration, runtime observation, symbolic decision monitoring and reflective system development. These interfaces are intentionally private/local, because they interact with protected runtime layers, telemetry and experimental cognitive infrastructure.</p>
         <div class="interfaces-grid">
-          <article class="interface-card">
+          <button class="interface-card" type="button" onclick="openInterfaceModal('qanima')" aria-haspopup="dialog" aria-controls="interface-modal-qanima">
             <div class="interface-label">Operational module</div>
             <h3>Q_ANIMA UI</h3>
             <div class="interface-subtitle">Local Bridge · Private Operational Interface</div>
             <p>Q_ANIMA UI is the operational interface dedicated to symbolic-runtime orchestration, local/cloud coordination, decision gating, telemetry inspection and controlled interaction with the Q_ANIMA cognitive engine.</p>
             <span class="interface-status">Private / Local Runtime</span>
-          </article>
-          <article class="interface-card">
+            <span class="interface-cta">View Structure</span>
+          </button>
+          <button class="interface-card" type="button" onclick="openInterfaceModal('achilleion')" aria-haspopup="dialog" aria-controls="interface-modal-achilleion">
             <div class="interface-label">Reflective module</div>
             <h3>Achilleion Dev UI</h3>
             <div class="interface-subtitle">Private Runtime · Development Interface</div>
             <p>Achilleion Dev UI is the reflective development surface for observing system state, runtime signals, memory-related structures, interface behavior, operational validation and internal evolution of the Achilleion environment.</p>
             <span class="interface-status">Private / Development Runtime</span>
-          </article>
+            <span class="interface-cta">View Structure</span>
+          </button>
         </div>
         <div class="interfaces-note">These interfaces are part of the private operational layer of Achilleion Vivens. Public access is intentionally restricted; the visible public layer documents the research architecture, while the runtime layer remains protected.</div>
       </section>
@@ -706,6 +845,59 @@
       </section>
     </main>
 
+    <div class="interface-modal" id="interface-modal-qanima" role="dialog" aria-modal="true" aria-labelledby="qanima-modal-title" onclick="closeInterfaceModal(event)">
+      <div class="interface-modal-panel" onclick="event.stopPropagation()">
+        <button class="interface-modal-close" type="button" aria-label="Close interface detail" onclick="closeInterfaceModal()">×</button>
+        <div class="interface-modal-body">
+          <div class="interface-preview">
+            <img src="assets/qanima-ui-preview.jpg" alt="Q_ANIMA UI operational interface preview" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className:'interface-preview-fallback', textContent:'Interface preview pending'}))">
+          </div>
+          <div>
+            <div class="interface-modal-kicker">Local Bridge · Private Operational Interface</div>
+            <h3 id="qanima-modal-title">Q_ANIMA UI</h3>
+            <div class="interface-modal-subtitle">First Applicative Layer · Trading Intelligence</div>
+            <span class="interface-status">Local Bridge · Private Operational Interface</span>
+            <p class="interface-modal-text">Q_ANIMA UI is the first concrete applicative form of Achilleion Vivens in the trading domain. It acts as a local/private operational bridge for symbolic-runtime orchestration, market-signal observation, decision gating, telemetry inspection and controlled interaction with the Q_ANIMA cognitive engine. It is conceived as an experimental trading intelligence surface, where predictive logic, symbolic interpretation and runtime feedback are tested against real market dynamics.</p>
+            <ul class="interface-modal-list">
+              <li>Market-signal observation</li>
+              <li>Predictive and symbolic decision support</li>
+              <li>Runtime telemetry and validation</li>
+              <li>Shadow / paper / live operational layers</li>
+              <li>Private local/cloud bridge</li>
+            </ul>
+            <div class="interface-modal-note">This interface belongs to the protected operational layer of Achilleion Vivens. It is documented publicly, but not exposed as a public runtime.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="interface-modal" id="interface-modal-achilleion" role="dialog" aria-modal="true" aria-labelledby="achilleion-modal-title" onclick="closeInterfaceModal(event)">
+      <div class="interface-modal-panel" onclick="event.stopPropagation()">
+        <button class="interface-modal-close" type="button" aria-label="Close interface detail" onclick="closeInterfaceModal()">×</button>
+        <div class="interface-modal-body">
+          <div class="interface-preview">
+            <img src="assets/achilleion-dev-ui-preview.jpg" alt="Achilleion Dev UI reflective runtime preview" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className:'interface-preview-fallback', textContent:'Interface preview pending'}))">
+          </div>
+          <div>
+            <div class="interface-modal-kicker">Private Runtime · System Observation Surface</div>
+            <h3 id="achilleion-modal-title">Achilleion Dev UI</h3>
+            <div class="interface-modal-subtitle">Reflective Runtime · Development Interface</div>
+            <span class="interface-status">Private Runtime · System Observation Surface</span>
+            <p class="interface-modal-text">Achilleion Dev UI is the reflective development surface of the Achilleion Vivens environment. It is used to observe system state, runtime signals, memory-related structures, interface behavior, operational validation and the internal evolution of the architecture.</p>
+            <ul class="interface-modal-list">
+              <li>Runtime state observation</li>
+              <li>Memory-aware structures</li>
+              <li>Reflective validation signals</li>
+              <li>Development telemetry</li>
+              <li>Interface behavior monitoring</li>
+              <li>Internal evolution of the Achilleion environment</li>
+            </ul>
+            <div class="interface-modal-note">This interface is part of the private development layer. It is presented here as a structural component of the system, while direct runtime access remains intentionally restricted.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       Achilleion Vivens · Independent Research Ecosystem
     </footer>
@@ -728,6 +920,25 @@
       const currentTheme = document.documentElement.dataset.theme === "neutral" ? "neutral" : "light";
       applyTheme(currentTheme === "neutral" ? "light" : "neutral");
     }
+
+    function openInterfaceModal(interfaceId) {
+      const modal = document.getElementById(`interface-modal-${interfaceId}`);
+      if (!modal) return;
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+      const closeButton = modal.querySelector(".interface-modal-close");
+      if (closeButton) closeButton.focus();
+    }
+
+    function closeInterfaceModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.querySelectorAll(".interface-modal.open").forEach((modal) => modal.classList.remove("open"));
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeInterfaceModal();
+    });
 
     applyTheme(document.documentElement.dataset.theme);
   </script>
