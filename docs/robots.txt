@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/sitemap.xml
