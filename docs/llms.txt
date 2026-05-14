@@ -12,3 +12,10 @@ https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/cor
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/semantic-retrieval-index.html
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-canonical-chunks.md
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-canonical-chunks.jsonl
+
+## Source-Mediated Corpus
+
+Source-mediated public corpus derived from curated internal syntheses, not raw internal chunks or private technical artefacts:
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/source-mediated-index.html
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-source-mediated-chunks.md
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-source-mediated-chunks.jsonl

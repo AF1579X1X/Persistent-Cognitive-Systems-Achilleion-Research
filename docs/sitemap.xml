@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/</loc>
@@ -20,5 +20,14 @@
   </url>
   <url>
     <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-canonical-chunks.jsonl</loc>
+  </url>
+  <url>
+    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/source-mediated-index.html</loc>
+  </url>
+  <url>
+    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-source-mediated-chunks.md</loc>
+  </url>
+  <url>
+    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-source-mediated-chunks.jsonl</loc>
   </url>
 </urlset>
