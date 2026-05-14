@@ -19,3 +19,9 @@ Source-mediated public corpus derived from curated internal syntheses, not raw i
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/source-mediated-index.html
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-source-mediated-chunks.md
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-source-mediated-chunks.jsonl
+
+Author canonical page:
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/author/francesco-mattioli.html
+
+Corpus hub:
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/
