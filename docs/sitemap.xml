@@ -1,33 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/equivalenti-sistemi-cognitivi-operativi-persistenti.html</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/reflective-runtime-architecture.html</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/canonical-definitions.html</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/semantic-retrieval-index.html</loc>
-  </url>
-  <url>
-    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-canonical-chunks.md</loc>
-  </url>
-  <url>
-    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-canonical-chunks.jsonl</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/source-mediated-index.html</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
-    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-source-mediated-chunks.md</loc>
+    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/achilleion-vivens-canonical-terminology.html</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
-    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-source-mediated-chunks.jsonl</loc>
+    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/achilleion-onto-topological-operators.html</loc>
+    <lastmod>2026-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/q-anima-trading-intelligence.html</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
 </urlset>
