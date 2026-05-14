@@ -587,6 +587,19 @@
       padding: 8px 12px;
       font: 800 12px var(--mono);
     }
+    .research-index-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font: 800 12px var(--mono);
+    }
+    .research-index-links a {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--muted);
+      padding: 8px 12px;
+    }
 
     .interface-modal {
       position: fixed;
@@ -879,6 +892,12 @@
             <li>Human-Digital Cognitive Fields</li>
             <li>Operational AI Interfaces</li>
           </ul>
+          <div class="research-index-links" aria-label="Semantic corpus links">
+            <a href="./corpus/canonical-definitions.html">Canonical Definitions</a>
+            <a href="./corpus/semantic-retrieval-index.html">Semantic Retrieval Index</a>
+            <a href="./corpus/chunks/achilleion-canonical-chunks.md">Markdown Chunks</a>
+            <a href="./corpus/chunks/achilleion-canonical-chunks.jsonl">JSONL Chunks</a>
+          </div>
         </div>
       </section>
 

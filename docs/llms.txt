@@ -1,0 +1,14 @@
+# Achilleion Vivens
+
+Achilleion Vivens is an independent research ecosystem by Francesco Mattioli focused on persistent cognitive systems, reflective AI architectures, symbolic runtime orchestration, memory-aware environments, Q_ANIMA and human-digital cognitive fields.
+
+Primary site:
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/
+
+## Semantic Retrieval Corpus
+
+Canonical chunk index:
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/canonical-definitions.html
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/semantic-retrieval-index.html
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-canonical-chunks.md
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/corpus/chunks/achilleion-canonical-chunks.jsonl
