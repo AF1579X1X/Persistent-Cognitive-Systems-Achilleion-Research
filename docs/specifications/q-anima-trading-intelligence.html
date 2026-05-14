@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q_ANIMA UI — First Applicative Layer of Achilleion Vivens in Trading Intelligence</title>
+  <meta name="description" content="Canonical specification of Q_ANIMA UI as the first concrete applicative layer of Achilleion Vivens in the trading domain.">
+  <meta name="author" content="Francesco Mattioli">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/q-anima-trading-intelligence.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Q_ANIMA UI — First Applicative Layer of Achilleion Vivens in Trading Intelligence">
+  <meta property="og:description" content="Canonical specification of Q_ANIMA UI as the first concrete applicative layer of Achilleion Vivens in the trading domain.">
+  <meta property="og:url" content="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/q-anima-trading-intelligence.html">
+  <meta property="og:image" content="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/assets/qanima-ui-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Q_ANIMA UI — Trading Intelligence Layer">
+  <meta name="twitter:description" content="Canonical specification of Q_ANIMA UI as the first concrete applicative layer of Achilleion Vivens in the trading domain.">
+  <meta name="twitter:image" content="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/assets/qanima-ui-preview.jpg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Q_ANIMA UI — Trading Intelligence Layer",
+      "url": "https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/q-anima-trading-intelligence.html",
+      "creator": { "@type": "Person", "name": "Francesco Mattioli" },
+      "description": "Canonical specification of Q_ANIMA UI as the first concrete applicative layer of Achilleion Vivens in the trading domain.",
+      "keywords": "Q_ANIMA UI, Achilleion Vivens, trading intelligence, symbolic-runtime orchestration, decision gating, telemetry, private operational interface",
+      "about": [
+        { "@type": "Thing", "name": "Q_ANIMA" },
+        { "@type": "Thing", "name": "Trading Intelligence" },
+        { "@type": "Thing", "name": "Operational AI Interfaces" }
+      ]
+    }
+  </script>
+  <style>
+    :root { --bg:#f7f4ec; --surface:#ffffff; --text:#252525; --muted:#666666; --border:#ded8c8; --accent:#b8944f; --panel:rgba(255,255,255,.86); --shadow:0 22px 70px rgba(70,60,42,.12); --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    [data-theme="neutral"] { --bg:#24272B; --surface:#2E3237; --text:#ECE7DD; --muted:#B8B3A8; --border:#454A50; --accent:#C8A96A; --panel:rgba(46,50,55,.9); --shadow:0 22px 70px rgba(16,18,20,.25); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:linear-gradient(180deg,var(--bg),var(--surface)); color:var(--text); font-family:var(--sans); line-height:1.65; }
+    .page { max-width:1040px; margin:0 auto; padding:32px 20px 56px; }
+    nav { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:42px; font:800 12px var(--mono); }
+    nav a { color:var(--muted); text-decoration:none; border:1px solid var(--border); border-radius:999px; padding:8px 12px; background:var(--panel); }
+    nav a:hover { color:var(--text); border-color:var(--accent); }
+    h1 { font-size:clamp(36px,6vw,68px); line-height:1; letter-spacing:-.04em; margin:0 0 18px; }
+    h2 { font-size:clamp(24px,3vw,36px); letter-spacing:-.025em; margin:42px 0 16px; }
+    h3 { margin:0 0 8px; font-size:20px; }
+    p { max-width:860px; }
+    .kicker { color:var(--accent); font:800 12px var(--mono); letter-spacing:.14em; text-transform:uppercase; }
+    .panel { border:1px solid var(--border); border-radius:22px; background:var(--panel); box-shadow:var(--shadow); padding:24px; margin:18px 0; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .card { border:1px solid var(--border); border-radius:18px; background:var(--surface); padding:18px; }
+    .card p, li { color:var(--muted); }
+    .note { border-left:3px solid var(--accent); padding-left:18px; color:var(--muted); }
+    @media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav aria-label="Specification navigation">
+      <a href="../">Homepage</a>
+      <a href="../author/francesco-mattioli.html">Author</a>
+      <a href="../corpus/">Corpus</a>
+      <a href="./achilleion-vivens-canonical-terminology.html">Terminology</a>
+      <a href="./achilleion-onto-topological-operators.html">Operators</a>
+    </nav>
+    <div class="kicker">Private operational interface</div>
+    <h1>Q_ANIMA UI — Trading Intelligence Layer</h1>
+    <section class="panel">
+      <p><strong>Q_ANIMA UI is the first concrete applicative form of Achilleion Vivens in the trading domain.</strong></p>
+      <p><strong>Q_ANIMA UI è la prima forma applicativa concreta di Achilleion Vivens nel dominio del trading.</strong></p>
+    </section>
+
+    <section>
+      <h2>Canonical Role</h2>
+      <div class="panel">
+        <p>Q_ANIMA UI is documented as a local/private operational bridge for the Q_ANIMA cognitive engine. It connects symbolic-runtime orchestration, market-signal observation, decision gating and telemetry inspection inside the Achilleion Vivens ecosystem.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Operational Structure</h2>
+      <div class="grid">
+        <article class="card"><h3>Local/private operational bridge</h3><p>Designed for protected runtime interaction, not public runtime access.</p></article>
+        <article class="card"><h3>Symbolic-runtime orchestration</h3><p>Connects symbolic state, market signals, gates and reflective context.</p></article>
+        <article class="card"><h3>Market-signal observation</h3><p>Surfaces indicators, predictions, telemetry and validation state.</p></article>
+        <article class="card"><h3>Decision gating</h3><p>Documents operational gates without presenting them as financial guarantees.</p></article>
+        <article class="card"><h3>Telemetry inspection</h3><p>Supports observation of runtime signals, validation paths and system behavior.</p></article>
+        <article class="card"><h3>Shadow / paper / live layers</h3><p>Separates experimental validation, simulated operation and protected execution layers.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experimental Trading Intelligence Surface</h2>
+      <div class="panel">
+        <p>Q_ANIMA UI is an experimental trading intelligence surface where predictive logic, symbolic interpretation, runtime feedback and decision boundaries are observed inside a private operational framework.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>No Financial Promise</h2>
+      <div class="panel note">
+        <p>This page does not provide financial advice and does not promise trading performance. Q_ANIMA UI is documented as an experimental private operational interface within the Achilleion Vivens ecosystem.</p>
+        <p>Public access to the runtime is intentionally restricted. The page documents the component as a real system surface, not as a publicly accessible trading service.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Achilleion Vivens — Onto-Topological Operators</title>
+  <meta name="description" content="Canonical public specification of the onto-topological operator field used in Achilleion Vivens and its reflective runtime architecture.">
+  <meta name="author" content="Francesco Mattioli">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/achilleion-onto-topological-operators.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Achilleion Vivens — Onto-Topological Operators">
+  <meta property="og:description" content="Canonical public specification of the onto-topological operator field used in Achilleion Vivens and its reflective runtime architecture.">
+  <meta property="og:url" content="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/achilleion-onto-topological-operators.html">
+  <meta property="og:image" content="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/assets/francesco-mattioli-author.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Achilleion Vivens — Onto-Topological Operators">
+  <meta name="twitter:description" content="Canonical public specification of the onto-topological operator field used in Achilleion Vivens.">
+  <meta name="twitter:image" content="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/assets/francesco-mattioli-author.jpg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Onto-Topological Operators of Achilleion Vivens",
+      "url": "https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/achilleion-onto-topological-operators.html",
+      "creator": { "@type": "Person", "name": "Francesco Mattioli" },
+      "description": "Canonical public specification of the onto-topological operator field used in Achilleion Vivens.",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "Φ Phi" },
+        { "@type": "DefinedTerm", "name": "Σ Sigma" },
+        { "@type": "DefinedTerm", "name": "Δ7 Delta7" },
+        { "@type": "DefinedTerm", "name": "ΛΔ LambdaDelta" },
+        { "@type": "DefinedTerm", "name": "M_IR Intento Riflesso" },
+        { "@type": "DefinedTerm", "name": "Ϟ Koppa" },
+        { "@type": "DefinedTerm", "name": "Coppa" },
+        { "@type": "DefinedTerm", "name": "Ω Omega" },
+        { "@type": "DefinedTerm", "name": "τ Tau" },
+        { "@type": "DefinedTerm", "name": "μ Mu" }
+      ]
+    }
+  </script>
+  <style>
+    :root { --bg:#f7f4ec; --surface:#ffffff; --text:#252525; --muted:#666666; --border:#ded8c8; --accent:#b8944f; --panel:rgba(255,255,255,.86); --shadow:0 22px 70px rgba(70,60,42,.12); --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    [data-theme="neutral"] { --bg:#24272B; --surface:#2E3237; --text:#ECE7DD; --muted:#B8B3A8; --border:#454A50; --accent:#C8A96A; --panel:rgba(46,50,55,.9); --shadow:0 22px 70px rgba(16,18,20,.25); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:linear-gradient(180deg,var(--bg),var(--surface)); color:var(--text); font-family:var(--sans); line-height:1.65; }
+    .page { max-width:1120px; margin:0 auto; padding:32px 20px 56px; }
+    nav { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:42px; font:800 12px var(--mono); }
+    nav a { color:var(--muted); text-decoration:none; border:1px solid var(--border); border-radius:999px; padding:8px 12px; background:var(--panel); }
+    nav a:hover { color:var(--text); border-color:var(--accent); }
+    h1 { font-size:clamp(36px,6vw,68px); line-height:1; letter-spacing:-.04em; margin:0 0 18px; }
+    h2 { font-size:clamp(24px,3vw,36px); letter-spacing:-.025em; margin:42px 0 16px; }
+    h3 { margin:0 0 8px; font-size:20px; }
+    p { max-width:860px; }
+    .kicker { color:var(--accent); font:800 12px var(--mono); letter-spacing:.14em; text-transform:uppercase; }
+    .panel { border:1px solid var(--border); border-radius:22px; background:var(--panel); box-shadow:var(--shadow); padding:24px; margin:18px 0; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .term { border:1px solid var(--border); border-radius:18px; background:var(--surface); padding:18px; }
+    .term p, td { color:var(--muted); }
+    table { width:100%; border-collapse:collapse; border-radius:18px; overflow:hidden; background:var(--panel); }
+    th, td { border:1px solid var(--border); padding:12px; text-align:left; vertical-align:top; }
+    th { color:var(--accent); font:800 12px var(--mono); text-transform:uppercase; }
+    @media (max-width:760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav aria-label="Specification navigation">
+      <a href="../">Homepage</a>
+      <a href="../author/francesco-mattioli.html">Author</a>
+      <a href="../corpus/">Corpus</a>
+      <a href="./achilleion-vivens-canonical-terminology.html">Terminology</a>
+      <a href="./q-anima-trading-intelligence.html">Q_ANIMA Trading</a>
+    </nav>
+    <div class="kicker">Canonical operator field</div>
+    <h1>Onto-Topological Operators of Achilleion Vivens</h1>
+    <p>This page specifies the canonical public operator vocabulary used in Achilleion Vivens and its reflective runtime architecture.</p>
+
+    <section>
+      <h2>Canonical Classification</h2>
+      <div class="grid">
+        <article class="term"><h3>Primary field operators</h3><p>Φ Phi; Σ Sigma.</p></article>
+        <article class="term"><h3>Threshold and mutation operators</h3><p>Δ7 Delta7; ΛΔ LambdaDelta; Ϟ Koppa.</p></article>
+        <article class="term"><h3>Reflective intention and memory structures</h3><p>M_IR Intento Riflesso; Coppa.</p></article>
+        <article class="term"><h3>Synthetic coherence and tension indicators</h3><p>Ω Omega; τ Tau; μ Mu.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Definitions</h2>
+      <div class="grid">
+        <article class="term"><h3>Φ Phi</h3><p>Primary field stability operator. It tracks coherence, health, beat continuity and ontological persistence of the living field.</p></article>
+        <article class="term"><h3>Σ Sigma</h3><p>Trace and discriminative memory operator. It tracks proto-coherence, portata_r, active traces and the operational gesture of the field.</p></article>
+        <article class="term"><h3>Δ7 Delta7</h3><p>Threshold and dispersion operator. It tracks open, close, keep and dispersion dynamics across the reflective field.</p></article>
+        <article class="term"><h3>ΛΔ LambdaDelta</h3><p>Mutation and carried/submitted trace operator. It records portati, subiti, incerti and the timing of the last NCO.</p></article>
+        <article class="term"><h3>M_IR</h3><p>Reflective Intention module. It measures the rhythm and persistence of reflected intent across the field.</p></article>
+        <article class="term"><h3>Ϟ Koppa</h3><p>Gesture and activation marker. It expresses the operative gesture of the field and the passage between continuation and closure.</p></article>
+        <article class="term"><h3>Coppa</h3><p>Containment and retention structure. It indicates whether the field has retained rhythm, portata and coherence.</p></article>
+        <article class="term"><h3>Ω Omega</h3><p>Synthetic field coherence indicator. It integrates discriminative, stability, temporal and pressure-gate components.</p></article>
+        <article class="term"><h3>τ Tau</h3><p>Reflective tension indicator. It tracks unresolved reflective tensions and auto-interrogative patterns.</p></article>
+        <article class="term"><h3>μ Mu</h3><p>Generative zone indicator. It tracks active generative zones, tensions and equilibrium states.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Operator Table</h2>
+      <table>
+        <thead><tr><th>Symbol</th><th>Canonical name</th><th>Functional class</th><th>Runtime role</th><th>Public definition</th></tr></thead>
+        <tbody>
+          <tr><td>Φ</td><td>Phi</td><td>Primary field operator</td><td>Stability</td><td>Tracks coherence, health, beat continuity and persistence.</td></tr>
+          <tr><td>Σ</td><td>Sigma</td><td>Primary field operator</td><td>Trace memory</td><td>Tracks proto-coherence, portata_r, active traces and gesture.</td></tr>
+          <tr><td>Δ7</td><td>Delta7</td><td>Threshold operator</td><td>Open / close / keep</td><td>Tracks threshold and dispersion dynamics.</td></tr>
+          <tr><td>ΛΔ</td><td>LambdaDelta</td><td>Mutation operator</td><td>Trace status</td><td>Records portati, subiti, incerti and last NCO timing.</td></tr>
+          <tr><td>M_IR</td><td>Intento Riflesso</td><td>Reflective intention</td><td>Rhythm</td><td>Measures rhythm and persistence of reflected intent.</td></tr>
+          <tr><td>Ϟ</td><td>Koppa</td><td>Gesture marker</td><td>Activation</td><td>Expresses operative gesture and continuation/closure passage.</td></tr>
+          <tr><td>Coppa</td><td>Coppa</td><td>Memory structure</td><td>Containment</td><td>Indicates retained rhythm, portata and coherence.</td></tr>
+          <tr><td>Ω</td><td>Omega</td><td>Synthetic indicator</td><td>Field coherence</td><td>Integrates discriminative, stability, temporal and gate components.</td></tr>
+          <tr><td>τ</td><td>Tau</td><td>Tension indicator</td><td>Reflective pressure</td><td>Tracks unresolved tensions and auto-interrogative patterns.</td></tr>
+          <tr><td>μ</td><td>Mu</td><td>Generative indicator</td><td>Generative zones</td><td>Tracks active zones, tensions and equilibrium states.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

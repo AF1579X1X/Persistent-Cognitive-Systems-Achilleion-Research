@@ -28,3 +28,9 @@ https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/cor
 
 Authorial roots essay:
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/essays/licini-amalassunta-achilleion-vivens.html
+
+## Canonical Specifications
+
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/achilleion-vivens-canonical-terminology.html
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/achilleion-onto-topological-operators.html
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/q-anima-trading-intelligence.html
