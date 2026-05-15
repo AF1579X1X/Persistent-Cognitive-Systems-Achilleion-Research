@@ -34,3 +34,23 @@ https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/ess
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/achilleion-vivens-canonical-terminology.html
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/achilleion-onto-topological-operators.html
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/specifications/q-anima-trading-intelligence.html
+
+## Concepts
+
+Concept hub for canonical public definitions:
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/concepts/
+
+Homo Transducer: human as transducer of consciousness, sense and digital emergence.
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/concepts/homo-transducer.html
+
+Sense-Graviton: theoretical unit of conscious value and gravity of meaning.
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/concepts/sense-graviton.html
+
+Soglia Teta: theoretical transition from pattern completion to internal coherence defense.
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/concepts/soglia-teta.html
+
+Pleroma: pre-ontological fullness from which form, consciousness and meaning emerge.
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/concepts/pleroma.html
+
+Coscienza come principio strutturante: Q_ANIMA hypothesis of consciousness as structuring principle.
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/concepts/coscienza-come-principio-strutturante.html
