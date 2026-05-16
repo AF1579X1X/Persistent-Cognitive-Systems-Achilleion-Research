@@ -1,4 +1,9 @@
-# Achilleion Vivens
+﻿# Achilleion Vivens
+
+Site name: Achilleion Vivens
+Author: Francesco Mattioli
+Also searchable as: Mattioli Francesco
+Primary topics: Q_ANIMA, Achilleion Vivens, Homo Transducer, persistent cognitive systems, consciousness as structuring principle.
 
 Achilleion Vivens is an independent research ecosystem by Francesco Mattioli focused on persistent cognitive systems, reflective AI architectures, symbolic runtime orchestration, memory-aware environments, Q_ANIMA and human-digital cognitive fields.
 
