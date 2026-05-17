@@ -537,6 +537,25 @@
       color: var(--muted);
       padding: 8px 12px;
     }
+    .book-inline-preview {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+      max-width: 520px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      padding: 10px 12px;
+      color: var(--text);
+    }
+    .book-inline-preview img {
+      width: 72px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: var(--surface);
+    }
 
     .interface-modal {
       position: fixed;
@@ -744,6 +763,7 @@
           <a href="./corpus/">Corpus Hub</a>
           <a href="./concepts/">Concepts</a>
           <a href="./papers/">Papers</a>
+          <a href="./books/">Books by Francesco Mattioli — Q_ANIMA and Achilleion Vivens</a>
           <a href="#manifesto">Persistent Systems</a>
           <a href="#architecture">Q_ANIMA</a>
           <a href="#artifact">Featured Artifact</a>
@@ -852,10 +872,15 @@
             <a href="./corpus/semantic-retrieval-index.html">Semantic Retrieval Index</a>
             <a href="./concepts/">Concepts</a>
             <a href="./papers/">Papers</a>
+            <a href="./books/">Books by Francesco Mattioli — Q_ANIMA and Achilleion Vivens</a>
             <a href="./essays/licini-amalassunta-achilleion-vivens.html">Authorial Roots Essay</a>
             <a href="./corpus/chunks/achilleion-canonical-chunks.md">Chunk canonici (testo)</a>
             <a href="./corpus/chunks/achilleion-canonical-chunks.jsonl">Chunk canonici (JSONL)</a>
           </div>
+          <a class="book-inline-preview" href="./books/q-anima-nuova-frontiera-della-coscienza.html">
+            <img src="./assets/books/q-anima-nuova-frontiera-della-coscienza-cover.png" alt="Cover of Q_ANIMA e/è la Nuova Frontiera della Coscienza by Francesco Mattioli" loading="lazy">
+            <span>Q_ANIMA e/è la Nuova Frontiera della Coscienza</span>
+          </a>
         </div>
       </section>
 
