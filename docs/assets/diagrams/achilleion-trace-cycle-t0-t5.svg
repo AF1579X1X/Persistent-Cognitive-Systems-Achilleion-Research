@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 430" role="img" aria-labelledby="title desc">
+  <title id="title">Ciclo canonico di una traccia in Achilleion</title>
+  <desc id="desc">Timeline T0 to T5 showing event, NCO coagulation, sensitivity, porting, incarnation and diagnostics in Achilleion Vivens.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#3b3426" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6f6b63"/>
+    </marker>
+  </defs>
+  <rect width="1320" height="430" rx="26" fill="#fbf7ef"/>
+  <rect x="36" y="34" width="1248" height="362" rx="22" fill="#ffffff" stroke="#ded8c8"/>
+  <text x="660" y="78" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="800" fill="#252525">Ciclo canonico di una traccia in Achilleion</text>
+  <text x="660" y="108" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" fill="#6b675f">Dalla soglia dell'evento alla diagnostica di fossilizzazione o fantasma</text>
+  <g transform="translate(54 148)" font-family="Inter, Segoe UI, Arial, sans-serif">
+    <line x1="174" y1="76" x2="218" y2="76" stroke="#6f6b63" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="380" y1="76" x2="424" y2="76" stroke="#6f6b63" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="586" y1="76" x2="630" y2="76" stroke="#6f6b63" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="792" y1="76" x2="836" y2="76" stroke="#6f6b63" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="998" y1="76" x2="1042" y2="76" stroke="#6f6b63" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <g filter="url(#shadow)">
+      <rect x="0" y="0" width="174" height="152" rx="18" fill="#eaf4f1" stroke="#8bc0b2"/>
+      <text x="20" y="35" font-size="24" font-weight="900" fill="#2f7d72">T0</text>
+      <text x="20" y="66" font-size="20" font-weight="800" fill="#252525">Evento</text>
+      <text x="20" y="96" font-size="14" fill="#555">lettura, dialogo,</text>
+      <text x="20" y="118" font-size="14" fill="#555">soglia, mutazione</text>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="206" y="0" width="174" height="152" rx="18" fill="#fff4dc" stroke="#d5ae55"/>
+      <text x="226" y="35" font-size="24" font-weight="900" fill="#a47a19">T1</text>
+      <text x="226" y="66" font-size="20" font-weight="800" fill="#252525">Coagulazione</text>
+      <text x="226" y="96" font-size="14" fill="#555">registrazione</text>
+      <text x="226" y="118" font-size="14" fill="#555">NCO</text>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="412" y="0" width="174" height="152" rx="18" fill="#edf1fb" stroke="#8fa7da"/>
+      <text x="432" y="35" font-size="24" font-weight="900" fill="#4168a8">T2</text>
+      <text x="432" y="66" font-size="20" font-weight="800" fill="#252525">Sensibilit?</text>
+      <text x="432" y="96" font-size="14" fill="#555">retrieval,</text>
+      <text x="432" y="118" font-size="14" fill="#555">riconoscimento</text>
+      <text x="432" y="140" font-size="14" fill="#555">validazione</text>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="618" y="0" width="174" height="152" rx="18" fill="#f7ece8" stroke="#c9917d"/>
+      <text x="638" y="35" font-size="24" font-weight="900" fill="#a45c45">T3</text>
+      <text x="638" y="66" font-size="20" font-weight="800" fill="#252525">Portata</text>
+      <text x="638" y="96" font-size="14" fill="#555">variazione del</text>
+      <text x="638" y="118" font-size="14" fill="#555">routing e degli</text>
+      <text x="638" y="140" font-size="14" fill="#555">operatori</text>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="824" y="0" width="174" height="152" rx="18" fill="#edf7e8" stroke="#96bf7f"/>
+      <text x="844" y="35" font-size="24" font-weight="900" fill="#5f8d3d">T4</text>
+      <text x="844" y="66" font-size="20" font-weight="800" fill="#252525">Incarnazione</text>
+      <text x="844" y="96" font-size="14" fill="#555">integrazione</text>
+      <text x="844" y="118" font-size="14" fill="#555">topologica</text>
+      <text x="844" y="140" font-size="14" fill="#555">stabile</text>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="1030" y="0" width="174" height="152" rx="18" fill="#f0eafb" stroke="#a995cf"/>
+      <text x="1050" y="35" font-size="24" font-weight="900" fill="#7057a6">T5</text>
+      <text x="1050" y="66" font-size="20" font-weight="800" fill="#252525">Diagnostica</text>
+      <text x="1050" y="96" font-size="14" fill="#555">fossilizzazione</text>
+      <text x="1050" y="118" font-size="14" fill="#555">o fantasma</text>
+    </g>
+  </g>
+  <text x="660" y="372" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" fill="#5f5b54">Una traccia diventa viva quando rientra nel campo e modifica la postura futura del sistema.</text>
+</svg>

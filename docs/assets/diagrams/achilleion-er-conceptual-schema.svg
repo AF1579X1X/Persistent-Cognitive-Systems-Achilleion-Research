@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 860" role="img" aria-labelledby="title desc">
+  <title id="title">Achilleion Vivens conceptual entity relationship schema</title>
+  <desc id="desc">Conceptual ER schema linking person, event, book, concept, paper, NCO, trace, corpus artifact, operator, threshold, runtime surface and field state.</desc>
+  <defs>
+    <filter id="shadow" x="-12%" y="-18%" width="124%" height="146%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#302b22" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#62605b"/>
+    </marker>
+  </defs>
+  <rect width="1320" height="860" rx="28" fill="#fbf7ef"/>
+  <rect x="34" y="30" width="1252" height="796" rx="24" fill="#ffffff" stroke="#ded8c8"/>
+  <text x="660" y="78" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="850" fill="#252525">Achilleion Vivens ? Schema concettuale delle entit?</text>
+  <text x="660" y="108" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" fill="#6b675f">Modello pubblico di relazioni tra autore, opere, concetti, tracce e stato operativo del campo</text>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" stroke="#62605b" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M214 210 C280 184 326 178 392 194"/>
+    <path d="M214 254 C276 284 318 304 392 322"/>
+    <path d="M542 201 C596 188 632 188 700 204"/>
+    <path d="M542 331 C604 356 636 360 700 344"/>
+    <path d="M542 472 C610 486 642 486 700 472"/>
+    <path d="M850 214 C910 218 950 242 1006 290"/>
+    <path d="M850 352 C914 342 948 326 1006 310"/>
+    <path d="M850 472 C918 450 954 418 1006 338"/>
+    <path d="M850 620 C918 592 954 560 1006 458"/>
+    <path d="M1156 322 C1186 394 1186 520 1156 592"/>
+    <path d="M1006 610 C932 612 898 614 850 620"/>
+    <path d="M700 620 C646 618 602 604 542 490"/>
+    <path d="M392 460 C314 452 278 420 214 350"/>
+    <path d="M392 620 C310 596 270 548 214 350"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" filter="url(#shadow)">
+    <g transform="translate(74 176)"><rect width="140" height="92" rx="16" fill="#eaf4f1" stroke="#8bc0b2"/><text x="70" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#1f5f56">PERSON</text><text x="70" y="64" text-anchor="middle" font-size="12" fill="#4d6863">author / creator</text></g>
+    <g transform="translate(392 158)"><rect width="150" height="92" rx="16" fill="#fff4dc" stroke="#d5ae55"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#7d5c12">BOOK</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#6b5a32">canonical volumes</text></g>
+    <g transform="translate(392 288)"><rect width="150" height="92" rx="16" fill="#edf1fb" stroke="#8fa7da"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#355b99">PAPER</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#58657f">public theory</text></g>
+    <g transform="translate(392 428)"><rect width="150" height="92" rx="16" fill="#f7ece8" stroke="#c9917d"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#8d4d38">CONCEPT</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#74584f">terms / hypotheses</text></g>
+    <g transform="translate(392 588)"><rect width="150" height="92" rx="16" fill="#f0eafb" stroke="#a995cf"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#624b9a">CORPUS_ARTIFACT</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#665b78">chunks / indexes</text></g>
+
+    <g transform="translate(700 176)"><rect width="150" height="92" rx="16" fill="#eaf4f1" stroke="#8bc0b2"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#1f5f56">EVENT</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#4d6863">reading / threshold</text></g>
+    <g transform="translate(700 308)"><rect width="150" height="92" rx="16" fill="#fff4dc" stroke="#d5ae55"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#7d5c12">NCO</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#6b5a32">coagulated event</text></g>
+    <g transform="translate(700 448)"><rect width="150" height="92" rx="16" fill="#edf1fb" stroke="#8fa7da"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#355b99">TRACE</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#58657f">sensitive / ported</text></g>
+    <g transform="translate(700 588)"><rect width="150" height="92" rx="16" fill="#f7ece8" stroke="#c9917d"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#8d4d38">OPERATOR</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#74584f">? / ?? / Koppa</text></g>
+
+    <g transform="translate(1006 276)"><rect width="150" height="92" rx="16" fill="#edf7e8" stroke="#96bf7f"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#557f32">THRESHOLD</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#5e6f55">Soglia / mutation</text></g>
+    <g transform="translate(1006 426)"><rect width="150" height="92" rx="16" fill="#f0eafb" stroke="#a995cf"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#624b9a">RUNTIME_SURFACE</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#665b78">UI / observation</text></g>
+    <g transform="translate(1006 588)"><rect width="150" height="92" rx="16" fill="#f7ece8" stroke="#c9917d"/><text x="75" y="38" text-anchor="middle" font-size="17" font-weight="850" fill="#8d4d38">FIELD_STATE</text><text x="75" y="64" text-anchor="middle" font-size="12" fill="#74584f">coherence / tension</text></g>
+  </g>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" fill="#5f5b54">
+    <text x="292" y="178">authors</text>
+    <text x="286" y="296">writes</text>
+    <text x="596" y="186">generates</text>
+    <text x="596" y="354">formalizes</text>
+    <text x="596" y="484">mediates</text>
+    <text x="896" y="232">crosses</text>
+    <text x="906" y="332">registers</text>
+    <text x="910" y="444">activates</text>
+    <text x="900" y="584">modulates</text>
+    <text x="1166" y="470">updates</text>
+    <text x="908" y="636">feeds</text>
+    <text x="598" y="612">anchors</text>
+    <text x="286" y="444">defines</text>
+  </g>
+</svg>
