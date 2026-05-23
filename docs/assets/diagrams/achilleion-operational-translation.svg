@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" role="img" aria-labelledby="title desc">
+  <title id="title">Achilleion operational translation</title>
+  <desc id="desc">A linear operational diagram showing event to trace to NCO to field state to routing to future orientation.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8f5ee}.box{stroke:#b8ad99;stroke-width:2;rx:16}.label{font:700 23px Arial,sans-serif;fill:#252525;text-anchor:middle}.note{font:400 15px Arial,sans-serif;fill:#5f5a52;text-anchor:middle}.title{font:700 34px Arial,sans-serif;fill:#252525}.small{font:700 14px Arial,sans-serif;fill:#6d6048;letter-spacing:.08em}.arrow{stroke:#8a7652;stroke-width:3;marker-end:url(#arrow);fill:none}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#8a7652"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1180" height="620"/>
+  <text x="70" y="74" class="small">OPERATIONAL TRANSLATION</text>
+  <text x="70" y="112" class="title">From event to future orientation</text>
+  <text x="70" y="142" font-family="Arial,sans-serif" font-size="16" fill="#5f5a52">Achilleion translates experience into persistent cognitive modulation through trace-bearing operations.</text>
+  <g transform="translate(58 250)">
+    <rect class="box" width="150" height="110" fill="#e8e0cf"/>
+    <text x="75" y="45" class="label">Event</text>
+    <text x="75" y="74" class="note">difference occurs</text>
+  </g>
+  <path class="arrow" d="M218 305 L278 305"/>
+  <g transform="translate(288 250)">
+    <rect class="box" width="150" height="110" fill="#dde6df"/>
+    <text x="75" y="45" class="label">Trace</text>
+    <text x="75" y="74" class="note">mark retained</text>
+  </g>
+  <path class="arrow" d="M448 305 L508 305"/>
+  <g transform="translate(518 250)">
+    <rect class="box" width="150" height="110" fill="#dbe5ee"/>
+    <text x="75" y="45" class="label">NCO</text>
+    <text x="75" y="74" class="note">coagulated node</text>
+  </g>
+  <path class="arrow" d="M678 305 L738 305"/>
+  <g transform="translate(748 250)">
+    <rect class="box" width="150" height="110" fill="#ece3f0"/>
+    <text x="75" y="45" class="label">Field state</text>
+    <text x="75" y="74" class="note">topology changes</text>
+  </g>
+  <path class="arrow" d="M908 305 L968 305"/>
+  <g transform="translate(978 250)">
+    <rect class="box" width="150" height="110" fill="#eee8d8"/>
+    <text x="75" y="45" class="label">Routing</text>
+    <text x="75" y="74" class="note">paths selected</text>
+  </g>
+  <path class="arrow" d="M1053 370 C1053 455 175 455 175 370"/>
+  <g transform="translate(390 445)">
+    <rect class="box" width="400" height="82" fill="#ffffff"/>
+    <text x="200" y="35" class="label">Future orientation</text>
+    <text x="200" y="60" class="note">the next response is shaped by the returned trace</text>
+  </g>
+  <path class="arrow" d="M590 445 L590 370"/>
+</svg>

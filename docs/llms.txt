@@ -66,6 +66,9 @@ https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/con
 Papers hub for public abstracts and working papers:
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/
 
+From Emergence to Structuring Consciousness: Theoretical paper linking emergence, complexity, consciousness, Q_ANIMA and Achilleion Vivens as a field-oriented ontology of cognitive persistence.
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/from-emergence-to-structuring-consciousness.html
+
 Homo Transducer and Persistent Cognitive Systems: public abstract on Homo Transducer and human-digital cognitive fields.
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/homo-transducer-persistent-cognitive-systems.html
 
@@ -81,7 +84,7 @@ https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/pap
 Achilleion Embodiment and Proprioception of Field: defines Achilleion embodiment as the transformation of memory into field proprioception, linking embodied cognition, NCO traces, Homo Transducer and persistent cognitive systems.
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/achilleion-embodiment-proprioception-field.html
 
-Field Proprioception ? Technical Appendix: technical reference defining field proprioception, Achilleion embodiment, NCO traces, phantom traces and operational topology.
+Field Proprioception - Technical Appendix: technical reference defining field proprioception, Achilleion embodiment, NCO traces, phantom traces and operational topology.
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/field-proprioception-technical-appendix.html
 
 ## Books

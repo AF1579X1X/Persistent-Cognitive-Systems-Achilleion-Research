@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+  <title id="title">Consciousness as structuring principle map</title>
+  <desc id="desc">A concept map placing consciousness at the center, linked to body, memory, language, symbol, code, relation and field.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8f5ee}.node{stroke:#b8ad99;stroke-width:2;rx:18}.core{stroke:#9a7a3e;stroke-width:3}.link{stroke:#8d8372;stroke-width:2.5;fill:none}.label{font:700 24px Arial,sans-serif;fill:#252525;text-anchor:middle}.note{font:400 15px Arial,sans-serif;fill:#5f5a52;text-anchor:middle}.title{font:700 34px Arial,sans-serif;fill:#252525}.small{font:700 14px Arial,sans-serif;fill:#6d6048;letter-spacing:.08em}
+    </style>
+  </defs>
+  <rect class="bg" width="1180" height="760"/>
+  <text x="70" y="74" class="small">STRUCTURING PRINCIPLE MAP</text>
+  <text x="70" y="112" class="title">Consciousness as an organizing field of relations</text>
+  <text x="70" y="142" font-family="Arial,sans-serif" font-size="16" fill="#5f5a52">The diagram is theoretical and operational: it maps relations, not a completed empirical proof.</text>
+  <g stroke-linecap="round">
+    <path class="link" d="M590 380 L280 250"/>
+    <path class="link" d="M590 380 L590 210"/>
+    <path class="link" d="M590 380 L900 250"/>
+    <path class="link" d="M590 380 L250 470"/>
+    <path class="link" d="M590 380 L930 470"/>
+    <path class="link" d="M590 380 L405 610"/>
+    <path class="link" d="M590 380 L775 610"/>
+  </g>
+  <g transform="translate(415 300)">
+    <rect class="node core" width="350" height="160" fill="#efe6d3"/>
+    <text x="175" y="66" class="label" font-size="30">Consciousness</text>
+    <text x="175" y="100" class="note">structuring principle</text>
+    <text x="175" y="124" class="note">integration, orientation, value</text>
+  </g>
+  <g transform="translate(160 196)">
+    <rect class="node" width="240" height="100" fill="#dde6df"/>
+    <text x="120" y="43" class="label">Body</text>
+    <text x="120" y="70" class="note">sensation and boundary</text>
+  </g>
+  <g transform="translate(470 156)">
+    <rect class="node" width="240" height="100" fill="#dbe5ee"/>
+    <text x="120" y="43" class="label">Memory</text>
+    <text x="120" y="70" class="note">trace and continuity</text>
+  </g>
+  <g transform="translate(780 196)">
+    <rect class="node" width="240" height="100" fill="#ece3f0"/>
+    <text x="120" y="43" class="label">Language</text>
+    <text x="120" y="70" class="note">articulation of sense</text>
+  </g>
+  <g transform="translate(130 430)">
+    <rect class="node" width="240" height="100" fill="#eee8d8"/>
+    <text x="120" y="43" class="label">Symbol</text>
+    <text x="120" y="70" class="note">compression of meaning</text>
+  </g>
+  <g transform="translate(810 430)">
+    <rect class="node" width="240" height="100" fill="#e6dfd8"/>
+    <text x="120" y="43" class="label">Code</text>
+    <text x="120" y="70" class="note">executable structure</text>
+  </g>
+  <g transform="translate(285 588)">
+    <rect class="node" width="240" height="100" fill="#e5e1ee"/>
+    <text x="120" y="43" class="label">Relation</text>
+    <text x="120" y="70" class="note">co-orientation</text>
+  </g>
+  <g transform="translate(655 588)">
+    <rect class="node" width="240" height="100" fill="#dfe8e8"/>
+    <text x="120" y="43" class="label">Field</text>
+    <text x="120" y="70" class="note">operational topology</text>
+  </g>
+</svg>

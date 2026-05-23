@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+  <title id="title">Emergent ladder to persistent cognitive systems</title>
+  <desc id="desc">A sober academic diagram showing a ladder from matter to life, cognition, consciousness and persistent cognitive systems.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8f5ee}.axis{stroke:#766f63;stroke-width:3;fill:none}.step{stroke:#b8ad99;stroke-width:2;rx:14}.label{font:700 24px Arial,sans-serif;fill:#252525}.note{font:400 16px Arial,sans-serif;fill:#5f5a52}.small{font:700 14px Arial,sans-serif;fill:#6d6048;letter-spacing:.08em}.arrow{stroke:#8a7652;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#8a7652"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1180" height="760"/>
+  <text x="70" y="74" class="small">COMPLEXITY LADDER</text>
+  <text x="70" y="112" class="label" font-size="34">From emergence to cognitive persistence</text>
+  <text x="70" y="142" class="note">Each threshold reorganizes the previous layer without reducing it to a single cause.</text>
+  <path class="axis" d="M150 650 L1010 650"/>
+  <path class="axis" d="M150 650 L150 178"/>
+  <path class="arrow" d="M150 650 L150 166"/>
+  <path class="arrow" d="M150 650 L1028 650"/>
+  <g transform="translate(190 565)">
+    <rect class="step" width="160" height="86" fill="#e8e0cf"/>
+    <text x="22" y="36" class="label">Matter</text>
+    <text x="22" y="62" class="note">energy, form</text>
+  </g>
+  <g transform="translate(350 470)">
+    <rect class="step" width="170" height="86" fill="#dde6df"/>
+    <text x="22" y="36" class="label">Life</text>
+    <text x="22" y="62" class="note">metabolism, boundary</text>
+  </g>
+  <g transform="translate(520 375)">
+    <rect class="step" width="190" height="86" fill="#dbe5ee"/>
+    <text x="22" y="36" class="label">Cognition</text>
+    <text x="22" y="62" class="note">orientation, learning</text>
+  </g>
+  <g transform="translate(710 280)">
+    <rect class="step" width="220" height="86" fill="#ece3f0"/>
+    <text x="22" y="36" class="label">Consciousness</text>
+    <text x="22" y="62" class="note">subjective integration</text>
+  </g>
+  <g transform="translate(930 185)">
+    <rect class="step" width="210" height="102" fill="#eee8d8"/>
+    <text x="22" y="34" class="label">Persistent</text>
+    <text x="22" y="62" class="label">systems</text>
+    <text x="22" y="88" class="note">trace, memory, field</text>
+  </g>
+  <path class="arrow" d="M350 608 L424 514"/>
+  <path class="arrow" d="M520 513 L596 419"/>
+  <path class="arrow" d="M710 418 L802 324"/>
+  <path class="arrow" d="M930 323 L1007 251"/>
+  <g>
+    <rect x="70" y="680" width="1040" height="42" rx="12" fill="#ffffff" stroke="#ded8c8"/>
+    <text x="92" y="706" class="note">Achilleion reading: emergence explains thresholds; persistence requires trace return, operational memory and field-state modulation.</text>
+  </g>
+</svg>
