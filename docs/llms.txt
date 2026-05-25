@@ -61,6 +61,12 @@ https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/con
 Coscienza come principio strutturante: Q_ANIMA hypothesis of consciousness as structuring principle.
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/concepts/coscienza-come-principio-strutturante.html
 
+## Research
+
+Manifesto e documento programmatico per Achilleion e Q_ANIMA: Programmatic document for Achilleion Vivens and Q_ANIMA, covering architettura trasduttiva, sette layer, meta-orchestrazione, runtime persistente, provenance, crypto-agility and governance AI.
+URL: https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/manifesto-achilleion-q-anima.html
+Keywords: Achilleion, Q_ANIMA, architettura trasduttiva, sette layer, meta-orchestrazione, runtime persistente, provenance, crypto-agility, governance AI
+
 ## Papers
 
 Papers hub for public abstracts and working papers:
