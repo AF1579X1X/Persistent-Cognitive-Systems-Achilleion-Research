@@ -32,7 +32,7 @@
     article { min-width:0; } .content { border:1px solid var(--line); border-radius:22px; background:var(--panel); box-shadow:var(--shadow); padding:28px; overflow:hidden; }
     h2 { margin:42px 0 12px; font-size:clamp(25px,3vw,38px); line-height:1.16; } h2:first-child { margin-top:0; } h3 { margin:26px 0 10px; font-size:24px; line-height:1.2; }
     p { margin:0 0 16px; } ul,ol { padding-left:22px; } li { margin:8px 0; color:var(--muted); } blockquote { margin:18px 0; border-left:4px solid var(--accent); padding:10px 16px; color:var(--muted); background:rgba(255,255,255,.5); } code { font-family:var(--mono); }
-    pre { max-width:100%; overflow:auto; border:1px solid var(--line); border-radius:16px; padding:16px; background:#fff; color:#333; } pre.mermaid { text-align:center; background:#fffdf8; color:#333; } .mermaid svg { max-width:100%; height:auto; }
+    pre { max-width:100%; overflow:auto; border:1px solid var(--line); border-radius:16px; padding:16px; background:#fff; color:#333; } .mermaid-wrap { overflow-x:auto; width:100%; margin:2rem 0; padding:1.25rem; border:1px solid rgba(120,100,60,.25); border-radius:18px; background:#fffdf7; } .mermaid-wrap pre.mermaid { min-width:1100px; margin:0; border:0; padding:0; overflow:visible; background:transparent; color:#333; text-align:center; } .mermaid-wrap svg { min-width:1100px; width:100%; height:auto; } .mermaid svg text { font-size:16px !important; font-weight:600; }
     .table-wrap { width:100%; overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:16px; background:#fff; } table { width:100%; min-width:880px; border-collapse:collapse; } th,td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; } th { background:#eee8d8; color:#252525; } td { color:#555; }
     footer { margin-top:34px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); }
     @media(max-width:860px) { .wrap { padding:24px 16px 56px; } .layout { grid-template-columns:1fr; } nav.toc { position:static; max-height:none; } .content { padding:20px; } table { min-width:760px; } }
@@ -40,7 +40,7 @@
 </head>
 <body>
   <main class="wrap">
-    <a class="top-link" href="../">Torna alla homepage Achilleion</a>
+    <a class="top-link" href="../index.html">Torna alla homepage Achilleion</a>
     <header>
       <div class="kicker">Research article</div>
       <h1>Manifesto e documento programmatico per Achilleion e Q_ANIMA</h1>
@@ -79,19 +79,33 @@
 <p>Il programma del progetto è quindi duplice. Pubblicamente, Achilleion si presenta come un laboratorio di continuità simbolica tra umano e macchina. Internamente, si organizza come un sistema di promozione controllata del senso: dal frammento al documento, dal documento al canone, dal canone alla memoria attiva, dalla memoria attiva alla riflessione condivisa. Questa è la forma più rigorosa in cui l’ambizione del progetto può diventare insieme leggibile, sviluppabile e difendibile.</p>
 <h2 id="modello-ontologico-dei-sette-layer">Modello ontologico dei sette layer</h2>
 <p>Il modo più solido di presentare il modello Achilleion è definirlo come <strong>ontologia ingegneristica di progetto</strong>: non una tassonomia universale definitiva, ma una griglia coerente che collega interfacce reali già note — soglie elettriche, logica booleana, ISA, syscall e API, tensori, tokenizzazione, transformer, provenance e governance — a una continuità di senso che il documento canonico descrive in forma teorica.</p>
-<pre class="mermaid">flowchart LR
-    L1[&quot;Fisico-energetico&quot;] --&gt; A12[&quot;Soglie, clock, margini&quot;]
-    A12 --&gt; L2[&quot;Logico-binario&quot;]
-    L2 --&gt; A23[&quot;Campionamento, registri, temporizzazione&quot;]
-    A23 --&gt; L3[&quot;Architetturale-computazionale&quot;]
-    L3 --&gt; A34[&quot;ISA, ABI, syscall, VFS, runtime&quot;]
-    A34 --&gt; L4[&quot;Software-sistemico&quot;]
-    L4 --&gt; A45[&quot;Pipeline dati, serving, tensori, embeddings&quot;]
-    A45 --&gt; L5[&quot;Tensoriale-statistico&quot;]
-    L5 --&gt; A56[&quot;Tokenizer, decoder, retrieval, schema&quot;]
-    A56 --&gt; L6[&quot;Semantico-linguistico&quot;]
-    L6 --&gt; A67[&quot;Policy, review, provenance, memoria riflessiva&quot;]
-    A67 --&gt; L7[&quot;Coscienziale-riflessivo&quot;]</pre>
+<div class="mermaid-wrap"><pre class="mermaid">flowchart LR
+    %% Modello ontologico dei sette layer
+    classDef layer fill:#f8f6ef,stroke:#8b7cf6,stroke-width:2px,color:#222,font-size:18px;
+    classDef bridge fill:#fffdf7,stroke:#9f7f43,stroke-width:1.5px,color:#333,font-size:16px;
+
+    subgraph R1[Layer 1-4: fondazione operativa]
+      direction LR
+      L1["L1<br/>Fisico-energetico"]:::layer
+      B12["Soglie<br/>clock<br/>margini"]:::bridge
+      L2["L2<br/>Logico-binario"]:::layer
+      B23["Registri<br/>campionamento<br/>tempo"]:::bridge
+      L3["L3<br/>Computazionale"]:::layer
+      B34["ISA<br/>ABI<br/>runtime"]:::bridge
+      L4["L4<br/>Software-sistemico"]:::layer
+    end
+
+    subgraph R2[Layer 5-7: generazione del senso]
+      direction LR
+      B45["Pipeline dati<br/>tensori<br/>embedding"]:::bridge
+      L5["L5<br/>Tensoriale-statistico"]:::layer
+      B56["Tokenizer<br/>retrieval<br/>schema"]:::bridge
+      L6["L6<br/>Semantico-linguistico"]:::layer
+      B67["Policy<br/>provenance<br/>memoria"]:::bridge
+      L7["L7<br/>Coscienziale-riflessivo"]:::layer
+    end
+
+    L1 --> B12 --> L2 --> B23 --> L3 --> B34 --> L4 --> B45 --> L5 --> B56 --> L6 --> B67 --> L7</pre></div>
 <p>La catena sopra rende esplicita la tesi del progetto: ogni layer traduce il precedente, ma nessun layer basta da solo a spiegare il livello superiore. Questa impostazione è compatibile con il fatto che, in pratica, il confine fra applicazione e kernel passi per system call e interfacce di runtime, mentre il confine fra semantica umana e computazione statistica passi per tokenizzazione, rappresentazioni continue e architetture di sequence transduction basate su self-attention.</p>
 <div class="table-wrap">
 <table>
@@ -111,36 +125,67 @@
 <p>La debolezza maggiore del testo teorico originario non è la visione, ma l’ambiguità del settimo layer. Per renderlo rigoroso, quel layer va definito con indicatori osservabili: persistenza della memoria, coerenza tra release, capacità di distinguere bozza e fonte canonica, rispetto delle policy, reversibilità delle decisioni, disponibilità della genealogia documentale. Se resta così formulato, non è un’affermazione metafisica mascherata da ingegneria; diventa invece un programma verificabile di riflessività socio-tecnica.</p>
 <h2 id="architettura-di-riferimento">Architettura di riferimento</h2>
 <p>L’architettura consigliata per Achilleion è <strong>composita ma non dispersiva</strong>. L’autorità di processo deve stare in un motore di workflow durevole; l’autorità di configurazione in un controller di stato desiderato; l’autorità di dato in un backend relazionale verificabile; l’autorità di evento in un bus messaggistico con consumer durabili; l’autorità di verità documentale in artefatti canonici firmati. Così si evita sia il monolite opaco sia la frammentazione senza centro.</p>
-<pre class="mermaid">flowchart TB
-    U[&quot;Utente / curatore umano&quot;] --&gt; G[&quot;Gateway applicativo&quot;]
-    G --&gt; M[&quot;Meta-orchestratore Achilleion&quot;]
-    M --&gt; T[&quot;Runtime persistente&quot;]
-    T --&gt; W1[&quot;Worker ingestione e normalizzazione&quot;]
-    T --&gt; W2[&quot;Worker retrieval e canonizzazione&quot;]
-    T --&gt; W3[&quot;Worker dialogo e pianificazione&quot;]
-    T --&gt; W4[&quot;Worker riflessività e sintesi&quot;]
-    T --&gt; W5[&quot;Worker sicurezza e firma&quot;]
+<div class="mermaid-wrap"><pre class="mermaid">flowchart TB
+    %% Architettura di riferimento
+    classDef actor fill:#f8f6ef,stroke:#8b7cf6,stroke-width:2px,color:#222,font-size:18px;
+    classDef core fill:#eef2ff,stroke:#4f46e5,stroke-width:2.5px,color:#111,font-size:18px;
+    classDef worker fill:#fffdf7,stroke:#9f7f43,stroke-width:1.8px,color:#222,font-size:17px;
+    classDef store fill:#f5f5f4,stroke:#78716c,stroke-width:1.8px,color:#222,font-size:16px;
+    classDef infra fill:#ecfeff,stroke:#0891b2,stroke-width:1.8px,color:#111,font-size:17px;
 
-    M --&gt; P[&quot;Policy engine e promotion gate&quot;]
-    M --&gt; O[&quot;Telemetry / OpenTelemetry&quot;]
+    U["Utente<br/>curatore umano"]:::actor --> G["Gateway<br/>applicativo"]:::core
+    G --> M["Meta-orchestratore<br/>Achilleion"]:::core
+    M --> T["Runtime<br/>persistente"]:::core
 
-    W1 --&gt; S1[&quot;Object storage dei grezzi&quot;]
-    W2 --&gt; S2[&quot;PostgreSQL + jsonb + full text + pgvector&quot;]
-    W4 --&gt; S3[&quot;Registro memoria riflessiva&quot;]
-    P --&gt; S4[&quot;Registro provenance e attestazioni&quot;]
-    W5 --&gt; S5[&quot;Firma artefatti / TUF-Sigstore&quot;]
+    subgraph W[Worker operativi]
+      direction LR
+      W1["Ingestione<br/>normalizzazione"]:::worker
+      W2["Retrieval<br/>canonizzazione"]:::worker
+      W3["Dialogo<br/>pianificazione"]:::worker
+      W4["Riflessività<br/>sintesi"]:::worker
+      W5["Sicurezza<br/>firma"]:::worker
+    end
 
-    E[&quot;Bus eventi&quot;] --&gt; M
-    E --&gt; O
-    E --&gt; W1
-    E --&gt; W3
+    T --> W1
+    T --> W2
+    T --> W3
+    T --> W4
+    T --> W5
 
-    K[&quot;Kubernetes / operator&quot;] --&gt; G
-    K --&gt; T
-    K --&gt; E
-    K --&gt; O
+    subgraph S[Registri e memoria]
+      direction LR
+      S1["Object storage<br/>grezzi"]:::store
+      S2["PostgreSQL<br/>jsonb + FTS + pgvector"]:::store
+      S3["Memoria<br/>riflessiva"]:::store
+      S4["Provenance<br/>attestazioni"]:::store
+      S5["Artefatti firmati<br/>TUF / Sigstore"]:::store
+    end
 
-    S2 -. opzionale fase avanzata .-&gt; X[&quot;Qdrant o grafo di knowledge/provenance&quot;]</pre>
+    W1 --> S1
+    W2 --> S2
+    W4 --> S3
+    W5 --> S5
+
+    M --> P["Policy engine<br/>promotion gate"]:::core
+    P --> S4
+    M --> O["Telemetry<br/>OpenTelemetry"]:::infra
+
+    subgraph I[Infrastruttura]
+      direction LR
+      E["Bus eventi"]:::infra
+      K["Kubernetes<br/>operator"]:::infra
+    end
+
+    E --> M
+    E --> O
+    E --> W1
+    E --> W3
+    K --> G
+    K --> T
+    K --> E
+    K --> O
+
+    S2 -. "fase avanzata" .-> X["Qdrant<br/>o grafo knowledge/provenance"]:::store</pre></div>
 <p>Il <strong>runtime persistente</strong> raccomandato è Temporal, perché documenta in modo chiaro durable execution, event history, replay e recupero del processo dopo crash anche di lunga durata. È il candidato migliore per tutti i flussi che devono sopravvivere a riavvii, interruzioni di rete, pause umane e processi che durano giorni o settimane. Kubernetes va invece usato come piano di automazione infrastrutturale e di riconciliazione; non come unica fonte della logica di business. NATS JetStream o un bus equivalente va usato per segnali, notifica, telemetria, eventi ad alto volume e decoupling.</p>
 <p>Per il <strong>sistema dei dati</strong>, il backend iniziale migliore è PostgreSQL come system of record, usando <code>jsonb</code> per documenti e stato, full-text search per ricerca lessicale auditabile e <code>pgvector</code> per retrieval semantico nello stesso dominio transazionale. Questa scelta riduce il numero di sistemi da governare e semplifica backup, replica, query e audit trail. Qdrant va considerato un secondo passo, utile quando diventano dominanti filtri ricchi, throughput vettoriale elevato, multitenancy o requisiti di strict-mode sui campi indicizzati. Un grafo di knowledge/provenance ha senso solo dopo che il canone e le relazioni principali saranno davvero stabili.</p>
 <p>I moduli di trasduzione da rendere espliciti fin dall’inizio sono i seguenti.</p>
@@ -207,33 +252,34 @@
 </table>
 </div>
 <p>La roadmap è coerente con le dipendenze tecnologiche e di governance emerse dalle fonti: prima definire il canone e i ruoli, poi la durable execution, poi provenance e promotion, poi la continuità riflessiva, infine la messa in sicurezza e la cripto-agilità.</p>
-<pre class="mermaid">gantt
+<div class="mermaid-wrap"><pre class="mermaid">gantt
     title Roadmap ipotetica Achilleion
     dateFormat  YYYY-MM-DD
     axisFormat  %b %Y
+    tickInterval 2month
 
-    section Fondazione
+    section 1. Fondazione canonica
     Documento canonico unificato        :a1, 2026-06-01, 60d
     Glossario layer e policy editoriali :a2, 2026-06-15, 75d
     Tassonomia artefatti e promotion    :a3, 2026-07-01, 60d
 
-    section Runtime
-    Runtime persistente                  :b1, 2026-08-01, 90d
-    Registro provenance                  :b2, 2026-09-01, 75d
-    Observability end-to-end             :b3, 2026-09-15, 75d
+    section 2. Runtime persistente
+    Runtime persistente                 :b1, 2026-08-01, 90d
+    Registro provenance                 :b2, 2026-09-01, 75d
+    Observability end-to-end            :b3, 2026-09-15, 75d
 
-    section Continuità
-    Retrieval canonico                   :c1, 2026-11-01, 90d
-    Validator citazionale e schema       :c2, 2026-12-01, 75d
-    Memoria riflessiva                   :c3, 2027-01-01, 90d
+    section 3. Continuità del senso
+    Retrieval canonico                  :c1, 2026-11-01, 90d
+    Validator citazionale e schema      :c2, 2026-12-01, 75d
+    Memoria riflessiva                  :c3, 2027-01-01, 90d
 
-    section Sicurezza
-    Firme e gestione chiavi              :d1, 2027-02-01, 75d
-    Inventory crittografico              :d2, 2027-03-01, 60d
-    Piano PQC e crypto-agility           :d3, 2027-04-01, 90d
+    section 4. Sicurezza e crypto-agility
+    Firme e gestione chiavi             :d1, 2027-02-01, 75d
+    Inventory crittografico             :d2, 2027-03-01, 60d
+    Piano PQC e crypto-agility          :d3, 2027-04-01, 90d
 
-    section Rilascio
-    Dashboard, runbook, release stabile  :e1, 2027-06-01, 90d</pre>
+    section 5. Rilascio stabile
+    Dashboard, runbook, release stabile :e1, 2027-06-01, 90d</pre></div>
 <h3 id="confronto-tra-pattern-di-orchestrazione">Confronto tra pattern di orchestrazione</h3>
 <div class="table-wrap">
 <table>
@@ -278,7 +324,7 @@
 <p>Restano alcune variabili non specificate che incidono sul dettaglio finale del documento programmatico: il regime di deployment esatto, l’eventuale presenza di vincoli normativi settoriali, la disponibilità di HSM/TPM o secure enclave sui nodi effettivi, il modello o i modelli linguistici da usare e il livello di self-hosting desiderato per il piano AI. Senza queste informazioni, la proposta qui presentata deve essere letta come <strong>architettura di riferimento rigorosa</strong>, non come blueprint definitivo.</p>
 <p>La conclusione sostanziale, però, è netta: <strong>Achilleion è realizzabile</strong> se smette di pensarsi come visione unica e comincia a operare come sistema a due facce, una pubblica e una interna, tenute insieme da un unico canone, da un runtime persistente, da una metrica di promozione del senso e da una disciplina di provenance, firma e cripto-agilità. In quella forma, il progetto può diventare non solo più chiaro, ma anche più costruibile, più verificabile e più utile per l’evoluzione di Q_ANIMA.</p>
         </section>
-        <footer><a class="top-link" href="../">Torna alla homepage Achilleion</a><span>Achilleion Vivens - Q_ANIMA</span></footer>
+        <footer><a class="top-link" href="../index.html">Torna alla homepage Achilleion</a><span>Achilleion Vivens - Q_ANIMA</span></footer>
       </article>
     </div>
   </main>
@@ -286,7 +332,30 @@
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
     mermaid.initialize({
       startOnLoad: true,
-      theme: 'default'
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Inter, system-ui, sans-serif',
+        fontSize: '18px',
+        primaryColor: '#f8f6ef',
+        primaryTextColor: '#222222',
+        primaryBorderColor: '#8b7cf6',
+        lineColor: '#222222',
+        secondaryColor: '#fffdf7',
+        tertiaryColor: '#eef2ff'
+      },
+      flowchart: {
+        htmlLabels: true,
+        nodeSpacing: 70,
+        rankSpacing: 80,
+        curve: 'basis'
+      },
+      gantt: {
+        fontSize: 18,
+        barHeight: 28,
+        topPadding: 48,
+        leftPadding: 140,
+        gridLineStartPadding: 35
+      }
     });
   </script>
 </body>
