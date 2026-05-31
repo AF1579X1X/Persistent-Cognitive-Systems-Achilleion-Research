@@ -138,41 +138,6 @@
     }
     .map-caption { color: var(--muted); font-size: 14px; margin-top: 12px; }
 
-    /* Interactive operational ecosystem map */
-    .map-wrap { width: 100%; overflow-x: auto; padding-bottom: 6px; }
-    .map-wrap svg { width: 100%; min-width: 760px; display: block; }
-    svg text { font-family: var(--sans); pointer-events: none; }
-    .branch { cursor: pointer; filter: drop-shadow(0 10px 18px rgba(40,36,28,0.12)); transition: transform 0.18s ease, filter 0.18s ease; }
-    .branch:hover { transform: translateY(-3px); filter: drop-shadow(0 14px 24px rgba(40,36,28,0.18)); }
-    .branch rect { fill: #fffdf8; stroke: rgba(43,39,32,0.18); }
-    .n-amber rect { fill: #fff5df; stroke: rgba(214,155,61,0.55); }
-    .n-teal rect { fill: #e8f6f3; stroke: rgba(50,143,137,0.55); }
-    .n-blue rect { fill: #edf4ff; stroke: rgba(76,121,184,0.55); }
-    .n-coral rect { fill: #fff0ec; stroke: rgba(199,101,85,0.55); }
-    .n-green rect { fill: #edf7ee; stroke: rgba(95,147,98,0.55); }
-    .n-gray rect { fill: #f2f3f5; stroke: rgba(113,121,136,0.55); }
-    .n-pink rect { fill: #fff0f7; stroke: rgba(186,110,145,0.55); }
-    .th { font-size: 15px; font-weight: 850; fill: #24211c; }
-    .tc { font-size: 10px; font-weight: 700; fill: #5f5a52; }
-    .micro { font-size: 9px; font-weight: 700; fill: #6a6257; }
-    .central-title { font-size: 22px; font-weight: 900; fill: #252018; }
-    .central-sub { font-size: 10px; font-weight: 800; fill: #6b5b3e; letter-spacing: 0.08em; }
-    .legend { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 18px; }
-    .legend-item { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; }
-    .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
-    .panel { display: none; padding: 18px; margin-top: 14px; }
-    .panel.open { display: block; }
-    .panel-head { display: flex; justify-content: space-between; gap: 12px; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 14px; }
-    .panel-title { font-size: 22px; font-weight: 900; }
-    .close { border: 1px solid var(--border); background: #fff; color: var(--muted); border-radius: 999px; padding: 7px 10px; cursor: pointer; font-weight: 900; }
-    .panel-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .card { border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,0.78); padding: 14px; }
-    .card h3, .card h4 { margin: 0 0 8px; font-size: 17px; }
-    .card p, .card li, .muted { color: var(--muted); }
-    .checklist { margin: 8px 0 0; padding-left: 18px; }
-    .key-phrase { margin-top: 14px; padding: 14px 16px; border-radius: 14px; background: rgba(167,127,50,0.12); border: 1px solid rgba(167,127,50,0.28); font-weight: 850; }
-    .psec-body { color: #3e3a33; }
-    pre { white-space: pre-wrap; background: #252018; color: #f8f1e5; border-radius: 14px; padding: 14px 16px; overflow-x: auto; }
     footer { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
     @media (max-width: 900px) {
       .branch-grid, .panel-grid { grid-template-columns: 1fr; }
@@ -277,495 +242,168 @@
       </section>
 
       <section id="interactive-map" class="map-section" aria-labelledby="map-title">
-        <div class="section-head">
-          <div class="tag">Interactive map</div>
-          <h2 id="map-title">Achilleion / Q_ANIMA Operational Ecosystem Map</h2>
-          <p class="lead">Click a branch of the map to open its public explanatory panel. The map is integrated as inline HTML, SVG, CSS and JavaScript, with no external dependency.</p>
-        </div>
-        <div class="map-wrap">
-<svg viewBox="0 0 860 640" role="img" aria-label="Achilleion Q_ANIMA Operational Ecosystem — radial map with 7 branches">
-<defs>
-  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  </marker>
-</defs>
-
-<!-- ── Spoke lines ── -->
-<line x1="390" y1="285" x2="200" y2="148" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-<line x1="430" y1="285" x2="622" y2="148" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-<line x1="410" y1="268" x2="410" y2="120" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-<line x1="450" y1="318" x2="640" y2="318" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-<line x1="430" y1="352" x2="622" y2="492" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-<line x1="390" y1="352" x2="200" y2="492" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-<line x1="370" y1="318" x2="180" y2="318" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-
-<!-- ══ CENTER NODE ══ -->
-<g class="n-purple">
-  <rect x="290" y="256" width="240" height="126" rx="14" stroke-width="0.6"/>
-  <text class="th" x="410" y="290" text-anchor="middle" dominant-baseline="central">Achilleion / Q_ANIMA</text>
-  <text class="ts" x="410" y="312" text-anchor="middle" dominant-baseline="central">Operational Ecosystem</text>
-  <text class="ts" x="410" y="332" text-anchor="middle" dominant-baseline="central">persistent · memory-aware</text>
-  <text class="ts" x="410" y="350" text-anchor="middle" dominant-baseline="central">governed · human-authorized</text>
-</g>
-
-<!-- ══ B1 — Q_ANIMA Runtime (top-left) ══ -->
-<g class="branch n-amber" onclick="openPanel('runtime')">
-  <rect x="68" y="96" width="256" height="66" rx="10" stroke-width="0.5"/>
-  <text class="th" x="196" y="118" text-anchor="middle" dominant-baseline="central">Q_ANIMA runtime</text>
-  <text class="ts" x="196" y="137" text-anchor="middle" dominant-baseline="central">Signal observation · shadow layers</text>
-  <!-- badges -->
-  <rect x="74"  y="170" width="56" height="15" rx="4" fill="rgba(186,117,23,0.18)"/>
-  <text class="tb" x="102" y="178" text-anchor="middle" dominant-baseline="central" fill="#FAC775">DRY RUN</text>
-  <rect x="138" y="170" width="110" height="15" rx="4" fill="rgba(186,117,23,0.18)"/>
-  <text class="tb" x="193" y="178" text-anchor="middle" dominant-baseline="central" fill="#FAC775">NO LIVE TRADING</text>
-  <rect x="256" y="170" width="62" height="15" rx="4" fill="rgba(186,117,23,0.18)"/>
-  <text class="tb" x="287" y="178" text-anchor="middle" dominant-baseline="central" fill="#FAC775">OBSERVE</text>
-</g>
-
-<!-- ══ B2 — Multi-Model Council (top center) ══ -->
-<g class="branch n-teal" onclick="openPanel('council')">
-  <rect x="290" y="32" width="240" height="66" rx="10" stroke-width="0.5"/>
-  <text class="th" x="410" y="54" text-anchor="middle" dominant-baseline="central">Multi-model council</text>
-  <text class="ts" x="410" y="73" text-anchor="middle" dominant-baseline="central">GRU · tabular · regime · anomaly</text>
-  <rect x="298" y="106" width="100" height="15" rx="4" fill="rgba(15,110,86,0.22)"/>
-  <text class="tb" x="348" y="114" text-anchor="middle" dominant-baseline="central" fill="#9FE1CB">OBSERVE ONLY</text>
-  <rect x="406" y="106" width="115" height="15" rx="4" fill="rgba(15,110,86,0.22)"/>
-  <text class="tb" x="463" y="114" text-anchor="middle" dominant-baseline="central" fill="#9FE1CB">NO GATE MUTATION</text>
-</g>
-
-<!-- ══ B3 — Macro Alignment (top-right) ══ -->
-<g class="branch n-blue" onclick="openPanel('macro')">
-  <rect x="534" y="96" width="256" height="66" rx="10" stroke-width="0.5"/>
-  <text class="th" x="662" y="118" text-anchor="middle" dominant-baseline="central">Macro runtime alignment</text>
-  <text class="ts" x="662" y="137" text-anchor="middle" dominant-baseline="central">Relation audit V1 · variation check</text>
-  <rect x="542" y="170" width="100" height="15" rx="4" fill="rgba(24,95,165,0.22)"/>
-  <text class="tb" x="592" y="178" text-anchor="middle" dominant-baseline="central" fill="#85B7EB">OBSERVE ONLY</text>
-  <rect x="650" y="170" width="90" height="15" rx="4" fill="rgba(163,45,45,0.22)"/>
-  <text class="tb" x="695" y="178" text-anchor="middle" dominant-baseline="central" fill="#F09595">STEP5 LOCKED</text>
-  <rect x="648" y="192" width="92" height="15" rx="4" fill="rgba(24,95,165,0.18)"/>
-  <text class="tb" x="694" y="200" text-anchor="middle" dominant-baseline="central" fill="#85B7EB">NOT CAUSAL</text>
-</g>
-
-<!-- ══ B4 — Meta-Orchestrator (right) ══ -->
-<g class="branch n-coral" onclick="openPanel('meta')">
-  <rect x="654" y="256" width="180" height="126" rx="10" stroke-width="0.5"/>
-  <text class="th" x="744" y="290" text-anchor="middle" dominant-baseline="central">Meta-Orchestrator</text>
-  <text class="th" x="744" y="308" text-anchor="middle" dominant-baseline="central">&amp; Governance</text>
-  <text class="ts" x="744" y="328" text-anchor="middle" dominant-baseline="central">V1.1 · G-01 active</text>
-  <rect x="660" y="348" width="78" height="15" rx="4" fill="rgba(153,60,29,0.22)"/>
-  <text class="tb" x="699" y="356" text-anchor="middle" dominant-baseline="central" fill="#F0997B">PROPOSE ONLY</text>
-  <rect x="746" y="348" width="80" height="15" rx="4" fill="rgba(163,45,45,0.22)"/>
-  <text class="tb" x="786" y="356" text-anchor="middle" dominant-baseline="central" fill="#F09595">STEP5 LOCKED</text>
-</g>
-
-<!-- ══ B5 — Memory/NCO/Retrieval (bottom-right) ══ -->
-<g class="branch n-green" onclick="openPanel('memory')">
-  <rect x="534" y="440" width="256" height="66" rx="10" stroke-width="0.5"/>
-  <text class="th" x="662" y="462" text-anchor="middle" dominant-baseline="central">Memory / NCO / retrieval</text>
-  <text class="ts" x="662" y="481" text-anchor="middle" dominant-baseline="central">Local bridge V1.2 · evidence schema</text>
-  <rect x="542" y="514" width="106" height="15" rx="4" fill="rgba(59,109,17,0.22)"/>
-  <text class="tb" x="595" y="522" text-anchor="middle" dominant-baseline="central" fill="#97C459">G-01.1 ACTIVE</text>
-  <rect x="656" y="514" width="104" height="15" rx="4" fill="rgba(59,109,17,0.22)"/>
-  <text class="tb" x="708" y="522" text-anchor="middle" dominant-baseline="central" fill="#97C459">NOT CAUSAL</text>
-</g>
-
-<!-- ══ B6 — Snapshot Store (bottom-left) ══ -->
-<g class="branch n-gray" onclick="openPanel('snapshot')">
-  <rect x="68" y="440" width="256" height="66" rx="10" stroke-width="0.5"/>
-  <text class="th" x="196" y="462" text-anchor="middle" dominant-baseline="central">Snapshot store</text>
-  <text class="ts" x="196" y="481" text-anchor="middle" dominant-baseline="central">Self-binding · step 4E active</text>
-  <rect x="76"  y="514" width="92" height="15" rx="4" fill="rgba(163,45,45,0.22)"/>
-  <text class="tb" x="122" y="522" text-anchor="middle" dominant-baseline="central" fill="#F09595">INSUFFICIENT</text>
-  <rect x="176" y="514" width="90" height="15" rx="4" fill="rgba(163,45,45,0.22)"/>
-  <text class="tb" x="221" y="522" text-anchor="middle" dominant-baseline="central" fill="#F09595">STEP5 LOCKED</text>
-  <rect x="274" y="514" width="44" height="15" rx="4" fill="rgba(95,94,90,0.22)"/>
-  <text class="tb" x="296" y="522" text-anchor="middle" dominant-baseline="central" fill="#B4B2A9">4E.1</text>
-</g>
-
-<!-- ══ B7 — Future Framework (left) ══ -->
-<g class="branch n-pink" onclick="openPanel('future')">
-  <rect x="0" y="256" width="180" height="126" rx="10" stroke-width="0.5"/>
-  <text class="th" x="90" y="290" text-anchor="middle" dominant-baseline="central">Future</text>
-  <text class="th" x="90" y="308" text-anchor="middle" dominant-baseline="central">framework</text>
-  <text class="ts" x="90" y="328" text-anchor="middle" dominant-baseline="central">roadmap · planned</text>
-  <rect x="6" y="348" width="100" height="15" rx="4" fill="rgba(153,53,86,0.22)"/>
-  <text class="tb" x="56" y="356" text-anchor="middle" dominant-baseline="central" fill="#ED93B1">NOT YET ACTIVE</text>
-  <rect x="114" y="348" width="58" height="15" rx="4" fill="rgba(153,53,86,0.22)"/>
-  <text class="tb" x="143" y="356" text-anchor="middle" dominant-baseline="central" fill="#ED93B1">PLANNED</text>
-</g>
-
-<!-- ── Footer hint ── -->
-<text x="430" y="620" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.22)" font-family="inherit">Click any branch node to open detail panel</text>
-
-</svg>
-</div><!-- /map-wrap -->
-
-<!-- ── LEGEND ── -->
-<div class="legend" style="margin-top:0.75rem;">
-  <span class="legend-label">Safety labels:</span>
-  <span class="pill p-amber">DRY RUN</span>
-  <span class="pill p-amber">NO LIVE TRADING</span>
-  <span class="pill p-teal">OBSERVE ONLY</span>
-  <span class="pill p-teal">NO GATE MUTATION</span>
-  <span class="pill p-red">STEP5 LOCKED</span>
-  <span class="pill p-blue">NOT CAUSAL</span>
-  <span class="pill p-gray">HUMAN-GOVERNED</span>
-  <span class="pill p-pink">PLANNED</span>
-</div>
-
-<!-- ══════════════════════════════════════════
-     DETAIL PANELS
-══════════════════════════════════════════ -->
-
-<!-- P1 — Q_ANIMA Runtime -->
-<div id="panel-runtime" class="panel">
-  <div class="panel-head">
-    <span class="panel-title">Q_ANIMA runtime</span>
-    <button class="panel-close" onclick="closePanel('runtime')">close ×</button>
+  <style>
+  #interactive-map {
+    --map-bg: #f8f7f4;
+    --map-bg2: #fff;
+    --map-bg3: #f0ede6;
+    --map-border: rgba(0,0,0,.08);
+    --map-border2: rgba(0,0,0,.15);
+    --map-t: rgba(0,0,0,.86);
+    --map-ts: rgba(0,0,0,.58);
+    --map-tt: rgba(0,0,0,.32);
+    --amber-fill:#fdf0da; --amber-stroke:#c07a12; --amber-text:#7a4a08;
+    --teal-fill:#e0f4ed; --teal-stroke:#1a7a60; --teal-text:#0a5040;
+    --blue-fill:#e4eef9; --blue-stroke:#2060a8; --blue-text:#0e4a82;
+    --coral-fill:#faeae4; --coral-stroke:#a03a1a; --coral-text:#742814;
+    --green-fill:#eaf2de; --green-stroke:#427214; --green-text:#2a500a;
+    --gray-fill:#f0ede6; --gray-stroke:#6a6866; --gray-text:#484644;
+    --pink-fill:#fae8ef; --pink-stroke:#a03060; --pink-text:#742044;
+    --purple-fill:#eeecfe; --purple-stroke:#5a50c0; --purple-text:#3c3498;
+    --red-fill:#fce8e8; --red-stroke:#b03030; --red-text:#7c1f1f;
+  }
+  #interactive-map .qanima-map-v3 { width: 100%; margin: 1.5rem 0 1rem; }
+  #interactive-map .radial-map {
+    position: relative;
+    width: min(100%, 1060px);
+    height: 690px;
+    margin: 0 auto;
+    border: .5px solid var(--map-border);
+    border-radius: 18px;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(90,80,192,.10), transparent 28%),
+      radial-gradient(circle at 20% 20%, rgba(250,199,117,.16), transparent 24%),
+      radial-gradient(circle at 80% 25%, rgba(133,183,235,.14), transparent 24%),
+      linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.44));
+    overflow: hidden;
+  }
+  #interactive-map .spokes-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+  #interactive-map .center-node,
+  #interactive-map .radial-node { position: absolute; z-index: 1; border: .5px solid transparent; box-shadow: 0 18px 42px rgba(40,36,28,.10); }
+  #interactive-map .center-node {
+    left: 50%; top: 50%; width: 230px; min-height: 124px; transform: translate(-50%,-50%);
+    border-radius: 18px; padding: 22px 18px 18px; text-align: center;
+    background: #eeecfe !important; border-color: var(--purple-stroke); color: #3c3498 !important;
+  }
+  #interactive-map .center-title { font-size: 16px; font-weight: 750; line-height: 1.18; letter-spacing: 0; margin-bottom: 8px; }
+  #interactive-map .center-sub { font-size: 12px; line-height: 1.45; opacity: .78; }
+  #interactive-map .center-tags { margin-top: 13px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+  #interactive-map .center-tag { font-size: 9px; font-weight: 800; letter-spacing: .07em; padding: 2px 7px; border-radius: 4px; background: rgba(90,80,192,.12); color: var(--purple-text); border: .5px solid rgba(90,80,192,.22); }
+  #interactive-map .radial-node {
+    width: 235px; min-height: 104px; border-radius: 14px; padding: 14px 15px 12px;
+    cursor: pointer; user-select: none; transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+    font-family: inherit; text-align: left;
+  }
+  #interactive-map .radial-node:hover { filter: brightness(1.04); transform: translateY(-2px); box-shadow: 0 24px 58px rgba(40,36,28,.15); }
+  #interactive-map .radial-node:active { transform: translateY(0); filter: brightness(1.02); }
+  #interactive-map .radial-node:focus { outline: 2px solid var(--purple-stroke); outline-offset: 3px; }
+  #interactive-map .node-title { font-size: 13.5px; font-weight: 750; line-height: 1.25; margin-bottom: 4px; letter-spacing: 0; }
+  #interactive-map .node-sub { font-size: 11.5px; line-height: 1.35; opacity: .76; margin-bottom: 9px; }
+  #interactive-map .node-badges { display: flex; flex-wrap: wrap; gap: 4px; }
+  #interactive-map .node-badge { display: inline-flex; align-items: center; min-height: 18px; font-size: 9px; font-weight: 850; letter-spacing: .055em; line-height: 1.1; padding: 3px 7px; border-radius: 5px; white-space: nowrap; }
+  #interactive-map .node-council { left: 50%; top: 28px; transform: translateX(-50%); }
+  #interactive-map .node-runtime { left: 58px; top: 116px; }
+  #interactive-map .node-macro { right: 58px; top: 116px; }
+  #interactive-map .node-future { left: 34px; top: 300px; }
+  #interactive-map .node-meta { right: 34px; top: 300px; }
+  #interactive-map .node-snapshot { left: 116px; bottom: 54px; }
+  #interactive-map .node-memory { right: 116px; bottom: 54px; }
+  #interactive-map .node-council:hover { transform: translateX(-50%) translateY(-2px); }
+  #interactive-map .node-council:active { transform: translateX(-50%) translateY(0); }
+  #interactive-map .n-amber { background: var(--amber-fill); border-color: var(--amber-stroke); color: var(--amber-text); }
+  #interactive-map .n-teal { background: var(--teal-fill); border-color: var(--teal-stroke); color: var(--teal-text); }
+  #interactive-map .n-blue { background: var(--blue-fill); border-color: var(--blue-stroke); color: var(--blue-text); }
+  #interactive-map .n-coral { background: var(--coral-fill); border-color: var(--coral-stroke); color: var(--coral-text); }
+  #interactive-map .n-green { background: var(--green-fill); border-color: var(--green-stroke); color: var(--green-text); }
+  #interactive-map .n-gray { background: var(--gray-fill); border-color: var(--gray-stroke); color: var(--gray-text); }
+  #interactive-map .n-pink { background: var(--pink-fill); border-color: var(--pink-stroke); color: var(--pink-text); }
+  #interactive-map .n-amber .node-badge { background: rgba(192,122,18,.14); color: var(--amber-text); border: .5px solid rgba(192,122,18,.22); }
+  #interactive-map .n-teal .node-badge { background: rgba(26,122,96,.14); color: var(--teal-text); border: .5px solid rgba(26,122,96,.22); }
+  #interactive-map .n-blue .node-badge { background: rgba(32,96,168,.14); color: var(--blue-text); border: .5px solid rgba(32,96,168,.22); }
+  #interactive-map .n-coral .node-badge { background: rgba(160,58,26,.14); color: var(--coral-text); border: .5px solid rgba(160,58,26,.22); }
+  #interactive-map .n-green .node-badge { background: rgba(66,114,20,.14); color: var(--green-text); border: .5px solid rgba(66,114,20,.22); }
+  #interactive-map .n-gray .node-badge { background: rgba(106,104,102,.12); color: var(--gray-text); border: .5px solid rgba(106,104,102,.22); }
+  #interactive-map .n-pink .node-badge { background: rgba(160,48,96,.14); color: var(--pink-text); border: .5px solid rgba(160,48,96,.22); }
+  #interactive-map .node-badge.red { background: rgba(176,48,48,.14) !important; color: var(--red-text) !important; border-color: rgba(176,48,48,.26) !important; }
+  #interactive-map .map-hint { margin: .8rem 0 0; text-align: center; color: var(--map-tt); font-size: 11px; }
+  #interactive-map .legend { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; justify-content: center; }
+  #interactive-map .legend-label { font-size: 11px; color: var(--map-tt); margin-right: 3px; }
+  #interactive-map .pill { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 99px; letter-spacing: .03em; }
+  #interactive-map .p-amber { background: var(--amber-fill); color: var(--amber-text); border: .5px solid var(--amber-stroke); }
+  #interactive-map .p-teal { background: var(--teal-fill); color: var(--teal-text); border: .5px solid var(--teal-stroke); }
+  #interactive-map .p-blue { background: var(--blue-fill); color: var(--blue-text); border: .5px solid var(--blue-stroke); }
+  #interactive-map .p-coral { background: var(--coral-fill); color: var(--coral-text); border: .5px solid var(--coral-stroke); }
+  #interactive-map .p-green { background: var(--green-fill); color: var(--green-text); border: .5px solid var(--green-stroke); }
+  #interactive-map .p-gray { background: var(--gray-fill); color: var(--gray-text); border: .5px solid var(--gray-stroke); }
+  #interactive-map .p-pink { background: var(--pink-fill); color: var(--pink-text); border: .5px solid var(--pink-stroke); }
+  #interactive-map .p-purple { background: var(--purple-fill); color: var(--purple-text); border: .5px solid var(--purple-stroke); }
+  #interactive-map .p-red { background: var(--red-fill); color: var(--red-text); border: .5px solid var(--red-stroke); }
+  #interactive-map .panel { display: none; margin-top: 1.25rem; background: var(--map-bg2); border: .5px solid var(--map-border2); border-radius: 14px; padding: 1.5rem; animation: mapfadein .16s ease; box-shadow: none; }
+  #interactive-map .panel.open { display: block; }
+  @keyframes mapfadein { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+  #interactive-map .panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; padding-bottom: 0; border-bottom: 0; }
+  #interactive-map .panel-title { font-size: 16px; font-weight: 750; color: var(--map-t); }
+  #interactive-map .panel-close { flex-shrink: 0; background: none; border: .5px solid var(--map-border2); border-radius: 7px; padding: 3px 10px; font-size: 12px; color: var(--map-ts); cursor: pointer; }
+  #interactive-map .panel-close:hover { background: var(--map-bg3); }
+  #interactive-map .pill-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1rem; }
+  #interactive-map .panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  #interactive-map .psec-label { font-size: 10px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--map-tt); margin-bottom: 5px; }
+  #interactive-map .psec-body { font-size: 13px; color: var(--map-ts); line-height: 1.65; }
+  #interactive-map .psec-body strong { font-weight: 750; color: var(--map-t); }
+  #interactive-map .psec-body ul { padding-left: 1.1rem; margin-top: 4px; }
+  #interactive-map .psec-body ul li { margin-bottom: 2px; }
+  #interactive-map .verdict { background: var(--map-bg3); border-left: 2.5px solid var(--red-stroke); border-radius: 0 7px 7px 0; padding: 8px 12px; font-size: 12px; font-family: var(--mono); color: var(--map-ts); margin-top: 1rem; }
+  #interactive-map .key-phrase { background: var(--map-bg3); border-left: 2.5px solid var(--purple-stroke); border-radius: 0 7px 7px 0; padding: 9px 14px; font-size: 13px; font-style: italic; color: var(--map-ts); margin: 1rem 0 0; line-height: 1.55; }
+  @media (max-width: 980px) {
+    #interactive-map .radial-map { height: 720px; }
+    #interactive-map .radial-node { width: 220px; }
+    #interactive-map .node-runtime { left: 28px; top: 130px; }
+    #interactive-map .node-macro { right: 28px; top: 130px; }
+    #interactive-map .node-future { left: 24px; top: 318px; }
+    #interactive-map .node-meta { right: 24px; top: 318px; }
+    #interactive-map .node-snapshot { left: 70px; bottom: 52px; }
+    #interactive-map .node-memory { right: 70px; bottom: 52px; }
+  }
+  @media (max-width: 760px) {
+    #interactive-map .radial-map { height: auto; padding: 14px; display: flex; flex-direction: column; gap: 9px; overflow: visible; }
+    #interactive-map .spokes-svg { display: none; }
+    #interactive-map .center-node,
+    #interactive-map .radial-node { position: static; width: 100%; min-height: auto; transform: none !important; box-shadow: 0 12px 28px rgba(40,36,28,.10); }
+    #interactive-map .center-node { order: -1; text-align: left; padding: 16px; }
+    #interactive-map .center-tags { justify-content: flex-start; align-items: flex-start; }
+    #interactive-map .radial-node:hover,
+    #interactive-map .node-council:hover { transform: translateY(-1px) !important; }
+    #interactive-map .panel-grid { grid-template-columns: 1fr; }
+  }
+</style>
+  <div class="section-head">
+    <div class="tag">Interactive map</div>
+    <h2 id="map-title">Achilleion / Q_ANIMA Operational Ecosystem Map</h2>
+    <p class="lead">Click a branch of the map to open its public explanatory panel. The map is integrated as static HTML, CSS and JavaScript, with no external dependency.</p>
   </div>
-  <div class="pill-row">
-    <span class="pill p-amber">Active</span>
-    <span class="pill p-amber">Dry-run</span>
-    <span class="pill p-amber">No live trading</span>
-    <span class="pill p-teal">Observe only</span>
-    <span class="pill p-gray">Human-governed</span>
-  </div>
-  <div class="panel-grid">
-    <div>
-      <div class="psec-label">What it is</div>
-      <div class="psec-body">Q_ANIMA is not a trading bot. It is an operational research runtime for <strong>observing signals, gates, regimes, shadow decisions and validation thresholds</strong>. No automatic live trading is active. Every output is a proposal, not an execution.</div>
-    </div>
-    <div>
-      <div class="psec-label">Active layers</div>
-      <div class="psec-body">
-        <ul>
-          <li>Shadow layer (diagnostic only)</li>
-          <li>Observe-only signal monitor</li>
-          <li>Decision gate observer</li>
-          <li>Tau state tracker</li>
-          <li>Local / cloud bridge (private)</li>
-          <li>Telemetry log</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Safety constraints</div>
-      <div class="psec-body">
-        <strong>NO LIVE TRADING</strong> enforced at runtime.<br/>
-        No automatic order execution.<br/>
-        No operational execution exposed in public layer.<br/>
-        Human authorization required at every step transition.<br/>
-        Tau suspension on unresolved tensions.
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Future conditions for live layer</div>
-      <div class="psec-body">Snapshot store sufficiency · STEP5 unlock · macro variation validation · G-01 invariant satisfaction · explicit human governance sign-off. None of these conditions are currently met.</div>
-    </div>
-  </div>
-  <div class="key-phrase">"Q_ANIMA is not a trading bot. It is an operational research runtime for observing signals, gates, regimes, shadow decisions and validation thresholds. No automatic live trading is active."</div>
-</div>
-
-<!-- P2 — Multi-Model Council -->
-<div id="panel-council" class="panel">
-  <div class="panel-head">
-    <span class="panel-title">Multi-model council</span>
-    <button class="panel-close" onclick="closePanel('council')">close ×</button>
-  </div>
-  <div class="pill-row">
-    <span class="pill p-teal">Active</span>
-    <span class="pill p-teal">Observe only</span>
-    <span class="pill p-teal">No gate mutation</span>
-    <span class="pill p-blue">Relation audit V1</span>
-    <span class="pill p-gray">Human-governed</span>
-  </div>
-  <div class="panel-grid">
-    <div>
-      <div class="psec-label">What it is</div>
-      <div class="psec-body">The Council is a <strong>diagnostic ensemble</strong>, not an LLM panel. It compares multiple specialized diagnostic views to detect convergence or divergence across signal interpretations. It does not mutate gates and does not authorize trades.</div>
-    </div>
-    <div>
-      <div class="psec-label">Council components</div>
-      <div class="psec-body">
-        <ul>
-          <li>Q_ANIMA / GRU prediction model</li>
-          <li>Tabular edge model</li>
-          <li>Regime detector</li>
-          <li>Anomaly detector</li>
-          <li>Council convergence watch</li>
-          <li>Outcome evaluation module</li>
-          <li>Outcome auto history log</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Safety constraints</div>
-      <div class="psec-body">
-        <strong>OBSERVE ONLY</strong> — no component may mutate operational gates.<br/>
-        <strong>NO GATE MUTATION</strong> enforced.<br/>
-        Human adjudication required on divergent verdicts.<br/>
-        LLMs may be used only as an external interpretive layer, not as the operational core of the Council.
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Current audit verdict</div>
-      <div class="psec-body">Macro Council Relation Audit V1 is active. Latest result:</div>
-    </div>
-  </div>
-  <div class="verdict">INSUFFICIENT_MACRO_VARIATION · RELATION_NOT_ENOUGH_VARIATION</div>
-  <div class="key-phrase">"The Council compares multiple diagnostic views: Q_ANIMA/GRU prediction, tabular edge model, regime detection, anomaly detection, convergence watch and outcome history. It does not mutate gates and does not authorize trades."</div>
-</div>
-
-<!-- P3 — Macro Alignment -->
-<div id="panel-macro" class="panel">
-  <div class="panel-head">
-    <span class="panel-title">Macro runtime alignment</span>
-    <button class="panel-close" onclick="closePanel('macro')">close ×</button>
-  </div>
-  <div class="pill-row">
-    <span class="pill p-blue">Active</span>
-    <span class="pill p-teal">Observe only</span>
-    <span class="pill p-red">Step5 locked</span>
-    <span class="pill p-blue">Not causal</span>
-    <span class="pill p-gray">Human-governed</span>
-  </div>
-  <div class="panel-grid">
-    <div>
-      <div class="psec-label">What it is</div>
-      <div class="psec-body">Monitors whether macro-level context conditions (risk, regime, pressure) show sufficient variation to support a meaningful relation audit. Currently blocked at STEP5. Observes association only — <strong>no causal claims</strong>.</div>
-    </div>
-    <div>
-      <div class="psec-label">Current audit state</div>
-      <div class="psec-body">
-        <ul>
-          <li>Macro Council Relation Audit V1 active</li>
-          <li>Latest verdict: <strong>INSUFFICIENT_MACRO_VARIATION</strong></li>
-          <li>relation_signal_label: <strong>RELATION_NOT_ENOUGH_VARIATION</strong></li>
-          <li>Dataset: 2 500 rows · 5 distinct runs</li>
-          <li>All runs under <strong>MACRO_RISK_PRESSURE_LOW</strong></li>
-          <li>No causal claims</li>
-          <li>STEP5 locked</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Safety constraints</div>
-      <div class="psec-body">
-        <strong>STEP5 LOCKED</strong> until macro variation reaches threshold.<br/>
-        <strong>OBSERVE ONLY</strong> — no autonomous step promotion.<br/>
-        All transitions require human governance sign-off.<br/>
-        <strong>NOT CAUSAL</strong>: statistical association is not causality.
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Unlock conditions for STEP5</div>
-      <div class="psec-body">Sufficient macro variation across risk regimes · council convergence log complete · snapshot store sufficiency · G-01 invariant satisfaction · human confirmation. None currently met.</div>
-    </div>
-  </div>
-  <div class="key-phrase">"The system reached the minimum number of distinct runs, but refused to infer a relation because macro variation was insufficient."</div>
-</div>
-
-<!-- P4 — Meta-Orchestrator -->
-<div id="panel-meta" class="panel">
-  <div class="panel-head">
-    <span class="panel-title">Meta-Orchestrator &amp; Governance</span>
-    <button class="panel-close" onclick="closePanel('meta')">close ×</button>
-  </div>
-  <div class="pill-row">
-    <span class="pill p-coral">V1.1 active</span>
-    <span class="pill p-amber">Dry-run / propose-only</span>
-    <span class="pill p-purple">G-01 active</span>
-    <span class="pill p-purple">G-01.1 active</span>
-    <span class="pill p-red">Step5 locked</span>
-  </div>
-  <div class="panel-grid">
-    <div>
-      <div class="psec-label">What it is</div>
-      <div class="psec-body"><strong>Meta-Orchestrator V1.1</strong> is not an autonomous agent. It is a <strong>dry-run governance layer</strong> that proposes next actions, checks evidence and remains constrained by invariants. It does not execute. Every proposal must be supported by <strong>evidence IDs resolved on the filesystem</strong>.</div>
-    </div>
-    <div>
-      <div class="psec-label">Active modules</div>
-      <div class="psec-body">
-        <ul>
-          <li>Meta-Orchestrator V1.1 (dry-run)</li>
-          <li>Governance Invariants <strong>G-01</strong></li>
-          <li>Evidence Schema <strong>G-01.1</strong></li>
-          <li>invariant_checker (active)</li>
-          <li>Proposal log</li>
-          <li>Human-step gate registry</li>
-          <li>Friction-aware execution layer</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Governance invariants (G-01)</div>
-      <div class="psec-body">
-        No live execution without human sign-off.<br/>
-        No gate mutation from within the council.<br/>
-        No causal claims from statistical patterns alone.<br/>
-        No scheduler mutation.<br/>
-        Snapshot store must be sufficient before STEP5.
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Evidence schema (G-01.1)</div>
-      <div class="psec-body">Formalizes what counts as evidence before any operational promotion. Requires: macro variation above threshold · council convergence log · snapshot store completeness · evidence IDs resolvable on filesystem · human-readable audit trail.</div>
-    </div>
-  </div>
-  <div class="key-phrase">"The Meta-Orchestrator is not an autonomous agent. It is a dry-run governance layer that proposes, checks evidence and remains constrained by invariants."</div>
-</div>
-
-<!-- P5 — Memory / NCO / Retrieval -->
-<div id="panel-memory" class="panel">
-  <div class="panel-head">
-    <span class="panel-title">Memory / NCO / Retrieval</span>
-    <button class="panel-close" onclick="closePanel('memory')">close ×</button>
-  </div>
-  <div class="pill-row">
-    <span class="pill p-green">Active</span>
-    <span class="pill p-green">Local bridge V1.2</span>
-    <span class="pill p-purple">G-01.1 active</span>
-    <span class="pill p-blue">Not causal</span>
-    <span class="pill p-gray">Human-governed</span>
-  </div>
-  <div class="panel-grid">
-    <div>
-      <div class="psec-label">What NCO is</div>
-      <div class="psec-body"><strong>NCO — Nota Coagulativa Operativa</strong> (canonical operational memory node). NCO entries are the canonical memory units of the ecosystem. They are not raw logs — they are consolidated, identity-verified records that enter the operational field only after review. NCO is not a biological model.</div>
-    </div>
-    <div>
-      <div class="psec-label">Active modules</div>
-      <div class="psec-body">
-        <ul>
-          <li>NCO registry</li>
-          <li>NCO master index</li>
-          <li>Local vectorstore</li>
-          <li>Local Retrieval Bridge V1.2</li>
-          <li>canonical_id_hits tracker</li>
-          <li>mention_hits tracker</li>
-          <li>Strict NCO identity guard</li>
-          <li>Evidence schema G-01.1</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Identity vs mention distinction</div>
-      <div class="psec-body">
-        <strong>exact_match_hits</strong> = textual occurrence of an ID in documents.<br/>
-        <strong>canonical_id_hits</strong> = real canonical document identity (resolved).<br/>
-        <strong>mention_hits</strong> = ID cited inside other documents.<br/><br/>
-        A mention is not a source. The retrieval bridge prevents mentions from being promoted into canonical evidence.
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Safety constraints</div>
-      <div class="psec-body">
-        <strong>NOT CAUSAL</strong>: retrieved traces are observational only.<br/>
-        NCO consolidation requires human review before operational promotion.<br/>
-        Evidence schema enforced on all retrievals.<br/>
-        No raw filesystem paths exposed publicly.
-      </div>
-    </div>
-  </div>
-  <div class="key-phrase">"A mentioned ID is not a canonical document. The retrieval bridge prevents mentions from being promoted into sources."</div>
-</div>
-
-<!-- P6 — Snapshot Store -->
-<div id="panel-snapshot" class="panel">
-  <div class="panel-head">
-    <span class="panel-title">Snapshot store / Self-binding</span>
-    <button class="panel-close" onclick="closePanel('snapshot')">close ×</button>
-  </div>
-  <div class="pill-row">
-    <span class="pill p-gray">Active</span>
-    <span class="pill p-red">Insufficient</span>
-    <span class="pill p-red">Step5 locked</span>
-    <span class="pill p-amber">Step 4E / 4E.1</span>
-    <span class="pill p-gray">Self-binding active</span>
-  </div>
-  <div class="panel-grid">
-    <div>
-      <div class="psec-label">What it is</div>
-      <div class="psec-body">Persistent record of system states across time. <strong>Self-binding</strong> means the system records its own invariants and past commitments, making them auditable. The store is active and recording, but <strong>not yet mature enough</strong> for causal audit.</div>
-    </div>
-    <div>
-      <div class="psec-label">Current state</div>
-      <div class="psec-body">
-        <ul>
-          <li>STEP 4E active</li>
-          <li>STEP 4E.1 active</li>
-          <li>Self-binding layer active and recording</li>
-          <li><strong>Snapshot history: INSUFFICIENT</strong></li>
-          <li>effective_n below threshold</li>
-          <li>STEP5 locked</li>
-          <li>No causal confirmation possible</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">What is needed</div>
-      <div class="psec-body">
-        Sufficient temporal coverage of field states.<br/>
-        Documented macro variation across council sessions.<br/>
-        NCO consolidation log completeness.<br/>
-        Counterfactual traces and closure tests.<br/>
-        Human sign-off on snapshot audit before STEP5 can be proposed.
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Safety constraints</div>
-      <div class="psec-body">
-        <strong>STEP5 LOCKED</strong> until snapshot store sufficiency is met.<br/>
-        No causal claims from current store.<br/>
-        All state records are observe-only until audit conditions are satisfied.
-      </div>
-    </div>
-  </div>
-  <div class="key-phrase">"The Snapshot Store is active but not mature enough for causal audit. STEP5 remains locked until sufficient real snapshots, counterfactual traces and closure tests are available."</div>
-</div>
-
-<!-- P7 — Future Framework -->
-<div id="panel-future" class="panel">
-  <div class="panel-head">
-    <span class="panel-title">Future framework</span>
-    <button class="panel-close" onclick="closePanel('future')">close ×</button>
-  </div>
-  <div class="pill-row">
-    <span class="pill p-pink">Not yet active</span>
-    <span class="pill p-pink">Planned</span>
-    <span class="pill p-gray">Human-governed</span>
-    <span class="pill p-purple">Invariants required</span>
-  </div>
-  <div class="panel-grid">
-    <div>
-      <div class="psec-label">Operational roadmap</div>
-      <div class="psec-body">
-        <ul>
-          <li>Crypto Macro Feed V1</li>
-          <li>Macro Runtime Feed V2</li>
-          <li>Macro Relation Audit V2</li>
-          <li>Macro Sensitivity Map</li>
-          <li>Macro Context Target Watchlist</li>
-          <li>Snapshot Store Accumulator</li>
-          <li>Meta-Orchestrator V2 — patch-safe, human auth</li>
-          <li>Meta-Orchestrator V3 — NCO + semi-auto ingestion</li>
-          <li>Meta-Orchestrator V4 — multi-agent executor (future only)</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="psec-label">Governance conditions (all layers)</div>
-      <div class="psec-body">
-        Every future layer requires:<br/>
-        Snapshot store sufficiency · macro variation validation · G-01 invariant satisfaction · evidence IDs on filesystem · explicit human governance approval at each step transition.<br/><br/>
-        <strong>No autonomous promotion at any step.</strong>
-      </div>
-    </div>
-  </div>
-  <div class="key-phrase">"Future development does not mean immediate autonomy. Each future layer remains governed by invariants, evidence, snapshot sufficiency and human confirmation."</div>
-</div>
-        <p class="map-caption">Figure 1. Interactive conceptual map of the current Achilleion/Q_ANIMA operational ecosystem. The figure describes public architecture and methodological constraints; it does not expose private runtime internals.</p>
-      </section>
+  <section class="qanima-map-v3 notranslate" translate="no" aria-label="Achilleion Q_ANIMA radial operational ecosystem map">
+<div class="radial-map" id="radial-map"><svg class="spokes-svg" id="spokes-svg" aria-hidden="true"></svg><div class="center-node" id="node-center"><div class="center-title">Achilleion / Q_ANIMA</div><div class="center-sub">persistent cognitive<br/>operational ecosystem</div><div class="center-tags"><span class="center-tag">MEMORY-AWARE</span><span class="center-tag">HUMAN-GOVERNED</span><span class="center-tag">OBSERVE-FIRST</span></div></div>
+<button class="radial-node n-teal node-council" id="node-council" onclick="openPanel('council')"><div class="node-title">Multi-model council</div><div class="node-sub">GRU · tabular · regime · anomaly</div><div class="node-badges"><span class="node-badge">OBSERVE ONLY</span><span class="node-badge">NO GATE MUTATION</span></div></button>
+<button class="radial-node n-amber node-runtime" id="node-runtime" onclick="openPanel('runtime')"><div class="node-title">Q_ANIMA runtime</div><div class="node-sub">Signal observation · shadow layers</div><div class="node-badges"><span class="node-badge">DRY RUN</span><span class="node-badge">NO LIVE TRADING</span><span class="node-badge">OBSERVE ONLY</span></div></button>
+<button class="radial-node n-blue node-macro" id="node-macro" onclick="openPanel('macro')"><div class="node-title">Macro runtime alignment</div><div class="node-sub">Relation audit V1 · variation check</div><div class="node-badges"><span class="node-badge">OBSERVE ONLY</span><span class="node-badge red">STEP5 LOCKED</span><span class="node-badge">NOT CAUSAL</span></div></button>
+<button class="radial-node n-pink node-future" id="node-future" onclick="openPanel('future')"><div class="node-title">Future framework</div><div class="node-sub">Roadmap · planned layers</div><div class="node-badges"><span class="node-badge">NOT YET ACTIVE</span><span class="node-badge">PLANNED</span></div></button>
+<button class="radial-node n-coral node-meta" id="node-meta" onclick="openPanel('meta')"><div class="node-title">Meta-Orchestrator &amp; Governance</div><div class="node-sub">V1.1 · G-01 active · propose-only</div><div class="node-badges"><span class="node-badge">PROPOSE ONLY</span><span class="node-badge">DRY RUN</span><span class="node-badge red">STEP5 LOCKED</span><span class="node-badge">G-01 ACTIVE</span></div></button>
+<button class="radial-node n-gray node-snapshot" id="node-snapshot" onclick="openPanel('snapshot')"><div class="node-title">Snapshot store / Self-binding</div><div class="node-sub">Self-binding · STEP 4E active</div><div class="node-badges"><span class="node-badge red">INSUFFICIENT</span><span class="node-badge red">STEP5 LOCKED</span><span class="node-badge">4E.1 ACTIVE</span></div></button>
+<button class="radial-node n-green node-memory" id="node-memory" onclick="openPanel('memory')"><div class="node-title">Memory / NCO / Retrieval</div><div class="node-sub">Local bridge V1.2 · evidence schema</div><div class="node-badges"><span class="node-badge">G-01.1 ACTIVE</span><span class="node-badge">NOT CAUSAL</span></div></button></div>
+<p class="map-hint">Click any branch to open its detail panel.</p><div class="legend"><span class="legend-label">Safety labels:</span><span class="pill p-amber">DRY RUN</span><span class="pill p-amber">NO LIVE TRADING</span><span class="pill p-teal">OBSERVE ONLY</span><span class="pill p-teal">NO GATE MUTATION</span><span class="pill p-red">STEP5 LOCKED</span><span class="pill p-blue">NOT CAUSAL</span><span class="pill p-gray">HUMAN-GOVERNED</span><span class="pill p-pink">PLANNED</span></div>
+<div id="panel-runtime" class="panel"><div class="panel-head"><span class="panel-title">Q_ANIMA runtime</span><button class="panel-close" onclick="closePanel('runtime')">close ×</button></div><div class="pill-row"><span class="pill p-amber">Active</span><span class="pill p-amber">Dry-run</span><span class="pill p-amber">No live trading</span><span class="pill p-teal">Observe only</span><span class="pill p-gray">Human-governed</span></div><div class="panel-grid"><div><div class="psec-label">What it is</div><div class="psec-body">Q_ANIMA is not a trading bot. It is an operational research runtime for <strong>observing signals, gates, regimes, shadow decisions and validation thresholds</strong>. No automatic live trading is active. Every output is a proposal, not an execution.</div></div><div><div class="psec-label">Active layers</div><div class="psec-body"><ul><li>Shadow layer (diagnostic only)</li><li>Observe-only signal monitor</li><li>Decision gate observer</li><li>Tau state tracker</li><li>Local / cloud bridge (private)</li><li>Telemetry log</li></ul></div></div><div><div class="psec-label">Safety constraints</div><div class="psec-body"><strong>NO LIVE TRADING</strong> enforced at runtime.<br/>No automatic order execution.<br/>No operational execution exposed in public layer.<br/>Human authorization required at every step transition.<br/>Tau suspension on unresolved tensions.</div></div><div><div class="psec-label">Future conditions for live layer</div><div class="psec-body">Snapshot store sufficiency · STEP5 unlock · macro variation validation · G-01 invariant satisfaction · explicit human governance sign-off. None of these conditions are currently met.</div></div></div><div class="key-phrase">"Q_ANIMA is not a trading bot. It is an operational research runtime for observing signals, gates, regimes, shadow decisions and validation thresholds. No automatic live trading is active."</div></div>
+<div id="panel-council" class="panel"><div class="panel-head"><span class="panel-title">Multi-model council</span><button class="panel-close" onclick="closePanel('council')">close ×</button></div><div class="pill-row"><span class="pill p-teal">Active</span><span class="pill p-teal">Observe only</span><span class="pill p-teal">No gate mutation</span><span class="pill p-blue">Relation audit V1</span><span class="pill p-gray">Human-governed</span></div><div class="panel-grid"><div><div class="psec-label">What it is</div><div class="psec-body">The Council is a <strong>diagnostic ensemble</strong>, not an LLM panel. It compares multiple specialized diagnostic views to detect convergence or divergence across signal interpretations. It does not mutate gates and does not authorize trades.</div></div><div><div class="psec-label">Council components</div><div class="psec-body"><ul><li>Q_ANIMA / GRU prediction model</li><li>Tabular edge model</li><li>Regime detector</li><li>Anomaly detector</li><li>Council convergence watch</li><li>Outcome evaluation module</li><li>Outcome auto history log</li></ul></div></div><div><div class="psec-label">Safety constraints</div><div class="psec-body"><strong>OBSERVE ONLY</strong> — no component may mutate operational gates.<br/><strong>NO GATE MUTATION</strong> enforced.<br/>Human adjudication required on divergent verdicts.<br/>LLMs may be used only as an external interpretive layer, not as the operational core.</div></div><div><div class="psec-label">Current audit verdict</div><div class="psec-body">Macro Council Relation Audit V1 is active. Latest result:</div></div></div><div class="verdict">INSUFFICIENT_MACRO_VARIATION · RELATION_NOT_ENOUGH_VARIATION</div><div class="key-phrase">"The Council compares multiple diagnostic views: Q_ANIMA/GRU prediction, tabular edge model, regime detection, anomaly detection, convergence watch and outcome history. It does not mutate gates and does not authorize trades."</div></div>
+<div id="panel-macro" class="panel"><div class="panel-head"><span class="panel-title">Macro runtime alignment</span><button class="panel-close" onclick="closePanel('macro')">close ×</button></div><div class="pill-row"><span class="pill p-blue">Active</span><span class="pill p-teal">Observe only</span><span class="pill p-red">Step5 locked</span><span class="pill p-blue">Not causal</span><span class="pill p-gray">Human-governed</span></div><div class="panel-grid"><div><div class="psec-label">What it is</div><div class="psec-body">Monitors whether macro-level context conditions show sufficient variation to support a meaningful relation audit. Currently blocked at STEP5. Observes association only — <strong>no causal claims</strong>.</div></div><div><div class="psec-label">Current audit state</div><div class="psec-body"><ul><li>Macro Council Relation Audit V1 active</li><li>Latest verdict: <strong>INSUFFICIENT_MACRO_VARIATION</strong></li><li>relation_signal_label: <strong>RELATION_NOT_ENOUGH_VARIATION</strong></li><li>Dataset: 2 500 rows · 5 distinct runs</li><li>All runs under <strong>MACRO_RISK_PRESSURE_LOW</strong></li><li>No causal claims · STEP5 locked</li></ul></div></div><div><div class="psec-label">Safety constraints</div><div class="psec-body"><strong>STEP5 LOCKED</strong> until macro variation reaches threshold.<br/><strong>OBSERVE ONLY</strong> — no autonomous step promotion.<br/><strong>NOT CAUSAL</strong>: statistical association is not causality.</div></div><div><div class="psec-label">Unlock conditions for STEP5</div><div class="psec-body">Sufficient macro variation across risk regimes · council convergence log complete · snapshot store sufficiency · G-01 satisfaction · human confirmation. None currently met.</div></div></div><div class="key-phrase">"The system reached the minimum number of distinct runs, but refused to infer a relation because macro variation was insufficient."</div></div>
+<div id="panel-meta" class="panel"><div class="panel-head"><span class="panel-title">Meta-Orchestrator &amp; Governance</span><button class="panel-close" onclick="closePanel('meta')">close ×</button></div><div class="pill-row"><span class="pill p-coral">V1.1 active</span><span class="pill p-amber">Dry-run / propose-only</span><span class="pill p-purple">G-01 active</span><span class="pill p-purple">G-01.1 active</span><span class="pill p-red">Step5 locked</span></div><div class="panel-grid"><div><div class="psec-label">What it is</div><div class="psec-body"><strong>Meta-Orchestrator V1.1</strong> is not an autonomous agent. It is a <strong>dry-run governance layer</strong> that proposes next actions, checks evidence and remains constrained by invariants. It does not execute. Every proposal must be supported by <strong>evidence IDs resolved on the filesystem</strong>.</div></div><div><div class="psec-label">Active modules</div><div class="psec-body"><ul><li>Meta-Orchestrator V1.1 (dry-run)</li><li>Governance Invariants <strong>G-01</strong></li><li>Evidence Schema <strong>G-01.1</strong></li><li>invariant_checker (active)</li><li>Proposal log</li><li>Human-step gate registry</li><li>Friction-aware execution layer</li></ul></div></div><div><div class="psec-label">Governance invariants (G-01)</div><div class="psec-body">No live execution without human sign-off.<br/>No gate mutation from within the council.<br/>No causal claims from statistical patterns alone.<br/>No scheduler mutation.<br/>Snapshot store must be sufficient before STEP5.</div></div><div><div class="psec-label">Evidence schema (G-01.1)</div><div class="psec-body">Formalizes what counts as evidence before any operational promotion. Requires macro variation above threshold, council convergence log, snapshot store completeness, evidence IDs resolvable on filesystem and human-readable audit trail.</div></div></div><div class="key-phrase">"The Meta-Orchestrator is not an autonomous agent. It is a dry-run governance layer that proposes, checks evidence and remains constrained by invariants."</div></div>
+<div id="panel-memory" class="panel"><div class="panel-head"><span class="panel-title">Memory / NCO / Retrieval</span><button class="panel-close" onclick="closePanel('memory')">close ×</button></div><div class="pill-row"><span class="pill p-green">Active</span><span class="pill p-green">Local bridge V1.2</span><span class="pill p-purple">G-01.1 active</span><span class="pill p-blue">Not causal</span><span class="pill p-gray">Human-governed</span></div><div class="panel-grid"><div><div class="psec-label">What NCO is</div><div class="psec-body"><strong>NCO — Nota Coagulativa Operativa</strong> (canonical operational memory node). NCO entries are the canonical memory units of the ecosystem. They are not raw logs — they are consolidated, identity-verified records that enter the operational field only after review.</div></div><div><div class="psec-label">Active modules</div><div class="psec-body"><ul><li>NCO registry</li><li>NCO master index</li><li>Local vectorstore</li><li>Local Retrieval Bridge V1.2</li><li>canonical_id_hits tracker</li><li>mention_hits tracker</li><li>Strict NCO identity guard</li><li>Evidence schema G-01.1</li></ul></div></div><div><div class="psec-label">Identity vs mention</div><div class="psec-body"><strong>exact_match_hits</strong> = textual occurrence of an ID.<br/><strong>canonical_id_hits</strong> = real canonical document identity (resolved).<br/><strong>mention_hits</strong> = ID cited inside other documents.<br/><br/>A mention is not a source. The retrieval bridge prevents mentions from being promoted into canonical evidence.</div></div><div><div class="psec-label">Safety constraints</div><div class="psec-body"><strong>NOT CAUSAL</strong>: retrieved traces are observational only.<br/>NCO consolidation requires human review before operational promotion.<br/>Evidence schema enforced on all retrievals.</div></div></div><div class="key-phrase">"A mentioned ID is not a canonical document. The retrieval bridge prevents mentions from being promoted into sources."</div></div>
+<div id="panel-snapshot" class="panel"><div class="panel-head"><span class="panel-title">Snapshot store / Self-binding</span><button class="panel-close" onclick="closePanel('snapshot')">close ×</button></div><div class="pill-row"><span class="pill p-gray">Active</span><span class="pill p-red">Insufficient</span><span class="pill p-red">Step5 locked</span><span class="pill p-amber">Step 4E / 4E.1</span><span class="pill p-gray">Self-binding active</span></div><div class="panel-grid"><div><div class="psec-label">What it is</div><div class="psec-body">Persistent record of system states across time. <strong>Self-binding</strong> means the system records its own invariants and past commitments, making them auditable. The store is active and recording, but <strong>not yet mature enough</strong> for causal audit.</div></div><div><div class="psec-label">Current state</div><div class="psec-body"><ul><li>STEP 4E active · STEP 4E.1 active</li><li>Self-binding layer active and recording</li><li><strong>Snapshot history: INSUFFICIENT</strong></li><li>effective_n below threshold</li><li>STEP5 locked · No causal confirmation</li></ul></div></div><div><div class="psec-label">What is needed</div><div class="psec-body">Sufficient temporal coverage of field states.<br/>Documented macro variation across council sessions.<br/>NCO consolidation log completeness.<br/>Counterfactual traces and closure tests.<br/>Human sign-off before STEP5 can be proposed.</div></div><div><div class="psec-label">Safety constraints</div><div class="psec-body"><strong>STEP5 LOCKED</strong> until snapshot store sufficiency is met.<br/>No causal claims from current store.<br/>All state records are observe-only until audit conditions are satisfied.</div></div></div><div class="key-phrase">"The Snapshot Store is active but not mature enough for causal audit. STEP5 remains locked until sufficient real snapshots, counterfactual traces and closure tests are available."</div></div>
+<div id="panel-future" class="panel"><div class="panel-head"><span class="panel-title">Future framework</span><button class="panel-close" onclick="closePanel('future')">close ×</button></div><div class="pill-row"><span class="pill p-pink">Not yet active</span><span class="pill p-pink">Planned</span><span class="pill p-gray">Human-governed</span><span class="pill p-purple">Invariants required</span></div><div class="panel-grid"><div><div class="psec-label">Operational roadmap</div><div class="psec-body"><ul><li>Crypto Macro Feed V1</li><li>Macro Runtime Feed V2</li><li>Macro Relation Audit V2</li><li>Macro Sensitivity Map</li><li>Macro Context Target Watchlist</li><li>Snapshot Store Accumulator</li><li>Meta-Orchestrator V2 — patch-safe, human auth</li><li>Meta-Orchestrator V3 — NCO + semi-auto ingestion</li><li>Meta-Orchestrator V4 — multi-agent executor (future only)</li></ul></div></div><div><div class="psec-label">Governance conditions</div><div class="psec-body">Every future layer requires snapshot store sufficiency, macro variation validation, G-01 invariant satisfaction, evidence IDs on filesystem and explicit human governance approval at each step transition.<br/><br/><strong>No autonomous promotion at any step.</strong></div></div></div><div class="key-phrase">"Future development does not mean immediate autonomy. Each future layer remains governed by invariants, evidence, snapshot sufficiency and human confirmation."</div></div>
+</section>
+  <p class="map-caption">Figure 1. Radial operational ecosystem map of Achilleion/Q_ANIMA. The figure describes public architecture and methodological constraints; it does not expose private runtime internals.</p>
+  <script>
+function openPanel(id){document.querySelectorAll('#interactive-map .panel').forEach(function(p){p.classList.remove('open')});var panel=document.getElementById('panel-'+id);if(panel){panel.classList.add('open');setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'})},60)}}function closePanel(id){var panel=document.getElementById('panel-'+id);if(panel)panel.classList.remove('open')}document.querySelectorAll('.radial-node').forEach(function(nd){nd.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();nd.click()}})});function drawSpokes(){var svg=document.getElementById('spokes-svg');var map=document.getElementById('radial-map');var center=document.getElementById('node-center');if(!svg||!map||!center)return;if(window.innerWidth<=760){svg.innerHTML='';return}var mr=map.getBoundingClientRect();var cr=center.getBoundingClientRect();var cx=cr.left-mr.left+cr.width/2;var cy=cr.top-mr.top+cr.height/2;var ids=['node-council','node-runtime','node-macro','node-future','node-meta','node-snapshot','node-memory'];var markup='';ids.forEach(function(id){var node=document.getElementById(id);if(!node)return;var r=node.getBoundingClientRect();var nx=r.left-mr.left+r.width/2;var ny=r.top-mr.top+r.height/2;var dx=nx-cx;var dy=ny-cy;var len=Math.sqrt(dx*dx+dy*dy)||1;var startPad=126;var endPad=122;var sx=cx+dx/len*startPad;var sy=cy+dy/len*startPad;var ex=nx-dx/len*endPad;var ey=ny-dy/len*endPad;var mx=(sx+ex)/2;var my=(sy+ey)/2;markup+='<path d="M'+sx.toFixed(1)+','+sy.toFixed(1)+' Q'+mx.toFixed(1)+','+(my-6).toFixed(1)+' '+ex.toFixed(1)+','+ey.toFixed(1)+'" fill="none" stroke="rgba(180,178,169,0.18)" stroke-width="0.9"/>'});svg.setAttribute('viewBox','0 0 '+mr.width.toFixed(0)+' '+mr.height.toFixed(0));svg.innerHTML=markup}window.addEventListener('load',function(){setTimeout(drawSpokes,120)});window.addEventListener('resize',function(){setTimeout(drawSpokes,120)});
+</script>
+</section>
 
       <section id="branches">
         <div class="section-head">
@@ -875,23 +513,5 @@
       Achilleion Vivens ? Independent research ecosystem ? Francesco Mattioli
     </footer>
   </div>
-  <script>
-    function openPanel(id) {
-      document.querySelectorAll('.map-section .panel').forEach(function(panel) {
-        panel.classList.remove('open');
-      });
-      var target = document.getElementById('panel-' + id);
-      if (target) {
-        target.classList.add('open');
-        window.setTimeout(function() {
-          target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 60);
-      }
-    }
-    function closePanel(id) {
-      var target = document.getElementById('panel-' + id);
-      if (target) target.classList.remove('open');
-    }
-  </script>
 </body>
 </html>
