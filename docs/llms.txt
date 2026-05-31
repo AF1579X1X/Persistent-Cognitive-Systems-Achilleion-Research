@@ -63,6 +63,8 @@ https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/con
 
 ## Research
 
+* Achilleion / Q_ANIMA Operational Ecosystem: public interactive map and article describing the current Q_ANIMA runtime, Multi-Model Council, Macro Runtime Alignment, Meta-Orchestrator V1.1, Governance Invariants G-01, Evidence Schema G-01.1, NCO memory, Local Retrieval Bridge V1.2, Snapshot Store and Future Framework. Clarifies that all active layers are observe-only or dry-run, STEP5 is locked, no live trading is active, and no causal claims are made.
+
 Manifesto e documento programmatico per Achilleion e Q_ANIMA: Programmatic document for Achilleion Vivens and Q_ANIMA, covering architettura trasduttiva, sette layer, meta-orchestrazione, runtime persistente, provenance, crypto-agility and governance AI.
 URL: https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/manifesto-achilleion-q-anima.html
 Keywords: Achilleion, Q_ANIMA, architettura trasduttiva, sette layer, meta-orchestrazione, runtime persistente, provenance, crypto-agility, governance AI

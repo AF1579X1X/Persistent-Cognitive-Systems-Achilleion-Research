@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Achilleion / Q_ANIMA Operational Ecosystem</title>
+  <meta name="description" content="Interactive research map and article on Achilleion/Q_ANIMA as a persistent cognitive-operational ecosystem governed by memory, invariants and methodological restraint.">
+  <meta name="author" content="Francesco Mattioli">
+  <meta name="robots" content="index, follow">
+  <meta property="og:site_name" content="Achilleion Vivens">
+  <meta name="application-name" content="Achilleion Vivens">
+  <meta property="og:title" content="Achilleion / Q_ANIMA Operational Ecosystem">
+  <meta property="og:description" content="From agentic workflows to persistent cognitive governance: architecture, memory, invariants and methodological restraint.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/qanima-operational-ecosystem.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Achilleion / Q_ANIMA Operational Ecosystem">
+  <meta name="twitter:description" content="Interactive research map and public article on Q_ANIMA runtime, governance invariants, NCO memory and methodological restraint.">
+  <link rel="canonical" href="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/qanima-operational-ecosystem.html">
+  <style>
+    :root {
+      --bg: #f7f4ec;
+      --surface: #fffdf8;
+      --surface-strong: #ffffff;
+      --ink: #252525;
+      --muted: #67645d;
+      --border: #ded8c8;
+      --line: rgba(43, 39, 32, 0.13);
+      --gold: #a77f32;
+      --amber: #d69b3d;
+      --teal: #328f89;
+      --blue: #4c79b8;
+      --coral: #c76555;
+      --green: #5f9362;
+      --rose: #ba6e91;
+      --slate: #717988;
+      --shadow: 0 22px 70px rgba(67, 57, 42, 0.12);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(214,155,61,0.14), transparent 28%),
+        radial-gradient(circle at 90% 12%, rgba(76,121,184,0.12), transparent 30%),
+        linear-gradient(180deg, var(--bg), #ffffff 58%);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.66;
+    }
+    a { color: inherit; }
+    .page { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+    .nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+    .nav a {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.76);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 10px 13px;
+      text-decoration: none;
+      font: 800 12px/1 var(--mono);
+      letter-spacing: 0.03em;
+    }
+    .nav a:hover { border-color: rgba(167,127,50,0.7); color: var(--ink); }
+    .eyebrow, .tag {
+      color: var(--gold);
+      font: 850 12px/1.4 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .hero {
+      padding: clamp(34px, 5vw, 68px) 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 {
+      margin: 10px 0 16px;
+      max-width: 950px;
+      font-size: clamp(42px, 6vw, 84px);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 900px;
+      font-size: clamp(18px, 2.4vw, 25px);
+    }
+    .status-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+    .status-strip span, .chip, .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid rgba(167,127,50,0.32);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.82);
+      padding: 8px 11px;
+      color: #554b39;
+      font: 800 12px/1.1 var(--mono);
+    }
+    main section { margin-top: 42px; }
+    .section-head { margin-bottom: 18px; }
+    h2 { margin: 0 0 10px; font-size: clamp(28px, 3.8vw, 46px); line-height: 1.08; letter-spacing: 0; }
+    h3 { margin: 24px 0 8px; font-size: 24px; line-height: 1.18; }
+    p { margin: 0 0 15px; }
+    .lead { font-size: 18px; color: #44413b; max-width: 900px; }
+    .panel, .article-card, .note, .map-section {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.86);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .article-card { padding: clamp(20px, 3vw, 32px); }
+    .note { padding: 18px 20px; color: #4d463b; border-left: 4px solid var(--gold); }
+    .map-section { padding: clamp(16px, 2.4vw, 26px); overflow: hidden; }
+    .table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--border); border-radius: 16px; background: #fff; box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; }
+    th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { background: #f3ecdb; color: #3a3329; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; }
+    td { color: #383631; }
+    tr:last-child td { border-bottom: 0; }
+    .branch-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .branch-grid .article-card { box-shadow: none; }
+    .formula {
+      margin: 22px 0;
+      padding: 18px 20px;
+      background: linear-gradient(90deg, rgba(167,127,50,0.14), rgba(50,143,137,0.10));
+      border: 1px solid rgba(167,127,50,0.26);
+      border-radius: 16px;
+      font-weight: 800;
+      color: #332d22;
+    }
+    .map-caption { color: var(--muted); font-size: 14px; margin-top: 12px; }
+
+    /* Interactive operational ecosystem map */
+    .map-wrap { width: 100%; overflow-x: auto; padding-bottom: 6px; }
+    .map-wrap svg { width: 100%; min-width: 760px; display: block; }
+    svg text { font-family: var(--sans); pointer-events: none; }
+    .branch { cursor: pointer; filter: drop-shadow(0 10px 18px rgba(40,36,28,0.12)); transition: transform 0.18s ease, filter 0.18s ease; }
+    .branch:hover { transform: translateY(-3px); filter: drop-shadow(0 14px 24px rgba(40,36,28,0.18)); }
+    .branch rect { fill: #fffdf8; stroke: rgba(43,39,32,0.18); }
+    .n-amber rect { fill: #fff5df; stroke: rgba(214,155,61,0.55); }
+    .n-teal rect { fill: #e8f6f3; stroke: rgba(50,143,137,0.55); }
+    .n-blue rect { fill: #edf4ff; stroke: rgba(76,121,184,0.55); }
+    .n-coral rect { fill: #fff0ec; stroke: rgba(199,101,85,0.55); }
+    .n-green rect { fill: #edf7ee; stroke: rgba(95,147,98,0.55); }
+    .n-gray rect { fill: #f2f3f5; stroke: rgba(113,121,136,0.55); }
+    .n-pink rect { fill: #fff0f7; stroke: rgba(186,110,145,0.55); }
+    .th { font-size: 15px; font-weight: 850; fill: #24211c; }
+    .tc { font-size: 10px; font-weight: 700; fill: #5f5a52; }
+    .micro { font-size: 9px; font-weight: 700; fill: #6a6257; }
+    .central-title { font-size: 22px; font-weight: 900; fill: #252018; }
+    .central-sub { font-size: 10px; font-weight: 800; fill: #6b5b3e; letter-spacing: 0.08em; }
+    .legend { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 18px; }
+    .legend-item { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; }
+    .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+    .panel { display: none; padding: 18px; margin-top: 14px; }
+    .panel.open { display: block; }
+    .panel-head { display: flex; justify-content: space-between; gap: 12px; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 14px; }
+    .panel-title { font-size: 22px; font-weight: 900; }
+    .close { border: 1px solid var(--border); background: #fff; color: var(--muted); border-radius: 999px; padding: 7px 10px; cursor: pointer; font-weight: 900; }
+    .panel-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .card { border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,0.78); padding: 14px; }
+    .card h3, .card h4 { margin: 0 0 8px; font-size: 17px; }
+    .card p, .card li, .muted { color: var(--muted); }
+    .checklist { margin: 8px 0 0; padding-left: 18px; }
+    .key-phrase { margin-top: 14px; padding: 14px 16px; border-radius: 14px; background: rgba(167,127,50,0.12); border: 1px solid rgba(167,127,50,0.28); font-weight: 850; }
+    .psec-body { color: #3e3a33; }
+    pre { white-space: pre-wrap; background: #252018; color: #f8f1e5; border-radius: 14px; padding: 14px 16px; overflow-x: auto; }
+    footer { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    @media (max-width: 900px) {
+      .branch-grid, .panel-grid { grid-template-columns: 1fr; }
+      .map-section { padding: 14px; }
+      table { min-width: 680px; }
+    }
+    @media (max-width: 620px) {
+      .page { padding: 22px 14px 44px; }
+      .status-strip span { width: 100%; justify-content: center; }
+      h1 { font-size: 40px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Achilleion / Q_ANIMA Operational Ecosystem",
+    "alternativeHeadline": "From agentic workflows to persistent cognitive governance",
+    "author": {
+      "@type": "Person",
+      "name": "Francesco Mattioli",
+      "alternateName": "Mattioli Francesco",
+      "url": "https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/author/francesco-mattioli.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Achilleion Vivens",
+      "url": "https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/"
+    },
+    "inLanguage": "en",
+    "about": ["Q_ANIMA", "Achilleion Vivens", "persistent cognitive governance", "NCO memory", "Meta-Orchestrator", "Governance Invariants", "Snapshot Store"],
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Achilleion Vivens",
+      "url": "https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/"
+    },
+    "url": "https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/qanima-operational-ecosystem.html"
+  }
+  </script>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../">Home</a>
+      <a href="./">Research</a>
+      <a href="../papers/">Papers</a>
+      <a href="../concepts/">Concepts</a>
+      <a href="../corpus/">Corpus</a>
+    </nav>
+
+    <header class="hero">
+      <div class="eyebrow">Achilleion Vivens Research Artifact</div>
+      <h1>Achilleion / Q_ANIMA Operational Ecosystem</h1>
+      <p class="subtitle">From agentic workflows to persistent cognitive governance: architecture, memory, invariants and methodological restraint.</p>
+      <div class="status-strip" aria-label="Current safety status">
+        <span>Observe-only</span>
+        <span>Dry-run governance</span>
+        <span>No gate mutation</span>
+        <span>STEP5 remains locked</span>
+        <span>No live trading is active</span>
+        <span>No causal claims</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="article-card" id="introduction">
+        <div class="section-head">
+          <div class="tag">Introduction</div>
+          <h2>A public map of a constrained operational ecosystem</h2>
+        </div>
+        <p class="lead">This article accompanies the interactive map <strong>Achilleion / Q_ANIMA Operational Ecosystem</strong>. The map shows seven public-facing branches of the current research architecture: Q_ANIMA Runtime, Multi-Model Council, Macro Runtime Alignment, Meta-Orchestrator and Governance, Memory / NCO / Retrieval, Snapshot Store / Self-Binding, and Future Framework.</p>
+        <p>The map is not a product announcement. It is a transparency document. It renders visible an architecture that is still in development, built layer by layer with explicit constraints at each step. The goal is not to demonstrate capability in the conventional sense. The goal is to demonstrate a particular kind of epistemic discipline: the ability to observe without claiming, to measure without inferring, and to accumulate evidence without rushing to act.</p>
+        <p>Most descriptions of AI systems in operational contexts focus on what the system can do. This document focuses on what the system deliberately does not do, and why those constraints are architectural choices rather than limitations.</p>
+      </section>
+
+      <section id="agentic-distinction">
+        <div class="section-head">
+          <div class="tag">Governance distinction</div>
+          <h2>Why Achilleion is not merely an agentic system</h2>
+        </div>
+        <p class="lead">The vocabulary of AI agents has proliferated rapidly. An agent, in common usage, perceives its environment, plans actions, uses tools and executes tasks toward a goal. Multi-agent systems extend this pattern by distributing subtasks across multiple specialized agents. Achilleion / Q_ANIMA does not fit either description. The differences are structural.</p>
+        <div class="table-wrap" role="region" aria-label="Comparative table: agentic system, multi-agent system and Achilleion Q_ANIMA" tabindex="0">
+          <table>
+            <thead>
+              <tr><th>Dimension</th><th>Agentic system</th><th>Multi-agent system</th><th>Achilleion / Q_ANIMA</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Primary mode</strong></td><td>Executes tasks</td><td>Delegates and aggregates</td><td>Observes, proposes, governs</td></tr>
+              <tr><td><strong>Memory</strong></td><td>Session-scoped or external store</td><td>Shared across agents</td><td>Canonical NCO registry with identity guard</td></tr>
+              <tr><td><strong>Evidence</strong></td><td>No formal evidence schema</td><td>No formal evidence schema</td><td>Evidence IDs must be resolved against canonical public/private records</td></tr>
+              <tr><td><strong>Causality</strong></td><td>Often blurred with correlation</td><td>Often blurred with correlation</td><td>Explicitly separated: observation, association, validation and causality</td></tr>
+              <tr><td><strong>Autonomy</strong></td><td>High</td><td>High, coordinated</td><td>Low by design; human-governed at every step</td></tr>
+              <tr><td><strong>Gate control</strong></td><td>No invariant-enforced gates</td><td>No invariant-enforced gates</td><td>Governance Invariants G-01; no gate mutation without human sign-off</td></tr>
+              <tr><td><strong>Step promotion</strong></td><td>Continuous or threshold-based</td><td>Continuous or threshold-based</td><td>Locked at STEP5 until snapshot sufficiency, macro variation and human confirmation</td></tr>
+              <tr><td><strong>Causal inference</strong></td><td>Not structurally restricted</td><td>Not structurally restricted</td><td>Refused when variation is insufficient</td></tr>
+              <tr><td><strong>Document identity</strong></td><td>Not tracked</td><td>Not tracked</td><td>Canonical identity distinguished from mention</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="formula">A mentioned ID is not a canonical document.</div>
+        <p>The last row is decisive. In many retrieval-augmented systems, a document that mentions an ID may be treated as equivalent to the canonical document identified by that ID. Achilleion / Q_ANIMA keeps these categories separate. This is not a technical detail; it is a foundational epistemic commitment.</p>
+      </section>
+
+      <section id="interactive-map" class="map-section" aria-labelledby="map-title">
+        <div class="section-head">
+          <div class="tag">Interactive map</div>
+          <h2 id="map-title">Achilleion / Q_ANIMA Operational Ecosystem Map</h2>
+          <p class="lead">Click a branch of the map to open its public explanatory panel. The map is integrated as inline HTML, SVG, CSS and JavaScript, with no external dependency.</p>
+        </div>
+        <div class="map-wrap">
+<svg viewBox="0 0 860 640" role="img" aria-label="Achilleion Q_ANIMA Operational Ecosystem — radial map with 7 branches">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- ── Spoke lines ── -->
+<line x1="390" y1="285" x2="200" y2="148" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+<line x1="430" y1="285" x2="622" y2="148" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+<line x1="410" y1="268" x2="410" y2="120" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+<line x1="450" y1="318" x2="640" y2="318" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+<line x1="430" y1="352" x2="622" y2="492" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+<line x1="390" y1="352" x2="200" y2="492" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+<line x1="370" y1="318" x2="180" y2="318" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+
+<!-- ══ CENTER NODE ══ -->
+<g class="n-purple">
+  <rect x="290" y="256" width="240" height="126" rx="14" stroke-width="0.6"/>
+  <text class="th" x="410" y="290" text-anchor="middle" dominant-baseline="central">Achilleion / Q_ANIMA</text>
+  <text class="ts" x="410" y="312" text-anchor="middle" dominant-baseline="central">Operational Ecosystem</text>
+  <text class="ts" x="410" y="332" text-anchor="middle" dominant-baseline="central">persistent · memory-aware</text>
+  <text class="ts" x="410" y="350" text-anchor="middle" dominant-baseline="central">governed · human-authorized</text>
+</g>
+
+<!-- ══ B1 — Q_ANIMA Runtime (top-left) ══ -->
+<g class="branch n-amber" onclick="openPanel('runtime')">
+  <rect x="68" y="96" width="256" height="66" rx="10" stroke-width="0.5"/>
+  <text class="th" x="196" y="118" text-anchor="middle" dominant-baseline="central">Q_ANIMA runtime</text>
+  <text class="ts" x="196" y="137" text-anchor="middle" dominant-baseline="central">Signal observation · shadow layers</text>
+  <!-- badges -->
+  <rect x="74"  y="170" width="56" height="15" rx="4" fill="rgba(186,117,23,0.18)"/>
+  <text class="tb" x="102" y="178" text-anchor="middle" dominant-baseline="central" fill="#FAC775">DRY RUN</text>
+  <rect x="138" y="170" width="110" height="15" rx="4" fill="rgba(186,117,23,0.18)"/>
+  <text class="tb" x="193" y="178" text-anchor="middle" dominant-baseline="central" fill="#FAC775">NO LIVE TRADING</text>
+  <rect x="256" y="170" width="62" height="15" rx="4" fill="rgba(186,117,23,0.18)"/>
+  <text class="tb" x="287" y="178" text-anchor="middle" dominant-baseline="central" fill="#FAC775">OBSERVE</text>
+</g>
+
+<!-- ══ B2 — Multi-Model Council (top center) ══ -->
+<g class="branch n-teal" onclick="openPanel('council')">
+  <rect x="290" y="32" width="240" height="66" rx="10" stroke-width="0.5"/>
+  <text class="th" x="410" y="54" text-anchor="middle" dominant-baseline="central">Multi-model council</text>
+  <text class="ts" x="410" y="73" text-anchor="middle" dominant-baseline="central">GRU · tabular · regime · anomaly</text>
+  <rect x="298" y="106" width="100" height="15" rx="4" fill="rgba(15,110,86,0.22)"/>
+  <text class="tb" x="348" y="114" text-anchor="middle" dominant-baseline="central" fill="#9FE1CB">OBSERVE ONLY</text>
+  <rect x="406" y="106" width="115" height="15" rx="4" fill="rgba(15,110,86,0.22)"/>
+  <text class="tb" x="463" y="114" text-anchor="middle" dominant-baseline="central" fill="#9FE1CB">NO GATE MUTATION</text>
+</g>
+
+<!-- ══ B3 — Macro Alignment (top-right) ══ -->
+<g class="branch n-blue" onclick="openPanel('macro')">
+  <rect x="534" y="96" width="256" height="66" rx="10" stroke-width="0.5"/>
+  <text class="th" x="662" y="118" text-anchor="middle" dominant-baseline="central">Macro runtime alignment</text>
+  <text class="ts" x="662" y="137" text-anchor="middle" dominant-baseline="central">Relation audit V1 · variation check</text>
+  <rect x="542" y="170" width="100" height="15" rx="4" fill="rgba(24,95,165,0.22)"/>
+  <text class="tb" x="592" y="178" text-anchor="middle" dominant-baseline="central" fill="#85B7EB">OBSERVE ONLY</text>
+  <rect x="650" y="170" width="90" height="15" rx="4" fill="rgba(163,45,45,0.22)"/>
+  <text class="tb" x="695" y="178" text-anchor="middle" dominant-baseline="central" fill="#F09595">STEP5 LOCKED</text>
+  <rect x="648" y="192" width="92" height="15" rx="4" fill="rgba(24,95,165,0.18)"/>
+  <text class="tb" x="694" y="200" text-anchor="middle" dominant-baseline="central" fill="#85B7EB">NOT CAUSAL</text>
+</g>
+
+<!-- ══ B4 — Meta-Orchestrator (right) ══ -->
+<g class="branch n-coral" onclick="openPanel('meta')">
+  <rect x="654" y="256" width="180" height="126" rx="10" stroke-width="0.5"/>
+  <text class="th" x="744" y="290" text-anchor="middle" dominant-baseline="central">Meta-Orchestrator</text>
+  <text class="th" x="744" y="308" text-anchor="middle" dominant-baseline="central">&amp; Governance</text>
+  <text class="ts" x="744" y="328" text-anchor="middle" dominant-baseline="central">V1.1 · G-01 active</text>
+  <rect x="660" y="348" width="78" height="15" rx="4" fill="rgba(153,60,29,0.22)"/>
+  <text class="tb" x="699" y="356" text-anchor="middle" dominant-baseline="central" fill="#F0997B">PROPOSE ONLY</text>
+  <rect x="746" y="348" width="80" height="15" rx="4" fill="rgba(163,45,45,0.22)"/>
+  <text class="tb" x="786" y="356" text-anchor="middle" dominant-baseline="central" fill="#F09595">STEP5 LOCKED</text>
+</g>
+
+<!-- ══ B5 — Memory/NCO/Retrieval (bottom-right) ══ -->
+<g class="branch n-green" onclick="openPanel('memory')">
+  <rect x="534" y="440" width="256" height="66" rx="10" stroke-width="0.5"/>
+  <text class="th" x="662" y="462" text-anchor="middle" dominant-baseline="central">Memory / NCO / retrieval</text>
+  <text class="ts" x="662" y="481" text-anchor="middle" dominant-baseline="central">Local bridge V1.2 · evidence schema</text>
+  <rect x="542" y="514" width="106" height="15" rx="4" fill="rgba(59,109,17,0.22)"/>
+  <text class="tb" x="595" y="522" text-anchor="middle" dominant-baseline="central" fill="#97C459">G-01.1 ACTIVE</text>
+  <rect x="656" y="514" width="104" height="15" rx="4" fill="rgba(59,109,17,0.22)"/>
+  <text class="tb" x="708" y="522" text-anchor="middle" dominant-baseline="central" fill="#97C459">NOT CAUSAL</text>
+</g>
+
+<!-- ══ B6 — Snapshot Store (bottom-left) ══ -->
+<g class="branch n-gray" onclick="openPanel('snapshot')">
+  <rect x="68" y="440" width="256" height="66" rx="10" stroke-width="0.5"/>
+  <text class="th" x="196" y="462" text-anchor="middle" dominant-baseline="central">Snapshot store</text>
+  <text class="ts" x="196" y="481" text-anchor="middle" dominant-baseline="central">Self-binding · step 4E active</text>
+  <rect x="76"  y="514" width="92" height="15" rx="4" fill="rgba(163,45,45,0.22)"/>
+  <text class="tb" x="122" y="522" text-anchor="middle" dominant-baseline="central" fill="#F09595">INSUFFICIENT</text>
+  <rect x="176" y="514" width="90" height="15" rx="4" fill="rgba(163,45,45,0.22)"/>
+  <text class="tb" x="221" y="522" text-anchor="middle" dominant-baseline="central" fill="#F09595">STEP5 LOCKED</text>
+  <rect x="274" y="514" width="44" height="15" rx="4" fill="rgba(95,94,90,0.22)"/>
+  <text class="tb" x="296" y="522" text-anchor="middle" dominant-baseline="central" fill="#B4B2A9">4E.1</text>
+</g>
+
+<!-- ══ B7 — Future Framework (left) ══ -->
+<g class="branch n-pink" onclick="openPanel('future')">
+  <rect x="0" y="256" width="180" height="126" rx="10" stroke-width="0.5"/>
+  <text class="th" x="90" y="290" text-anchor="middle" dominant-baseline="central">Future</text>
+  <text class="th" x="90" y="308" text-anchor="middle" dominant-baseline="central">framework</text>
+  <text class="ts" x="90" y="328" text-anchor="middle" dominant-baseline="central">roadmap · planned</text>
+  <rect x="6" y="348" width="100" height="15" rx="4" fill="rgba(153,53,86,0.22)"/>
+  <text class="tb" x="56" y="356" text-anchor="middle" dominant-baseline="central" fill="#ED93B1">NOT YET ACTIVE</text>
+  <rect x="114" y="348" width="58" height="15" rx="4" fill="rgba(153,53,86,0.22)"/>
+  <text class="tb" x="143" y="356" text-anchor="middle" dominant-baseline="central" fill="#ED93B1">PLANNED</text>
+</g>
+
+<!-- ── Footer hint ── -->
+<text x="430" y="620" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.22)" font-family="inherit">Click any branch node to open detail panel</text>
+
+</svg>
+</div><!-- /map-wrap -->
+
+<!-- ── LEGEND ── -->
+<div class="legend" style="margin-top:0.75rem;">
+  <span class="legend-label">Safety labels:</span>
+  <span class="pill p-amber">DRY RUN</span>
+  <span class="pill p-amber">NO LIVE TRADING</span>
+  <span class="pill p-teal">OBSERVE ONLY</span>
+  <span class="pill p-teal">NO GATE MUTATION</span>
+  <span class="pill p-red">STEP5 LOCKED</span>
+  <span class="pill p-blue">NOT CAUSAL</span>
+  <span class="pill p-gray">HUMAN-GOVERNED</span>
+  <span class="pill p-pink">PLANNED</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     DETAIL PANELS
+══════════════════════════════════════════ -->
+
+<!-- P1 — Q_ANIMA Runtime -->
+<div id="panel-runtime" class="panel">
+  <div class="panel-head">
+    <span class="panel-title">Q_ANIMA runtime</span>
+    <button class="panel-close" onclick="closePanel('runtime')">close ×</button>
+  </div>
+  <div class="pill-row">
+    <span class="pill p-amber">Active</span>
+    <span class="pill p-amber">Dry-run</span>
+    <span class="pill p-amber">No live trading</span>
+    <span class="pill p-teal">Observe only</span>
+    <span class="pill p-gray">Human-governed</span>
+  </div>
+  <div class="panel-grid">
+    <div>
+      <div class="psec-label">What it is</div>
+      <div class="psec-body">Q_ANIMA is not a trading bot. It is an operational research runtime for <strong>observing signals, gates, regimes, shadow decisions and validation thresholds</strong>. No automatic live trading is active. Every output is a proposal, not an execution.</div>
+    </div>
+    <div>
+      <div class="psec-label">Active layers</div>
+      <div class="psec-body">
+        <ul>
+          <li>Shadow layer (diagnostic only)</li>
+          <li>Observe-only signal monitor</li>
+          <li>Decision gate observer</li>
+          <li>Tau state tracker</li>
+          <li>Local / cloud bridge (private)</li>
+          <li>Telemetry log</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Safety constraints</div>
+      <div class="psec-body">
+        <strong>NO LIVE TRADING</strong> enforced at runtime.<br/>
+        No automatic order execution.<br/>
+        No operational execution exposed in public layer.<br/>
+        Human authorization required at every step transition.<br/>
+        Tau suspension on unresolved tensions.
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Future conditions for live layer</div>
+      <div class="psec-body">Snapshot store sufficiency · STEP5 unlock · macro variation validation · G-01 invariant satisfaction · explicit human governance sign-off. None of these conditions are currently met.</div>
+    </div>
+  </div>
+  <div class="key-phrase">"Q_ANIMA is not a trading bot. It is an operational research runtime for observing signals, gates, regimes, shadow decisions and validation thresholds. No automatic live trading is active."</div>
+</div>
+
+<!-- P2 — Multi-Model Council -->
+<div id="panel-council" class="panel">
+  <div class="panel-head">
+    <span class="panel-title">Multi-model council</span>
+    <button class="panel-close" onclick="closePanel('council')">close ×</button>
+  </div>
+  <div class="pill-row">
+    <span class="pill p-teal">Active</span>
+    <span class="pill p-teal">Observe only</span>
+    <span class="pill p-teal">No gate mutation</span>
+    <span class="pill p-blue">Relation audit V1</span>
+    <span class="pill p-gray">Human-governed</span>
+  </div>
+  <div class="panel-grid">
+    <div>
+      <div class="psec-label">What it is</div>
+      <div class="psec-body">The Council is a <strong>diagnostic ensemble</strong>, not an LLM panel. It compares multiple specialized diagnostic views to detect convergence or divergence across signal interpretations. It does not mutate gates and does not authorize trades.</div>
+    </div>
+    <div>
+      <div class="psec-label">Council components</div>
+      <div class="psec-body">
+        <ul>
+          <li>Q_ANIMA / GRU prediction model</li>
+          <li>Tabular edge model</li>
+          <li>Regime detector</li>
+          <li>Anomaly detector</li>
+          <li>Council convergence watch</li>
+          <li>Outcome evaluation module</li>
+          <li>Outcome auto history log</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Safety constraints</div>
+      <div class="psec-body">
+        <strong>OBSERVE ONLY</strong> — no component may mutate operational gates.<br/>
+        <strong>NO GATE MUTATION</strong> enforced.<br/>
+        Human adjudication required on divergent verdicts.<br/>
+        LLMs may be used only as an external interpretive layer, not as the operational core of the Council.
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Current audit verdict</div>
+      <div class="psec-body">Macro Council Relation Audit V1 is active. Latest result:</div>
+    </div>
+  </div>
+  <div class="verdict">INSUFFICIENT_MACRO_VARIATION · RELATION_NOT_ENOUGH_VARIATION</div>
+  <div class="key-phrase">"The Council compares multiple diagnostic views: Q_ANIMA/GRU prediction, tabular edge model, regime detection, anomaly detection, convergence watch and outcome history. It does not mutate gates and does not authorize trades."</div>
+</div>
+
+<!-- P3 — Macro Alignment -->
+<div id="panel-macro" class="panel">
+  <div class="panel-head">
+    <span class="panel-title">Macro runtime alignment</span>
+    <button class="panel-close" onclick="closePanel('macro')">close ×</button>
+  </div>
+  <div class="pill-row">
+    <span class="pill p-blue">Active</span>
+    <span class="pill p-teal">Observe only</span>
+    <span class="pill p-red">Step5 locked</span>
+    <span class="pill p-blue">Not causal</span>
+    <span class="pill p-gray">Human-governed</span>
+  </div>
+  <div class="panel-grid">
+    <div>
+      <div class="psec-label">What it is</div>
+      <div class="psec-body">Monitors whether macro-level context conditions (risk, regime, pressure) show sufficient variation to support a meaningful relation audit. Currently blocked at STEP5. Observes association only — <strong>no causal claims</strong>.</div>
+    </div>
+    <div>
+      <div class="psec-label">Current audit state</div>
+      <div class="psec-body">
+        <ul>
+          <li>Macro Council Relation Audit V1 active</li>
+          <li>Latest verdict: <strong>INSUFFICIENT_MACRO_VARIATION</strong></li>
+          <li>relation_signal_label: <strong>RELATION_NOT_ENOUGH_VARIATION</strong></li>
+          <li>Dataset: 2 500 rows · 5 distinct runs</li>
+          <li>All runs under <strong>MACRO_RISK_PRESSURE_LOW</strong></li>
+          <li>No causal claims</li>
+          <li>STEP5 locked</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Safety constraints</div>
+      <div class="psec-body">
+        <strong>STEP5 LOCKED</strong> until macro variation reaches threshold.<br/>
+        <strong>OBSERVE ONLY</strong> — no autonomous step promotion.<br/>
+        All transitions require human governance sign-off.<br/>
+        <strong>NOT CAUSAL</strong>: statistical association is not causality.
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Unlock conditions for STEP5</div>
+      <div class="psec-body">Sufficient macro variation across risk regimes · council convergence log complete · snapshot store sufficiency · G-01 invariant satisfaction · human confirmation. None currently met.</div>
+    </div>
+  </div>
+  <div class="key-phrase">"The system reached the minimum number of distinct runs, but refused to infer a relation because macro variation was insufficient."</div>
+</div>
+
+<!-- P4 — Meta-Orchestrator -->
+<div id="panel-meta" class="panel">
+  <div class="panel-head">
+    <span class="panel-title">Meta-Orchestrator &amp; Governance</span>
+    <button class="panel-close" onclick="closePanel('meta')">close ×</button>
+  </div>
+  <div class="pill-row">
+    <span class="pill p-coral">V1.1 active</span>
+    <span class="pill p-amber">Dry-run / propose-only</span>
+    <span class="pill p-purple">G-01 active</span>
+    <span class="pill p-purple">G-01.1 active</span>
+    <span class="pill p-red">Step5 locked</span>
+  </div>
+  <div class="panel-grid">
+    <div>
+      <div class="psec-label">What it is</div>
+      <div class="psec-body"><strong>Meta-Orchestrator V1.1</strong> is not an autonomous agent. It is a <strong>dry-run governance layer</strong> that proposes next actions, checks evidence and remains constrained by invariants. It does not execute. Every proposal must be supported by <strong>evidence IDs resolved on the filesystem</strong>.</div>
+    </div>
+    <div>
+      <div class="psec-label">Active modules</div>
+      <div class="psec-body">
+        <ul>
+          <li>Meta-Orchestrator V1.1 (dry-run)</li>
+          <li>Governance Invariants <strong>G-01</strong></li>
+          <li>Evidence Schema <strong>G-01.1</strong></li>
+          <li>invariant_checker (active)</li>
+          <li>Proposal log</li>
+          <li>Human-step gate registry</li>
+          <li>Friction-aware execution layer</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Governance invariants (G-01)</div>
+      <div class="psec-body">
+        No live execution without human sign-off.<br/>
+        No gate mutation from within the council.<br/>
+        No causal claims from statistical patterns alone.<br/>
+        No scheduler mutation.<br/>
+        Snapshot store must be sufficient before STEP5.
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Evidence schema (G-01.1)</div>
+      <div class="psec-body">Formalizes what counts as evidence before any operational promotion. Requires: macro variation above threshold · council convergence log · snapshot store completeness · evidence IDs resolvable on filesystem · human-readable audit trail.</div>
+    </div>
+  </div>
+  <div class="key-phrase">"The Meta-Orchestrator is not an autonomous agent. It is a dry-run governance layer that proposes, checks evidence and remains constrained by invariants."</div>
+</div>
+
+<!-- P5 — Memory / NCO / Retrieval -->
+<div id="panel-memory" class="panel">
+  <div class="panel-head">
+    <span class="panel-title">Memory / NCO / Retrieval</span>
+    <button class="panel-close" onclick="closePanel('memory')">close ×</button>
+  </div>
+  <div class="pill-row">
+    <span class="pill p-green">Active</span>
+    <span class="pill p-green">Local bridge V1.2</span>
+    <span class="pill p-purple">G-01.1 active</span>
+    <span class="pill p-blue">Not causal</span>
+    <span class="pill p-gray">Human-governed</span>
+  </div>
+  <div class="panel-grid">
+    <div>
+      <div class="psec-label">What NCO is</div>
+      <div class="psec-body"><strong>NCO — Nota Coagulativa Operativa</strong> (canonical operational memory node). NCO entries are the canonical memory units of the ecosystem. They are not raw logs — they are consolidated, identity-verified records that enter the operational field only after review. NCO is not a biological model.</div>
+    </div>
+    <div>
+      <div class="psec-label">Active modules</div>
+      <div class="psec-body">
+        <ul>
+          <li>NCO registry</li>
+          <li>NCO master index</li>
+          <li>Local vectorstore</li>
+          <li>Local Retrieval Bridge V1.2</li>
+          <li>canonical_id_hits tracker</li>
+          <li>mention_hits tracker</li>
+          <li>Strict NCO identity guard</li>
+          <li>Evidence schema G-01.1</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Identity vs mention distinction</div>
+      <div class="psec-body">
+        <strong>exact_match_hits</strong> = textual occurrence of an ID in documents.<br/>
+        <strong>canonical_id_hits</strong> = real canonical document identity (resolved).<br/>
+        <strong>mention_hits</strong> = ID cited inside other documents.<br/><br/>
+        A mention is not a source. The retrieval bridge prevents mentions from being promoted into canonical evidence.
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Safety constraints</div>
+      <div class="psec-body">
+        <strong>NOT CAUSAL</strong>: retrieved traces are observational only.<br/>
+        NCO consolidation requires human review before operational promotion.<br/>
+        Evidence schema enforced on all retrievals.<br/>
+        No raw filesystem paths exposed publicly.
+      </div>
+    </div>
+  </div>
+  <div class="key-phrase">"A mentioned ID is not a canonical document. The retrieval bridge prevents mentions from being promoted into sources."</div>
+</div>
+
+<!-- P6 — Snapshot Store -->
+<div id="panel-snapshot" class="panel">
+  <div class="panel-head">
+    <span class="panel-title">Snapshot store / Self-binding</span>
+    <button class="panel-close" onclick="closePanel('snapshot')">close ×</button>
+  </div>
+  <div class="pill-row">
+    <span class="pill p-gray">Active</span>
+    <span class="pill p-red">Insufficient</span>
+    <span class="pill p-red">Step5 locked</span>
+    <span class="pill p-amber">Step 4E / 4E.1</span>
+    <span class="pill p-gray">Self-binding active</span>
+  </div>
+  <div class="panel-grid">
+    <div>
+      <div class="psec-label">What it is</div>
+      <div class="psec-body">Persistent record of system states across time. <strong>Self-binding</strong> means the system records its own invariants and past commitments, making them auditable. The store is active and recording, but <strong>not yet mature enough</strong> for causal audit.</div>
+    </div>
+    <div>
+      <div class="psec-label">Current state</div>
+      <div class="psec-body">
+        <ul>
+          <li>STEP 4E active</li>
+          <li>STEP 4E.1 active</li>
+          <li>Self-binding layer active and recording</li>
+          <li><strong>Snapshot history: INSUFFICIENT</strong></li>
+          <li>effective_n below threshold</li>
+          <li>STEP5 locked</li>
+          <li>No causal confirmation possible</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">What is needed</div>
+      <div class="psec-body">
+        Sufficient temporal coverage of field states.<br/>
+        Documented macro variation across council sessions.<br/>
+        NCO consolidation log completeness.<br/>
+        Counterfactual traces and closure tests.<br/>
+        Human sign-off on snapshot audit before STEP5 can be proposed.
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Safety constraints</div>
+      <div class="psec-body">
+        <strong>STEP5 LOCKED</strong> until snapshot store sufficiency is met.<br/>
+        No causal claims from current store.<br/>
+        All state records are observe-only until audit conditions are satisfied.
+      </div>
+    </div>
+  </div>
+  <div class="key-phrase">"The Snapshot Store is active but not mature enough for causal audit. STEP5 remains locked until sufficient real snapshots, counterfactual traces and closure tests are available."</div>
+</div>
+
+<!-- P7 — Future Framework -->
+<div id="panel-future" class="panel">
+  <div class="panel-head">
+    <span class="panel-title">Future framework</span>
+    <button class="panel-close" onclick="closePanel('future')">close ×</button>
+  </div>
+  <div class="pill-row">
+    <span class="pill p-pink">Not yet active</span>
+    <span class="pill p-pink">Planned</span>
+    <span class="pill p-gray">Human-governed</span>
+    <span class="pill p-purple">Invariants required</span>
+  </div>
+  <div class="panel-grid">
+    <div>
+      <div class="psec-label">Operational roadmap</div>
+      <div class="psec-body">
+        <ul>
+          <li>Crypto Macro Feed V1</li>
+          <li>Macro Runtime Feed V2</li>
+          <li>Macro Relation Audit V2</li>
+          <li>Macro Sensitivity Map</li>
+          <li>Macro Context Target Watchlist</li>
+          <li>Snapshot Store Accumulator</li>
+          <li>Meta-Orchestrator V2 — patch-safe, human auth</li>
+          <li>Meta-Orchestrator V3 — NCO + semi-auto ingestion</li>
+          <li>Meta-Orchestrator V4 — multi-agent executor (future only)</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="psec-label">Governance conditions (all layers)</div>
+      <div class="psec-body">
+        Every future layer requires:<br/>
+        Snapshot store sufficiency · macro variation validation · G-01 invariant satisfaction · evidence IDs on filesystem · explicit human governance approval at each step transition.<br/><br/>
+        <strong>No autonomous promotion at any step.</strong>
+      </div>
+    </div>
+  </div>
+  <div class="key-phrase">"Future development does not mean immediate autonomy. Each future layer remains governed by invariants, evidence, snapshot sufficiency and human confirmation."</div>
+</div>
+        <p class="map-caption">Figure 1. Interactive conceptual map of the current Achilleion/Q_ANIMA operational ecosystem. The figure describes public architecture and methodological constraints; it does not expose private runtime internals.</p>
+      </section>
+
+      <section id="branches">
+        <div class="section-head">
+          <div class="tag">Seven branches</div>
+          <h2>The operational branches, stated conservatively</h2>
+        </div>
+        <div class="branch-grid">
+          <article class="article-card">
+            <h3>Q_ANIMA Runtime</h3>
+            <p><strong>Status:</strong> active, dry-run, observe-only. Q_ANIMA Runtime is the signal observation and shadow decision layer of the ecosystem. It monitors signals, tracks regime states, observes gate conditions and records shadow decisions as proposals, not executions.</p>
+            <p><strong>Q_ANIMA is not a trading bot.</strong> It does not place orders, execute decisions automatically or authorize public operation. No automatic live trading is active at any layer.</p>
+          </article>
+          <article class="article-card">
+            <h3>Multi-Model Council</h3>
+            <p><strong>Status:</strong> active, observe-only, no gate mutation. The Council is a diagnostic ensemble that compares specialized views to detect convergence or divergence across signal interpretations.</p>
+            <p>The Council does not mutate operational gates, authorize trades or make autonomous decisions. Its outputs remain diagnostic and subject to human governance.</p>
+          </article>
+          <article class="article-card">
+            <h3>Macro Runtime Alignment</h3>
+            <p><strong>Status:</strong> active, observe-only, not causal. Macro Runtime Alignment checks whether macro-level context shows enough variation to support a meaningful relation audit.</p>
+            <p><strong>Current macro relation audit is observe-only.</strong> It measures observed association, not causality, and does not produce market predictions.</p>
+          </article>
+          <article class="article-card">
+            <h3>Meta-Orchestrator & Governance</h3>
+            <p><strong>Status:</strong> V1.1 active, dry-run, propose-only. The Meta-Orchestrator coordinates modules without acting autonomously. It proposes next actions, checks evidence and remains constrained by Governance Invariants G-01 and Evidence Schema G-01.1.</p>
+            <p>It does not execute, mutate gates, schedule operational changes or bypass human confirmation.</p>
+          </article>
+          <article class="article-card">
+            <h3>Memory / NCO / Retrieval</h3>
+            <p><strong>Status:</strong> active, Local Retrieval Bridge V1.2, canonical identity guard. NCO entries are consolidated memory nodes, not raw logs. The retrieval bridge separates exact textual matches, canonical document identity and mentions.</p>
+            <p><strong>A mentioned ID is not a canonical document.</strong> The system prevents mentions from being promoted into sources.</p>
+          </article>
+          <article class="article-card">
+            <h3>Snapshot Store / Self-Binding</h3>
+            <p><strong>Status:</strong> active but insufficient for causal audit. The Snapshot Store records system states across time and supports self-binding commitments, but it is not mature enough for causal confirmation.</p>
+            <p><strong>STEP5 remains locked</strong> until sufficient snapshots, macro variation, counterfactual traces, closure tests and human sign-off exist.</p>
+          </article>
+          <article class="article-card">
+            <h3>Future Framework</h3>
+            <p><strong>Status:</strong> planned, not active. Future layers describe a governed roadmap, not current capability. Every future layer remains bound to invariants, evidence, snapshot sufficiency and human confirmation.</p>
+            <p>Future development does not imply immediate autonomy.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="current-state">
+        <div class="section-head">
+          <div class="tag">Current state</div>
+          <h2>Verified public state of the ecosystem</h2>
+        </div>
+        <div class="table-wrap" role="region" aria-label="Current state table" tabindex="0">
+          <table>
+            <thead><tr><th>Component</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Meta-Orchestrator V1.1</td><td>Active, dry-run, propose-only</td></tr>
+              <tr><td>Governance Invariants G-01</td><td>Active</td></tr>
+              <tr><td>Evidence Schema G-01.1</td><td>Active</td></tr>
+              <tr><td>Local Retrieval Bridge V1.2</td><td>Active, canonical identity guard</td></tr>
+              <tr><td>Macro Council Relation Audit V1</td><td>Observe-only association audit</td></tr>
+              <tr><td>Latest audit verdict</td><td>Insufficient macro variation / relation not enough variation</td></tr>
+              <tr><td>STEP5</td><td><strong>Locked</strong></td></tr>
+              <tr><td>Snapshot Store</td><td>Active, self-binding, insufficient for causal audit</td></tr>
+              <tr><td>Live trading</td><td><strong>None</strong></td></tr>
+              <tr><td>Gate mutation</td><td><strong>None</strong></td></tr>
+              <tr><td>Causal claims</td><td><strong>None</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="methodological-restraint" class="article-card">
+        <div class="section-head">
+          <div class="tag">Methodological restraint</div>
+          <h2>The system refused to overclaim</h2>
+        </div>
+        <p>The most epistemically significant event in the current state of Achilleion / Q_ANIMA is not something the system did. It is something the system refused to do.</p>
+        <p>The Macro Council Relation Audit V1 accumulated observational history across distinct runs. It reached the minimum threshold required to attempt an observe-only relation audit, then stopped when macro context variation was insufficient. A relation measured exclusively within one macro regime cannot be generalized. The system had enough rows to inspect, but not enough contextual variation to support a stronger inference.</p>
+        <p>This behavior is by design. The evidence schema does not permit an observed association to be promoted into a causal claim when the variation needed to test that relation is absent. Statistical correlation in a homogeneous context is not causality.</p>
+        <div class="note">Current macro relation audit is observe-only. It measures observed association, not causality. Macro context does not authorize trades. STEP5 remains locked. No operational execution is active in the public layer.</div>
+      </section>
+
+      <section id="boundary" class="article-card">
+        <div class="section-head">
+          <div class="tag">Public / private boundary</div>
+          <h2>What this page publishes, and what it does not publish</h2>
+        </div>
+        <p>This document and the interactive map describe the architecture and principles of Achilleion / Q_ANIMA. They do not expose private runtime code, credentials, exchange integration details, private telemetry, operational state or sensitive identifiers.</p>
+        <p>The public layer contains research artifacts, architectural descriptions, canonical terminology, conceptual maps, working papers and this interactive ecosystem map. The private layer contains operational implementation details and protected runtime state. References to runtime modules use public conceptual names only.</p>
+      </section>
+
+      <section id="conclusion" class="article-card">
+        <div class="section-head">
+          <div class="tag">Conclusion</div>
+          <h2>Persistence, memory and governed transformation</h2>
+        </div>
+        <p>Achilleion / Q_ANIMA does not seek immediate autonomy. It seeks persistence, memory, governance and controlled transformation.</p>
+        <p>The architecture described here is built around the premise that a system's most important capability is not what it can do, but what it can refuse to do and what it requires before it acts. Governance Invariants, evidence schema, identity guard, snapshot sufficiency and the explicit STEP5 lock are the design.</p>
+        <p>The current state is an early, careful, observe-only ecosystem. It is accumulating evidence, testing methods, validating retrieval, enforcing invariants and building the conditions under which more can be done safely, verifiably and with human oversight at every step.</p>
+      </section>
+
+      <section id="methodological-note" class="note">
+        <strong>Methodological note.</strong> Current macro relation audit is observe-only. It measures observed association, not causality. No live trading is active. No gate mutation is active. STEP5 remains locked. This document is published for research transparency and does not constitute a claim of market prediction capability, causal inference or live trading activity.
+      </section>
+    </main>
+
+    <footer>
+      Achilleion Vivens ? Independent research ecosystem ? Francesco Mattioli
+    </footer>
+  </div>
+  <script>
+    function openPanel(id) {
+      document.querySelectorAll('.map-section .panel').forEach(function(panel) {
+        panel.classList.remove('open');
+      });
+      var target = document.getElementById('panel-' + id);
+      if (target) {
+        target.classList.add('open');
+        window.setTimeout(function() {
+          target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 60);
+      }
+    }
+    function closePanel(id) {
+      var target = document.getElementById('panel-' + id);
+      if (target) target.classList.remove('open');
+    }
+  </script>
+</body>
+</html>
