@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="it">
 <head>
   <meta charset="utf-8">
@@ -34,6 +34,16 @@
     p { margin:0 0 16px; } ul,ol { padding-left:22px; } li { margin:8px 0; color:var(--muted); } code { font-family:var(--mono); }
     pre { max-width:100%; overflow:auto; border:1px solid var(--line); border-radius:16px; padding:16px; background:#fff; color:#333; }
     .mermaid-wrap { overflow-x:auto; width:100%; margin:2rem 0; padding:1.25rem; border:1px solid rgba(120,100,60,.25); border-radius:18px; background:#fffdf7; } .mermaid-wrap pre.mermaid { min-width:1100px; margin:0; border:0; padding:0; overflow:visible; background:transparent; color:#333; text-align:center; } .mermaid-wrap svg { min-width:1100px; width:100%; height:auto; } .mermaid svg text { font-size:16px !important; font-weight:600; }
+    .roadmap-static-wrap { width:100%; overflow-x:auto; margin:2rem 0; padding:1.25rem 1.25rem 1.5rem; border:1px solid rgba(120,100,60,.25); border-radius:18px; background:#fffdf7; }
+    .roadmap-static { min-width:1700px; display:grid; grid-template-columns:170px repeat(15, 1fr); gap:8px; align-items:stretch; color:#252525; }
+    .roadmap-title { grid-column:1 / -1; font:800 18px var(--sans); margin:0 0 4px; }
+    .roadmap-month { min-height:34px; display:flex; align-items:center; justify-content:center; border-bottom:2px solid rgba(159,127,67,.36); color:#5f5544; font:800 12px var(--mono); white-space:nowrap; }
+    .roadmap-category { min-height:48px; display:flex; align-items:center; padding:8px 10px; border-radius:10px; background:#eee8d8; color:#252525; font:800 13px var(--sans); }
+    .roadmap-bar { min-height:48px; display:flex; align-items:center; justify-content:center; text-align:center; padding:8px 12px; border:1px solid rgba(139,124,246,.42); border-radius:10px; background:#f8f6ef; color:#252525; font:800 13px var(--sans); line-height:1.18; overflow:hidden; }
+    .roadmap-bar.runtime { background:#eef2ff; border-color:rgba(79,70,229,.42); }
+    .roadmap-bar.continuity { background:#f4f7f2; border-color:rgba(92,134,87,.38); }
+    .roadmap-bar.security { background:#f7f1e8; border-color:rgba(159,127,67,.45); }
+    .roadmap-bar.release { background:#ecfeff; border-color:rgba(8,145,178,.42); }
     .table-wrap { width:100%; overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:16px; background:#fff; } table { width:100%; min-width:900px; border-collapse:collapse; font-size:15px; } th,td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; } th { background:#eee8d8; color:#252525; } td { color:#555; }
     footer { margin-top:34px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); }
     @media(max-width:860px) { .wrap { padding:24px 16px 56px; } .layout { grid-template-columns:1fr; } nav.toc { position:static; max-height:none; } .content { padding:20px; } table { min-width:760px; } .mermaid-wrap pre.mermaid, .mermaid-wrap svg { min-width:980px; } }
@@ -183,40 +193,56 @@
 <p>La roadmap organizza un orizzonte di circa <strong>18 mesi</strong>, con team piccolo-medio e forte integrazione fra architettura, editoria tecnica, ML, platform e security. Le date sono coordinate di pianificazione: orientano il lavoro, non funzionano come vincoli esterni.</p>
 <div class="table-wrap"><table>
 <thead><tr><th>Fase</th><th>Orizzonte</th><th>Deliverable chiave</th><th>Ruoli prevalenti</th><th>Exit criteria</th><th>Rischio dominante</th></tr></thead><tbody>
-<tr><td>Consolidamento</td><td>mesi 0-3</td><td>manifesto pubblico, specifica interna, glossario dei layer, tassonomia artefatti, baseline hardware/software</td><td>system architect, editor tecnico, platform engineer</td><td>documento canonico unificato e sistema di promozione definito</td><td>visione troppo astratta o contraddittoria</td></tr>
+<tr><td>Consolidamento</td><td>mesi 0-3</td><td>manifesto pubblico, specifica interna, glossario dei layer, tassonomia artefatti, baseline hardware/software</td><td>system architect, editor tecnico, platform engineer</td><td>Documento canonico e sistema di promozione definito</td><td>visione troppo astratta o contraddittoria</td></tr>
 <tr><td>Meta-orchestrazione</td><td>mesi 3-6</td><td>runtime durevole, registry provenance, pipeline ingestione/promotion, osservabilità base</td><td>platform engineer, backend engineer, DevSecOps</td><td>flussi principali recuperabili dopo crash e interruzioni</td><td>sistema ancora frammentato tra tool non coordinati</td></tr>
 <tr><td>Riflessività</td><td>mesi 6-9</td><td>memoria riflessiva, sintesi di stato, review gates, session continuity</td><td>backend engineer, ML engineer, conversation designer</td><td>sintesi inter-sessione verificabile e revisionabile</td><td>confusione tra memoria utile e rumore</td></tr>
 <tr><td>Continuità simbolica</td><td>mesi 9-14</td><td>retrieval canonico, validator citazionale, schema outputs, redazione duale public/internal</td><td>ML engineer, data engineer, editor, domain reviewer</td><td>prevalenza del canone sulle bozze e output conformi a schema</td><td>eloquenza senza fondamento</td></tr>
 <tr><td>Campo dialogico persistente</td><td>mesi 14-18</td><td>orchestrazione matura, dashboard di stato, firma artefatti, inventory crittografico, readiness PQC</td><td>system architect, security engineer, DevSecOps, owner umano</td><td>rilascio stabile con governance, firme, inventory e roadmap PQC</td><td>scalabilità organizzativa e debito di processo</td></tr>
 </tbody></table></div>
 <p>La roadmap è coerente con le dipendenze tecnologiche e di governance emerse dalle fonti: prima definire il canone e i ruoli, poi la durable execution, poi provenance e promotion, poi la continuità riflessiva, infine la messa in sicurezza e la cripto-agilità.</p>
-<div class="mermaid-wrap"><pre class="mermaid">gantt
-    title Roadmap ipotetica Achilleion
-    dateFormat  YYYY-MM-DD
-    axisFormat  %b %Y
+<div class="roadmap-static-wrap" aria-label="Roadmap ipotetica Achilleion">
+  <div class="roadmap-static">
+    <div class="roadmap-title">Roadmap ipotetica Achilleion</div>
+    <div></div>
+    <div class="roadmap-month">Jun 2026</div>
+    <div class="roadmap-month">Jul 2026</div>
+    <div class="roadmap-month">Aug 2026</div>
+    <div class="roadmap-month">Sep 2026</div>
+    <div class="roadmap-month">Oct 2026</div>
+    <div class="roadmap-month">Nov 2026</div>
+    <div class="roadmap-month">Dec 2026</div>
+    <div class="roadmap-month">Jan 2027</div>
+    <div class="roadmap-month">Feb 2027</div>
+    <div class="roadmap-month">Mar 2027</div>
+    <div class="roadmap-month">Apr 2027</div>
+    <div class="roadmap-month">May 2027</div>
+    <div class="roadmap-month">Jun 2027</div>
+    <div class="roadmap-month">Jul 2027</div>
+    <div class="roadmap-month">Aug 2027</div>
 
-    section Fondazione
-    Documento canonico unificato        :a1, 2026-06-01, 60d
-    Glossario layer e policy editoriali :a2, 2026-06-15, 75d
-    Tassonomia artefatti e promotion    :a3, 2026-07-01, 60d
+    <div class="roadmap-category" style="grid-column:1; grid-row:3 / span 3;">Fondazione</div>
+    <div class="roadmap-bar" style="grid-column:2 / span 2; grid-row:3;">Documento canonico</div>
+    <div class="roadmap-bar" style="grid-column:2 / span 3; grid-row:4;">Glossario layer / policy</div>
+    <div class="roadmap-bar" style="grid-column:3 / span 2; grid-row:5;">Tassonomia artefatti</div>
 
-    section Runtime
-    Runtime persistente                  :b1, 2026-08-01, 90d
-    Registro provenance                  :b2, 2026-09-01, 75d
-    Observability end-to-end             :b3, 2026-09-15, 75d
+    <div class="roadmap-category" style="grid-column:1; grid-row:6 / span 3;">Runtime</div>
+    <div class="roadmap-bar runtime" style="grid-column:4 / span 3; grid-row:6;">Runtime persistente</div>
+    <div class="roadmap-bar runtime" style="grid-column:5 / span 3; grid-row:7;">Registro provenance</div>
+    <div class="roadmap-bar runtime" style="grid-column:5 / span 3; grid-row:8;">Observability</div>
 
-    section Continuità
-    Retrieval canonico                   :c1, 2026-11-01, 90d
-    Validator citazionale e schema       :c2, 2026-12-01, 75d
-    Memoria riflessiva                   :c3, 2027-01-01, 90d
+    <div class="roadmap-category" style="grid-column:1; grid-row:9 / span 3;">Continuità</div>
+    <div class="roadmap-bar continuity" style="grid-column:7 / span 3; grid-row:9;">Retrieval canonico</div>
+    <div class="roadmap-bar continuity" style="grid-column:8 / span 3; grid-row:10;">Validator citazioni</div>
+    <div class="roadmap-bar continuity" style="grid-column:9 / span 3; grid-row:11;">Memoria riflessiva</div>
 
-    section Sicurezza
-    Firme e gestione chiavi              :d1, 2027-02-01, 75d
-    Inventory crittografico              :d2, 2027-03-01, 60d
-    Piano PQC e crypto-agility           :d3, 2027-04-01, 90d
+    <div class="roadmap-category" style="grid-column:1; grid-row:12 / span 2;">Sicurezza</div>
+    <div class="roadmap-bar security" style="grid-column:10 / span 3; grid-row:12;">Layer operativo</div>
+    <div class="roadmap-bar security" style="grid-column:12 / span 3; grid-row:13;">Piano PQC e crypto-agility</div>
 
-    section Rilascio
-    Dashboard, runbook, release stabile  :e1, 2027-06-01, 90d</pre></div>
+    <div class="roadmap-category" style="grid-column:1; grid-row:14;">Rilascio</div>
+    <div class="roadmap-bar release" style="grid-column:14 / span 3; grid-row:14;">Dashboard / release</div>
+  </div>
+</div>
 <h3 id="confronto-tra-pattern-di-orchestrazione">Confronto tra pattern di orchestrazione</h3>
 <div class="table-wrap"><table>
 <thead><tr><th>Pattern</th><th>Punto di forza</th><th>Limite strutturale</th><th>Quando eccelle</th><th>Giudizio per Achilleion</th></tr></thead><tbody>
