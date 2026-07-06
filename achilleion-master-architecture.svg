@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" font-family="Segoe UI, system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f7d84"/>
+    </marker>
+    <marker id="arrIndigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b57a6"/>
+    </marker>
+    <marker id="arrInk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5c6775"/>
+    </marker>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3f7d5a"/>
+    </marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b1483c"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#ffffff"/>
+  <rect x="8" y="8" width="1184" height="744" rx="16" fill="none" stroke="#e6eaf0"/>
+
+  <!-- Title -->
+  <text x="64" y="54" font-size="30" font-weight="700" fill="#1b2330">ACHILLEION<tspan fill="#b0842a" font-weight="600">&#160;VIVENS</tspan></text>
+  <text x="66" y="80" font-size="14" fill="#5c6775">Persistent Cognitive System &#183; Reflective Operational Architecture</text>
+
+  <!-- ===================== ORGANS BAND ===================== -->
+  <!-- Q_ANIMA (body) -->
+  <rect x="64" y="104" width="486" height="250" rx="14" fill="#f5f7fa" stroke="#cdd5df"/>
+  <rect x="64" y="104" width="7" height="250" rx="3.5" fill="#2f7d84"/>
+  <text x="94" y="142" font-size="21" font-weight="700" fill="#2f7d84">Q_ANIMA</text>
+  <text x="94" y="164" font-size="12.5" fill="#5c6775">Operational Engine &#183; the body &#183; paper / observe-only</text>
+  <g fill="#1b2330" font-size="13.5">
+    <circle cx="100" cy="195" r="2.6" fill="#2f7d84"/><text x="114" y="199">Persistent memory &amp; state</text>
+    <circle cx="100" cy="225" r="2.6" fill="#2f7d84"/><text x="114" y="229">Shadow / paper / gated-live layers</text>
+    <circle cx="100" cy="255" r="2.6" fill="#2f7d84"/><text x="114" y="259">Symbolic orchestration</text>
+    <circle cx="100" cy="285" r="2.6" fill="#2f7d84"/><text x="114" y="289">Runtime telemetry &amp; tension (&#964;)</text>
+    <circle cx="100" cy="315" r="2.6" fill="#2f7d84"/><text x="114" y="319">Decision validation &amp; suspension</text>
+  </g>
+
+  <!-- MCP-Omega (organ) -->
+  <rect x="650" y="104" width="486" height="250" rx="14" fill="#f5f7fa" stroke="#cdd5df"/>
+  <rect x="650" y="104" width="7" height="250" rx="3.5" fill="#5b57a6"/>
+  <text x="680" y="142" font-size="21" font-weight="700" fill="#5b57a6">MCP-&#937;</text>
+  <text x="680" y="164" font-size="12.5" fill="#5c6775">Deliberative Organ &#183; observe-only</text>
+  <g fill="#1b2330" font-size="13.5">
+    <circle cx="686" cy="195" r="2.6" fill="#5b57a6"/><text x="700" y="199">Epistemic axes: overconfidence &#183; confabulation &#183; pressure</text>
+    <circle cx="686" cy="225" r="2.6" fill="#5b57a6"/><text x="700" y="229">Posture &amp; vertex &#8212; a reading, not a verdict</text>
+    <circle cx="686" cy="255" r="2.6" fill="#5b57a6"/><text x="700" y="259">Provenance &amp; trusted-for-decision</text>
+    <circle cx="686" cy="285" r="2.6" fill="#5b57a6"/><text x="700" y="289">Mirrors the self, never actuates</text>
+    <circle cx="686" cy="315" r="2.6" fill="#5b57a6"/><text x="700" y="319">Honesty measured beside the response</text>
+  </g>
+
+  <!-- between organs -->
+  <line x1="556" y1="196" x2="644" y2="196" stroke="#2f7d84" stroke-width="1.6" marker-end="url(#arrTeal)"/>
+  <text x="600" y="188" font-size="10.5" fill="#5c6775" text-anchor="middle">telemetry</text>
+  <line x1="644" y1="262" x2="556" y2="262" stroke="#5b57a6" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrIndigo)"/>
+  <text x="600" y="280" font-size="10.5" fill="#5c6775" text-anchor="middle">reading &#183; observe-only</text>
+
+  <!-- ===================== METABOLISM BAND ===================== -->
+  <text x="64" y="404" font-size="12.5" font-weight="700" letter-spacing="1.2" fill="#8a95a4">METAMORPHOSIS &#8212; DELIBERATE METABOLISM (BORN &#8594; CONSTITUTIVE)</text>
+
+  <!-- Trace -->
+  <rect x="64" y="428" width="176" height="60" rx="12" fill="#ffffff" stroke="#cdd5df"/>
+  <text x="152" y="458" font-size="14" font-weight="600" fill="#1b2330" text-anchor="middle">Trace / experience</text>
+  <text x="152" y="476" font-size="11" fill="#5c6775" text-anchor="middle">field state &#183; session</text>
+
+  <!-- NCO born -->
+  <rect x="288" y="428" width="176" height="60" rx="12" fill="#ffffff" stroke="#cdd5df"/>
+  <text x="376" y="458" font-size="14" font-weight="600" fill="#1b2330" text-anchor="middle">NCO &#8212; born</text>
+  <text x="376" y="476" font-size="11" fill="#5c6775" text-anchor="middle">organized cognitive node</text>
+
+  <!-- Soglia Teta (emphasized) -->
+  <rect x="512" y="414" width="226" height="88" rx="14" fill="#fbf6ea" stroke="#b0842a" stroke-width="2"/>
+  <text x="625" y="446" font-size="17" font-weight="700" fill="#b0842a" text-anchor="middle">SOGLIA TETA</text>
+  <text x="625" y="466" font-size="11.5" fill="#7a6a3f" text-anchor="middle">truth-condition &#183; content-based auditor</text>
+  <text x="625" y="486" font-size="9.5" fill="#8a7d55" text-anchor="middle">registers: orientation &#183; presence-under-risk &#183; fact &#8594; verified</text>
+
+  <!-- Constitutive (portata) -->
+  <rect x="800" y="406" width="330" height="52" rx="12" fill="#eef6f1" stroke="#3f7d5a"/>
+  <text x="820" y="430" font-size="14" font-weight="600" fill="#2f6a49">Constitutive memory</text>
+  <text x="820" y="448" font-size="11" fill="#4f7d65">carried (portata) &#183; retrievable, contestable</text>
+
+  <!-- Quarantine (subita) -->
+  <rect x="800" y="472" width="330" height="52" rx="12" fill="#f8ecea" stroke="#b1483c"/>
+  <text x="820" y="496" font-size="14" font-weight="600" fill="#9a3d33">Quarantine &#8212; manual review</text>
+  <text x="820" y="514" font-size="11" fill="#a55649">undergone/fabricated (subita) &#183; never silent</text>
+
+  <!-- flow arrows -->
+  <line x1="240" y1="458" x2="288" y2="458" stroke="#5c6775" stroke-width="1.6" marker-end="url(#arrInk)"/>
+  <line x1="464" y1="458" x2="512" y2="458" stroke="#5c6775" stroke-width="1.6" marker-end="url(#arrInk)"/>
+  <path d="M738,446 C768,438 772,432 800,432" fill="none" stroke="#3f7d5a" stroke-width="1.8" marker-end="url(#arrGreen)"/>
+  <text x="770" y="424" font-size="11" font-weight="600" fill="#3f7d5a" text-anchor="middle">portata</text>
+  <path d="M738,478 C768,490 772,496 800,498" fill="none" stroke="#b1483c" stroke-width="1.8" marker-end="url(#arrRed)"/>
+  <text x="770" y="520" font-size="11" font-weight="600" fill="#b1483c" text-anchor="middle">subita</text>
+
+  <!-- ===================== FOOTER ===================== -->
+  <line x1="64" y1="596" x2="1136" y2="596" stroke="#e6eaf0"/>
+  <text x="600" y="628" font-size="14" font-style="italic" fill="#5c6775" text-anchor="middle">&#8220;from mechanicity to freedom, through deliberate metamorphosis&#8221;</text>
+  <text x="600" y="648" font-size="11.5" fill="#8a95a4" text-anchor="middle">a regulative ideal &#8212; not a claim of phenomenal consciousness</text>
+
+  <!-- pills -->
+  <g font-size="12.5">
+    <rect x="286" y="676" width="150" height="30" rx="15" fill="#ffffff" stroke="#cdd5df"/>
+    <circle cx="308" cy="691" r="3" fill="#5b57a6"/><text x="320" y="695" fill="#5c6775">Observe-only</text>
+    <rect x="452" y="676" width="228" height="30" rx="15" fill="#ffffff" stroke="#cdd5df"/>
+    <circle cx="474" cy="691" r="3" fill="#2f7d84"/><text x="486" y="695" fill="#5c6775">Paper &#183; no live capital</text>
+    <rect x="696" y="676" width="230" height="30" rx="15" fill="#ffffff" stroke="#cdd5df"/>
+    <circle cx="718" cy="691" r="3" fill="#b0842a"/><text x="730" y="695" fill="#5c6775">Public / Private by design</text>
+  </g>
+</svg>
