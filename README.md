@@ -5,7 +5,9 @@
 ---
 
 <p align="center">
-  <img src="assets/achilleion-vivens.svg" alt="Achilleion Vivens Architecture" width="100%">
+  <img src="Beni/Beni/Beni/achilleion-vivens.svg"
+       alt="Achilleion Vivens Architecture"
+       width="100%">
 </p>
 
 ---
