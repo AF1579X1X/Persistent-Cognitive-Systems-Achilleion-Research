@@ -4,7 +4,57 @@
 
 ---
 
-![Achilleion Vivens Architecture](preview2.png)
+```mermaid
+graph TD
+    %% --- ARCHITETTURA CORE ---
+    Q["Q_ANIMA (Operational Engine)
+    • Persistent memory & state
+    • Shadow / paper / gated-live layers
+    • Symbolic orchestration
+    • Runtime telemetry & tension (τ)"]
+
+    MCP["MCP-Ω (Deliberative Organ)
+    • Overconfidence & pressure
+    • Posture & vertex (a reading)
+    • Provenance & trust-for-decision
+    • Mirrors the self, never actuates"]
+
+    Q ==>|"telemetry"| MCP
+    MCP -.->|"observe-only"| Q
+
+    %% --- CONNESSIONE DI FLUSSO ---
+    Q --> B1
+    MCP --> B1
+
+    %% --- PROCESSO METAMORPHOSIS ---
+    B1["Trace / experience
+    (field state • session)"]
+    
+    B2["NCO — born
+    (organized cognitive node)"]
+    
+    B3["SOGLIA TETA
+    (truth-condition)"]
+    
+    B4["Constitutive memory
+    (carried / portata • contestable)"]
+    
+    B5["Quarantine — review
+    (undergone / subita • never silent)"]
+
+    B1 --> B2
+    B2 --> B3
+    B3 -->|"portata"| B4
+    B3 -->|"subita"| B5
+
+    %% --- STILI COLORI ---
+    style Q fill:#f8fafd,stroke:#2a7b7b,stroke-width:2px
+    style MCP fill:#fafdff,stroke:#5c51a4,stroke-width:2px
+    style B1 fill:#ffffff,stroke:#b0c4de,stroke-width:1.5px
+    style B2 fill:#ffffff,stroke:#708090,stroke-width:1.5px
+    style B3 fill:#fffdf6,stroke:#b8860b,stroke-width:2px
+    style B4 fill:#f6fff8,stroke:#2e8b57,stroke-width:1.5px
+    style B5 fill:#fff5f5,stroke:#cd5c5c,stroke-width:1.5px
 
 ---
 
