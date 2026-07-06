@@ -4,74 +4,9 @@
 
 ---
 
-``<svg width="1400" height="2400" viewBox="0 0 1400 2400" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1400" height="2400" fill="#ffffff"/>
-
-  <style>
-    .title { font: 800 58px Arial, sans-serif; fill:#111827; }
-    .subtitle { font: 500 34px Arial, sans-serif; fill:#374151; }
-    .box-title { font: 800 44px Arial, sans-serif; fill:#111827; }
-    .box-sub { font: 700 34px Arial, sans-serif; fill:#374151; }
-    .text { font: 500 32px Arial, sans-serif; fill:#111827; }
-    .small { font: 500 30px Arial, sans-serif; fill:#374151; }
-    .label { font: 800 30px Arial, sans-serif; fill:#1f2937; }
-    .arrow { stroke:#475569; stroke-width:5; fill:none; marker-end:url(#arrow); }
-  </style>
-
-  <defs>
-    <marker id="arrow" markerWidth="18" markerHeight="18" refX="15" refY="6" orient="auto">
-      <path d="M0,0 L16,6 L0,12 Z" fill="#475569"/>
-    </marker>
-  </defs>
-
-  <text x="700" y="90" text-anchor="middle" class="title">ACHILLEION VIVENS</text>
-  <text x="700" y="145" text-anchor="middle" class="subtitle">Sistemi Cognitivi Persistenti · Persistent Cognitive Systems</text>
-  <text x="700" y="190" text-anchor="middle" class="subtitle">Architetture Riflettenti · Reflective Architectures</text>
-
-  <rect x="120" y="270" width="1160" height="360" rx="28" fill="#f8fafd" stroke="#2a7b7b" stroke-width="6"/>
-  <text x="700" y="335" text-anchor="middle" class="box-title">Q_ANIMA</text>
-  <text x="700" y="390" text-anchor="middle" class="box-sub">Motore operativo · Operational Engine</text>
-  <text x="180" y="465" class="text">• Memoria persistente e stato</text>
-  <text x="220" y="510" class="small">Persistent memory and state</text>
-  <text x="180" y="575" class="text">• Livelli ombra / carta / live controllato</text>
-  <text x="220" y="620" class="small">Shadow / paper / gated-live layers</text>
-
-  <rect x="120" y="780" width="1160" height="410" rx="28" fill="#fafdff" stroke="#5c51a4" stroke-width="6"/>
-  <text x="700" y="845" text-anchor="middle" class="box-title">MCP-Ω</text>
-  <text x="700" y="900" text-anchor="middle" class="box-sub">Organo deliberativo · Deliberative Organ</text>
-  <text x="180" y="975" class="text">• Pressione e sovrastima</text>
-  <text x="220" y="1020" class="small">Pressure and overconfidence</text>
-  <text x="180" y="1085" class="text">• Provenienza e fiducia decisionale</text>
-  <text x="220" y="1130" class="small">Provenance and trust-for-decision</text>
-
-  <path d="M700 630 L700 780" class="arrow"/>
-  <text x="735" y="715" class="label">telemetria · telemetry</text>
-
-  <rect x="170" y="1320" width="1060" height="210" rx="26" fill="#ffffff" stroke="#b0c4de" stroke-width="5"/>
-  <text x="700" y="1395" text-anchor="middle" class="box-title">Traccia / esperienza</text>
-  <text x="700" y="1450" text-anchor="middle" class="box-sub">Trace / experience</text>
-  <text x="700" y="1500" text-anchor="middle" class="small">stato di campo · field state · sessione</text>
-
-  <path d="M700 1190 L700 1320" class="arrow"/>
-  <text x="735" y="1265" class="label">solo osservazione · observe-only</text>
-
-  <rect x="170" y="1640" width="1060" height="360" rx="26" fill="#ffffff" stroke="#708090" stroke-width="5"/>
-  <text x="700" y="1715" text-anchor="middle" class="box-title">NCO</text>
-  <text x="700" y="1770" text-anchor="middle" class="box-sub">Nodo di Continuità Operativa</text>
-  <text x="700" y="1820" text-anchor="middle" class="small">Node of Operational Continuity</text>
-  <text x="700" y="1885" text-anchor="middle" class="small">quando metabolizzato diventa · when metabolized becomes</text>
-  <text x="700" y="1945" text-anchor="middle" class="box-sub">Nodo Cognitivo Organizzato</text>
-  <text x="700" y="1995" text-anchor="middle" class="small">Organized Cognitive Node</text>
-
-  <path d="M700 1530 L700 1640" class="arrow"/>
-
-  <rect x="170" y="2140" width="1060" height="170" rx="26" fill="#fffdf6" stroke="#b8860b" stroke-width="6"/>
-  <text x="700" y="2210" text-anchor="middle" class="box-title">SOGLIA TETA</text>
-  <text x="700" y="2265" text-anchor="middle" class="box-sub">Condizione di verità · Truth-condition</text>
-
-  <path d="M700 2000 L700 2140" class="arrow"/>
-</svg>
-```
+<p align="center">
+  <img src="assets/achilleion-vivens.svg" alt="Achilleion Vivens Architecture" width="100%">
+</p>
 
 ---
 
@@ -103,75 +38,18 @@ Q_ANIMA è concepita come **architettura di ricerca operativa**, non come un fra
 
 ### Architettura a runtime riflettente
 
-La ricerca si è concentrata su:
-
-- Sistemi a stati persistenti
-- Loop di retroazione riflessiva
-- Esecuzione consapevole della memoria
-- Condizioni di sospensione in tempo di esercizio
-- Telemetria simbolico-operativa
-- Validazione operativa dei margini
-
 Concetti interni chiave:
 
 - **Corporate / Core Ideal:** *from mechanicity to freedom, through deliberate metamorphosis*
 - **τ (Tau)** — tensione operativa
-- **NCO** — Nodo Cognitivo Organizzato
+- **NCO** — nasce come Nodo di Continuità Operativa; quando metabolizzato diventa Nodo Cognitivo Organizzato
 - **Soglia Teta** — condizione di verità del metabolismo born → costitutivo
-- Attrito a tempo di esecuzione
-- Validazione operativa dei margini
 
 ---
 
 ## Superficie di Ricerca Pubblica
 
-**Reperto in evidenza — Sistemi cognitivi persistenti: equivalenti e traiettorie nel mondo.**
-
-Esplorazione interattiva degli artefatti comparativi di ricerca:
-
-- Agenti con stato
-- Architetture riflettenti
-- Sistemi di orchestrazione
-- Runtime consapevoli della memoria
-- Cognizione operativa persistente
-
 🔗 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/
-
----
-
-## Confine pubblico / privato
-
-Questa superficie **pubblica** contiene:
-
-- Reperti di ricerca
-- Mappe concettuali
-- Documentazione architetturale
-- Studi comparativi
-- Report di ricerca HTML interattivi
-
-Il **runtime operativo resta privato per progettazione.**
-
-I livelli privati includono:
-
-- Durate di esecuzione
-- Automazione sensibile
-- Sistemi operativi attivi
-- Credenziali e infrastruttura
-- Telemetria interna
-- Ambienti di orchestrazione protetti
-
----
-
-## Direzioni di ricerca
-
-Aree attuali di esplorazione:
-
-- Cognizione persistente
-- Sistemi operativi riflettenti
-- Architetture di runtime simboliche
-- Orchestrazione orientata alla memoria
-- Sistemi ibridi di IA locale/cloud
-- Ambienti decisionali consapevoli dello stato
 
 ---
 
