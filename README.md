@@ -1,10 +1,8 @@
-<div align="center">
-
 # ACHILLEION VIVENS
 
 **Sistemi Cognitivi Persistenti · Architetture Riflettenti · Ricerca Operativa Simbolica**
 
-</div>
+---
 
 ```mermaid
 graph TD
