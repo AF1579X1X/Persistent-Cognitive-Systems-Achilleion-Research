@@ -7,7 +7,7 @@
 </div>
 
 ```mermaid
-graph TB
+graph TD
     %% --- CORE ARCHITECTURE ---
     subgraph CORE [" ARCHITETTURA CORE "]
         direction LR
@@ -33,6 +33,9 @@ graph TB
         Q -- "telemetry ==>" --> MCP
         MCP -. " <== observe-only" .-> Q
     end
+
+    %% Forza il posizionamento verticale calando verso il basso
+    CORE --> METAMORPHOSIS
 
     %% --- METAMORPHOSIS PROCESS ---
     subgraph METAMORPHOSIS [" METAMORPHOSIS — DELIBERATE METABOLISM (BORN → CONSTITUTIVE) "]
