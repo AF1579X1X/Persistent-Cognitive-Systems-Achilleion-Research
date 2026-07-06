@@ -5,7 +5,7 @@
 ---
 
 <p align="center">
-  <img src="Risorse/Risorse/Risorse/achilleion-vivens.svg"
+  <img src="./assets/achilleion-vivens.svg"
        alt="Achilleion Vivens Architecture"
        width="100%">
 </p>
