@@ -64,105 +64,28 @@
   <text x="700" y="2265" text-anchor="middle" class="box-sub">Condizione di verità · Truth-condition</text>
 
   <path d="M700 2000 L700 2140" class="arrow"/>
-  <!-- Freccia sinistra -->
-  <line x1="470" y1="1500" x2="300" y2="1640"
-        stroke="#475569"
-        stroke-width="5"/>
-  <text x="330"
-        y="1580"
-        font-size="28"
-        font-family="Arial"
-        font-weight="700"
-        fill="#1f2937">
-        portata • carried
-  </text>
+  <!-- Rami dopo SOGLIA TETA -->
+  <path d="M700 2310 L430 2470" stroke="#475569" stroke-width="5" fill="none"/>
+  <path d="M700 2310 L970 2470" stroke="#475569" stroke-width="5" fill="none"/>
 
-  <!-- Freccia destra -->
-  <line x1="930" y1="1500" x2="1100" y2="1640"
-        stroke="#475569"
-        stroke-width="5"/>
-  <text x="900"
-        y="1580"
-        font-size="28"
-        font-family="Arial"
-        font-weight="700"
-        fill="#1f2937">
-        subìta • undergone
-  </text>
+  <text x="455" y="2415" text-anchor="middle" class="label">portata • carried</text>
+  <text x="945" y="2415" text-anchor="middle" class="label">subìta • undergone</text>
 
   <!-- Memoria costitutiva -->
-  <rect x="80"
-        y="1640"
-        width="500"
-        height="260"
-        rx="28"
-        fill="#f6fff8"
-        stroke="#2e8b57"
-        stroke-width="6"/>
+  <rect x="120" y="2470" width="520" height="260" rx="28"
+        fill="#f6fff8" stroke="#2e8b57" stroke-width="6"/>
 
-  <text x="330"
-        y="1715"
-        text-anchor="middle"
-        class="box-title">
-        Memoria Costitutiva
-  </text>
+  <text x="380" y="2550" text-anchor="middle" class="box-title">Memoria Costitutiva</text>
+  <text x="380" y="2605" text-anchor="middle" class="box-sub">Constitutive Memory</text>
+  <text x="380" y="2670" text-anchor="middle" class="small">portata • carried</text>
+  <text x="380" y="2720" text-anchor="middle" class="small">contestabile • contestable</text>
 
-  <text x="330"
-        y="1770"
-        text-anchor="middle"
-        class="box-sub">
-        Constitutive Memory
-  </text>
+  <!-- Quarantena e revisione -->
+  <rect x="760" y="2470" width="520" height="260" rx="28"
+        fill="#fff5f5" stroke="#cd5c5c" stroke-width="6"/>
 
-  <text x="330"
-        y="1840"
-        text-anchor="middle"
-        class="small">
-        portata • carried
-  </text>
-
-  <text x="330"
-        y="1885"
-        text-anchor="middle"
-        class="small">
-        contestabile • contestable
-  </text>
-
-  <!-- Quarantena -->
-  <rect x="820"
-        y="1640"
-        width="500"
-        height="260"
-        rx="28"
-        fill="#fff5f5"
-        stroke="#cd5c5c"
-        stroke-width="6"/>
-
-  <text x="1070"
-        y="1715"
-        text-anchor="middle"
-        class="box-title">
-        Quarantena e Revisione
-  </text>
-
-  <text x="1070"
-        y="1770"
-        text-anchor="middle"
-        class="box-sub">
-        Quarantine and Review
-  </text>
-
-  <text x="1070"
-        y="1840"
-        text-anchor="middle"
-        class="small">
-        subìta • undergone
-  </text>
-
-  <text x="1070"
-        y="1885"
-        text-anchor="middle"
-        class="small">
-        mai silente • never silent
-  </text>
+  <text x="1020" y="2550" text-anchor="middle" class="box-title">Quarantena e Revisione</text>
+  <text x="1020" y="2605" text-anchor="middle" class="box-sub">Quarantine and Review</text>
+  <text x="1020" y="2670" text-anchor="middle" class="small">subìta • undergone</text>
+  <text x="1020" y="2720" text-anchor="middle" class="small">mai silente • never silent</text>
 </svg>
