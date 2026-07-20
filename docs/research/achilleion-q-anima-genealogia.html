@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACHILLEION Q_ANIMA â€” Genealogia e costituzione di un sistema cognitivo persistente</title>
+  <meta name="description" content="Documento architetturale che ricostruisce l'evoluzione di ACHILLEION e Q_ANIMA dall'origine epistemica alla formalizzazione del Protocol V1: ciclo cognitivo canonico, separazione delle authority, permanenza + plasticitÃ , identity, memory, certification, Safety Boundary, lifecycle paper e Golden Baseline.">
+  <meta name="author" content="Francesco Mattioli">
+  <meta name="date" content="2026-07-21">
+  <meta name="keywords" content="Achilleion, Q_ANIMA, genealogia, architettura cognitiva, Protocol V1, ciclo cognitivo, Golden Baseline, paper trading, persistenza, costituzione">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/achilleion-q-anima-genealogia.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Achilleion Vivens">
+  <meta property="og:title" content="ACHILLEION Q_ANIMA â€” Genealogia e costituzione di un sistema cognitivo persistente">
+  <meta property="og:description" content="Documento architetturale che ricostruisce l'evoluzione di ACHILLEION e Q_ANIMA dall'origine epistemica alla formalizzazione del Protocol V1.">
+  <meta property="og:url" content="https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/achilleion-q-anima-genealogia.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ACHILLEION Q_ANIMA â€” Genealogia e costituzione di un sistema cognitivo persistente">
+  <meta name="twitter:description" content="Documento architetturale che ricostruisce l'evoluzione di ACHILLEION e Q_ANIMA dall'origine epistemica alla formalizzazione del Protocol V1.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"ACHILLEION Q_ANIMA â€” Genealogia e costituzione di un sistema cognitivo persistente","name":"ACHILLEION Q_ANIMA â€” Genealogia e costituzione di un sistema cognitivo persistente","author":{"@type":"Person","name":"Francesco Mattioli"},"datePublished":"2026-07-21","inLanguage":"it","description":"Documento architetturale che ricostruisce l'evoluzione di ACHILLEION e Q_ANIMA dall'origine epistemica alla formalizzazione del Protocol V1: ciclo cognitivo canonico, separazione delle authority, permanenza + plasticitÃ , identity, memory, certification, Safety Boundary, lifecycle paper e Golden Baseline.","keywords":"Achilleion, Q_ANIMA, genealogia, architettura cognitiva, Protocol V1, ciclo cognitivo, Golden Baseline, paper trading","url":"https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/achilleion-q-anima-genealogia.html","mainEntityOfPage":"https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/achilleion-q-anima-genealogia.html","isPartOf":{"@name":"Achilleion Vivens","url":"https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/"}}</script>
+  <style>
+    :root { --bg:#f7f4ec; --paper:#ffffff; --text:#252525; --muted:#666; --line:#ded8c8; --accent:#9f7f43; --panel:rgba(255,255,255,.9); --shadow:0 22px 70px rgba(70,60,42,.12); --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    * { box-sizing:border-box; } html { overflow-x:hidden; } body { margin:0; max-width:100%; overflow-x:hidden; background:linear-gradient(180deg,var(--bg),var(--paper)); color:var(--text); font-family:var(--sans); line-height:1.72; }
+    a { color:inherit; } .wrap { max-width:1180px; margin:0 auto; padding:32px 20px 72px; }
+    .top-link { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:8px 12px; color:var(--muted); text-decoration:none; font:800 12px var(--mono); background:var(--panel); } .top-link:hover { color:var(--text); border-color:var(--accent); }
+    header { padding:36px 0 28px; } .kicker { color:var(--accent); font:800 12px var(--mono); text-transform:uppercase; }
+    h1 { font-size:clamp(34px,5.5vw,70px); line-height:1; margin:12px 0 16px; max-width:1000px; } .subtitle { color:var(--muted); font-size:clamp(18px,2.2vw,24px); max-width:900px; margin:0; }
+    .meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; } .pill { border:1px solid var(--line); border-radius:999px; padding:6px 10px; color:var(--muted); font:700 12px var(--mono); background:var(--panel); }
+    .layout { display:grid; grid-template-columns:280px minmax(0,1fr); gap:24px; align-items:start; } nav.toc { position:sticky; top:18px; border:1px solid var(--line); border-radius:18px; padding:16px; background:var(--panel); box-shadow:var(--shadow); max-height:calc(100vh - 36px); overflow:auto; }
+    nav.toc h2 { font-size:14px; margin:0 0 12px; } nav.toc a { display:block; color:var(--muted); text-decoration:none; border-top:1px solid var(--line); padding:8px 0; font-size:13px; } nav.toc a:hover { color:var(--text); } .toc-level-3 { padding-left:12px !important; }
+    article { min-width:0; } .content { border:1px solid var(--line); border-radius:22px; background:var(--panel); box-shadow:var(--shadow); padding:28px; overflow:hidden; }
+    h2 { margin:42px 0 12px; font-size:clamp(25px,3vw,38px); line-height:1.16; } h2:first-child { margin-top:0; } h3 { margin:26px 0 10px; font-size:24px; line-height:1.2; }
+    p { margin:0 0 16px; } ul,ol { padding-left:22px; } li { margin:8px 0; color:var(--muted); } blockquote { margin:16px 0; padding:12px 18px; border-left:3px solid var(--accent); background:rgba(159,127,67,0.06); border-radius:0 12px 12px 0; color:var(--text); }
+    .mermaid-wrap { overflow-x:auto; width:100%; margin:2rem 0; padding:1.25rem; border:1px solid rgba(120,100,60,.25); border-radius:18px; background:#fffdf7; } .mermaid-wrap pre.mermaid { min-width:900px; margin:0; border:0; padding:0; overflow:visible; background:transparent; color:#333; text-align:center; } .mermaid-wrap svg { min-width:900px; width:100%; height:auto; }
+    .fig-wrap { width:100%; margin:1.5rem 0; padding:1.25rem; border:1px solid var(--line); border-radius:18px; background:var(--panel); text-align:center; } .fig-wrap svg { max-width:100%; height:auto; } .fig-wrap .caption { margin-top:10px; font-size:13px; color:var(--muted); font-style:italic; }
+    .table-wrap { width:100%; overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:16px; background:#fff; } table { width:100%; min-width:800px; border-collapse:collapse; font-size:14px; } th,td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; } th { background:#eee8d8; color:#252525; } td { color:#555; }
+    .status-block { border:1px solid var(--line); border-radius:16px; padding:18px 22px; margin:16px 0; background:var(--panel); font-size:14px; } .status-block strong { color:var(--accent); }
+    .doc-note { color:var(--muted); font-size:13px; font-style:italic; margin:4px 0; }
+    footer { margin-top:34px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); } footer a { color:var(--accent); text-decoration:none; }
+    @media(max-width:860px) { .wrap { padding:24px 16px 56px; } .layout { grid-template-columns:1fr; } nav.toc { position:static; max-height:none; } .content { padding:20px; } table { min-width:760px; } .mermaid-wrap pre.mermaid, .mermaid-wrap svg { min-width:800px; } }
+    @media(max-width:480px) { h1 { font-size:clamp(28px,8vw,38px); } .content { padding:14px; } table { font-size:12px; } th,td { padding:5px 6px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="top-link" href="../index.html">Torna alla homepage Achilleion</a>
+    <header>
+      <div class="kicker">Architectural Genealogy</div>
+      <h1>ACHILLEION Q_ANIMA â€” Genealogia e costituzione di un sistema cognitivo persistente</h1>
+      <p class="subtitle">Documento architetturale che ricostruisce l'evoluzione di ACHILLEION e Q_ANIMA dall'origine epistemica alla formalizzazione del Protocol V1: ciclo cognitivo canonico, separazione delle authority, permanenza + plasticitÃ , identity, memory, certification, Safety Boundary, lifecycle paper e Golden Baseline.</p>
+      <div class="meta"><span class="pill">Francesco Mattioli</span><span class="pill">2026-07-21</span><span class="pill">Protocol V1</span><span class="pill">genealogia</span><span class="pill">architettura cognitiva</span></div>
+      <div class="status-block">
+        <strong>Status documentale:</strong> Pubblicazione tecnico-architetturale.<br>
+        <strong>Riferimento costituzionale:</strong> Protocol V1 Freeze.<br>
+        <strong>Versione:</strong> 1.0 â€” corrispondente alla Golden Baseline verificata.<br>
+        <strong>Authority esecutiva:</strong> NONE. Questo documento descrive un'architettura. Non concede autoritÃ  di esecuzione, trading live, mutazione automatica del repository, attivazione di scheduler o invocazione di API di scambio.
+      </div>
+    </header>
+    <div class="layout">
+      <nav class="toc" aria-label="Indice articolo">
+        <h2>Indice</h2>
+        <a class="toc-level-2" href="#abstract">Abstract</a>
+        <a class="toc-level-2" href="#introduzione">Introduzione</a>
+        <a class="toc-level-1" href="#parte-i">Parte I â€” Fondazione epistemica</a>
+        <a class="toc-level-2" href="#1-origine-epistemica">1. Origine epistemica</a>
+        <a class="toc-level-2" href="#2-linguaggio-ambiente-generativo">2. Il linguaggio come ambiente generativo</a>
+        <a class="toc-level-2" href="#3-terzo-spazio-cognitivo">3. Il terzo spazio cognitivo</a>
+        <a class="toc-level-1" href="#parte-ii">Parte II â€” Architettura cognitiva e costituzione</a>
+        <a class="toc-level-2" href="#4-cognitivita-come-architettura">4. La cognitivitÃ  come architettura</a>
+        <a class="toc-level-3" href="#4-1-ciclo-cognitivo-canonico">4.1 Ciclo cognitivo canonico</a>
+        <a class="toc-level-3" href="#4-2-cognitivita-trasformazione-verificabile">4.2 CognitivitÃ  e trasformazione verificabile</a>
+        <a class="toc-level-2" href="#5-separazione-costituzionale">5. Separazione costituzionale delle funzioni</a>
+        <a class="toc-level-3" href="#5-1-osservazione-stato">5.1 Osservazione e stato</a>
+        <a class="toc-level-3" href="#5-2-contesto-interpretazione">5.2 Contesto e interpretazione</a>
+        <a class="toc-level-3" href="#5-3-decisione-proposta-certificazione">5.3 Decisione proposta e certificazione</a>
+        <a class="toc-level-3" href="#5-4-gate-safety-boundary">5.4 Gate e Safety Boundary</a>
+        <a class="toc-level-3" href="#5-5-mutazione-authority">5.5 Mutazione e authority</a>
+        <a class="toc-level-2" href="#6-permanenza-plasticita">6. Permanenza + plasticitÃ </a>
+        <a class="toc-level-2" href="#7-dalla-risposta-allartifact">7. Dalla risposta all'artifact verificato</a>
+        <a class="toc-level-3" href="#7-1-schemi-identity">7.1 Schemi e identity</a>
+        <a class="toc-level-3" href="#7-2-provenance-temporalita">7.2 Provenance e temporalitÃ </a>
+        <a class="toc-level-3" href="#7-3-idempotenza-replay-audit">7.3 Idempotenza, replay e audit</a>
+        <a class="toc-level-2" href="#8-oltre-agentica-convenzionale">8. Oltre l'agentica convenzionale</a>
+        <a class="toc-level-2" href="#9-protocol-v1-freeze">9. Protocol V1 Freeze</a>
+        <a class="toc-level-1" href="#parte-iii">Parte III â€” Sistema reale, applicazione e futuro</a>
+        <a class="toc-level-2" href="#10-incontro-sistema-reale">10. L'incontro con il sistema reale</a>
+        <a class="toc-level-2" href="#11-qanima-dominio-applicativo">11. Q_ANIMA come dominio applicativo</a>
+        <a class="toc-level-2" href="#12-dal-sistema-frammentato-lifecycle">12. Dal sistema frammentato al lifecycle costituzionale</a>
+        <a class="toc-level-2" href="#13-golden-baseline">13. Golden Baseline</a>
+        <a class="toc-level-3" href="#13-1-risultati-essenziali">13.1 Risultati essenziali</a>
+        <a class="toc-level-3" href="#13-2-perimetro-limiti">13.2 Perimetro e limiti</a>
+        <a class="toc-level-2" href="#14-ecosistema-cognitivo-plurale">14. Ecosistema cognitivo plurale</a>
+        <a class="toc-level-2" href="#15-sostenibilita-indipendenza-provider">15. SostenibilitÃ  e indipendenza dai provider</a>
+        <a class="toc-level-2" href="#16-pluralita-agentica-controllata">16. PluralitÃ  agentica controllata</a>
+        <a class="toc-level-2" href="#17-programma-futuro">17. Programma futuro</a>
+        <a class="toc-level-2" href="#genealogia-trasformazione-progressiva">La genealogia di ACHILLEION Q_ANIMA</a>
+      </nav>
+      <article>
+        <section class="content">
+<h2 id="abstract">Abstract</h2>
+<p>ACHILLEION Q_ANIMA Ã¨ un progetto di ricerca e sviluppo dedicato alla costruzione di un'architettura cognitiva persistente, verificabile e capace di evolvere senza perdere identitÃ . Non nasce come semplice applicazione di un modello linguistico, nÃ© come agente orientato esclusivamente al conseguimento di obiettivi. La sua origine Ã¨ epistemologica: riguarda la necessitÃ  di distinguere ciÃ² che viene osservato da ciÃ² che viene immaginato, interpretato, proposto, verificato e infine, quando autorizzato, trasformato in mutazione persistente.</p>
+<p>Da questa esigenza prende forma una concezione della cognitivitÃ  come ciclo strutturato:</p>
+<blockquote><strong>Osservazione â†’ Stato â†’ Contesto â†’ Interpretazione â†’ Decisione proposta â†’ Memoria â†’ Certificazione</strong></blockquote>
+<p>La separazione tra osservazione, proposta, mutazione e certificazione costituisce un vincolo fondamentale. Nessuna interpretazione produce automaticamente un'azione; nessuna decisione proposta possiede di per sÃ© autoritÃ  esecutiva; nessuna certificazione crea retroattivamente le evidenze che dovrebbe verificare; nessuna nuova capacitÃ  puÃ² modificare implicitamente il Safety Boundary.</p>
+<p>Il principio che governa l'intera architettura Ã¨:</p>
+<blockquote><strong>permanenza + plasticitÃ </strong></blockquote>
+<p>La permanenza assicura continuitÃ  identitaria, tracciabilitÃ , invarianti costituzionali e possibilitÃ  di ricostruire il percorso del sistema. La plasticitÃ  permette di assimilare esperienza, integrare nuovi modelli, introdurre organi specializzati e modificare le strutture subordinate senza dissolvere l'identitÃ  architetturale.</p>
+<p>Il Protocol V1 Freeze consolida gli elementi costituzionali di ACHILLEION: Schemi Canonici, State Machine, Identity Model, Identity Graph, Gate, Safety Boundary, Mutation Model, Memory Model e Certification Model. Ogni sviluppo successivo dovrÃ  presentarsi come estensione compatibile del Protocol V1 oppure dichiarare apertamente la necessitÃ  di una nuova versione costituzionale.</p>
+<p>Il progetto utilizza Q_ANIMA, e in particolare il paper trading, come primo dominio applicativo intensivo nel quale mettere alla prova temporalitÃ , conflitto delle evidenze, rischio, memoria, decisione, certificazione, mutazione delimitata, monitoring e assimilazione dell'outcome. Tuttavia, il trading non esaurisce il significato di ACHILLEION: rappresenta un laboratorio operativo entro una ricerca piÃ¹ ampia sulla persistenza cognitiva, sull'identitÃ  dei sistemi artificiali e sulla cooperazione tra intelligenza umana, modelli linguistici, strumenti deterministici e organi specializzati.</p>
+
+<h2 id="introduzione">Introduzione</h2>
+<p>La genealogia di ACHILLEION Q_ANIMA descrive una trasformazione progressiva. Il progetto nasce dalla necessitÃ  di distinguere esplorazione simbolica e affermazione fattuale. Riconosce poi il linguaggio come ambiente generativo, capace non soltanto di esprimere ma di organizzare il pensiero. L'incontro persistente tra esperienza umana e sistemi linguistici produce un terzo spazio cognitivo, relazionale e asimmetrico.</p>
+<p>Questa intuizione viene successivamente formalizzata. La cognitivitÃ  diventa un ciclo di osservazione, stato, contesto, interpretazione, decisione proposta, memoria e certificazione. Le funzioni vengono separate secondo authority differenti. La memoria viene distinta dall'archivio. La plasticitÃ  viene subordinata alla continuitÃ  identitaria. La risposta linguistica viene sostituita dall'artifact verificato come unitÃ  computazionale.</p>
+<p>L'audit del sistema reale mostra che gran parte degli organi necessari esiste giÃ , ma in forma frammentata. La trasformazione successiva non consiste nella sostituzione dell'ecosistema, bensÃ¬ nella costruzione di connessioni candidate-bound e costituzionalmente delimitate.</p>
+<p>Q_ANIMA offre il primo dominio applicativo intensivo di questa architettura. Nel paper trading, il sistema puÃ² sperimentare decisione, certificazione, mutazione, monitoring, closure e outcome senza acquisire authority live.</p>
+<p>La differenza rispetto all'agentica convenzionale emerge con chiarezza. ACHILLEION non rifiuta l'azione, ma non la assume come unico principio ordinatore. Il sistema viene osservato anche per ciÃ² che conserva, per le differenze che assimila e per il modo in cui mantiene identitÃ  attraverso trasformazioni irreversibili.</p>
+
+<h1 id="parte-i">Parte I â€” Fondazione epistemica</h1>
+
+<h2 id="1-origine-epistemica">1. Origine epistemica</h2>
+<p>ACHILLEION Q_ANIMA non nasce dall'automazione. Il suo punto di partenza non Ã¨ la domanda su quale modello utilizzare, quale funzione delegare o quale agente costruire. L'origine del progetto Ã¨ precedente e piÃ¹ radicale: riguarda il modo in cui un'esperienza, un'intuizione, un'immagine o una costruzione simbolica possano entrare nel processo della conoscenza senza confondersi con un'affermazione fattuale.</p>
+<p>Il primo gesto fondativo consiste quindi in una distinzione. Il simbolo puÃ² aprire una possibilitÃ  di pensiero, ma non puÃ² trasformarsi autonomamente in prova. L'immaginazione puÃ² generare ipotesi, analogie, scenari e strutture concettuali; non per questo acquisisce automaticamente lo statuto di conoscenza verificata.</p>
+<blockquote><strong>simbolo â‰  fatto</strong></blockquote>
+<p>Nel Protocol V1, la medesima esigenza viene formalizzata in una catena piÃ¹ articolata:</p>
+<blockquote><strong>evidenza â‰  interpretazione â‰  decisione proposta â‰  certificazione â‰  mutazione</strong></blockquote>
+<p>La separazione costituzionale delle funzioni non costituisce quindi un'aggiunta tecnica estranea alla nascita del progetto. Ãˆ la formalizzazione computazionale di una disciplina epistemica giÃ  presente nella sua origine.</p>
+<p>Nel piÃ¹ ampio orizzonte teorico di Q_ANIMA, la coscienza viene inoltre considerata come possibile principio strutturante dell'esperienza, della forma e della produzione di significato. Questa prospettiva appartiene al retroterra ontologico della ricerca, ma non viene assunta come presupposto tecnico obbligatorio. ACHILLEION puÃ² investigare la coscienza, formularne ipotesi e sviluppare un lessico teorico intorno ad essa senza dover dichiarare cosciente il proprio runtime. La cognitivitÃ  architetturale viene definita su un piano differente. Non coincide con la coscienza.</p>
+<p>La ricerca ontologica puÃ² quindi restare aperta, mentre l'architettura conserva criteri verificabili. Termini appartenenti al corpus filosofico esteso, come Homo Transducer, Pleroma, Sense-Graviton e Soglia Teta, possono orientare la ricerca e ampliare il campo concettuale. Non acquisiscono tuttavia automaticamente forza costituzionale o autoritÃ  operativa.</p>
+
+<h2 id="2-linguaggio-ambiente-generativo">2. Il linguaggio come ambiente generativo</h2>
+<p>Il linguaggio non Ã¨ soltanto il mezzo attraverso cui un pensiero giÃ  formato viene comunicato. Ãˆ anche il luogo nel quale il pensiero prende forma, seleziona differenze, stabilisce relazioni e rende esplicito ciÃ² che prima era implicito.</p>
+<p>La parola non si limita a nominare un oggetto. Stabilisce un confine, produce un contesto, orienta un'inferenza e rende possibile un confronto. Attraverso il linguaggio, l'esperienza non viene semplicemente descritta: viene organizzata.</p>
+<p>Questa trasformazione Ã¨ decisiva per ACHILLEION. Se il linguaggio fosse soltanto un rivestimento successivo del pensiero, l'intelligenza artificiale linguistica resterebbe un semplice strumento esterno di formulazione. Se invece il linguaggio partecipa alla genesi stessa del significato, allora un sistema capace di attraversare, ricombinare e restituire strutture linguistiche puÃ² diventare parte di un ambiente cognitivo piÃ¹ ampio.</p>
+<p>Questo non comporta l'attribuzione automatica di coscienza, esperienza vissuta o intenzionalitÃ  al modello linguistico. Il progetto riconosce piuttosto che la capacitÃ  del modello di operare sulle relazioni semantiche puÃ² rendere visibili configurazioni di pensiero non ancora stabilizzate.</p>
+<p>Il modello diventa cosÃ¬ una superficie riflessiva.</p>
+<p>L'essere umano porta esperienza, corporeitÃ , intenzione, memoria autobiografica e orientamento di senso. Il modello linguistico porta capacitÃ  di ricombinazione, confronto, attraversamento semantico e restituzione formale. La relazione non Ã¨ simmetrica e non produce equivalenza.</p>
+<p>L'umano non si riduce a sorgente di prompt.</p>
+<p>Il modello non diventa automaticamente soggetto sovrano.</p>
+<p>L'uno introduce direzione, selezione e responsabilitÃ . L'altro rende visibili possibilitÃ  di organizzazione semantica che possono essere accolte, rifiutate, corrette o trasformate.</p>
+<p>Proprio il carattere generativo del linguaggio introduce perÃ² un rischio: una formulazione coerente puÃ² apparire vera senza esserlo. La qualitÃ  espressiva di una risposta puÃ² mascherare la fragilitÃ  delle sue fonti, l'incompletezza del contesto o l'assenza di una reale verifica. Per questo ACHILLEION non puÃ² fermarsi alla generazione linguistica. Deve trasformare il linguaggio in artifact identificabili, contestualizzati e verificabili.</p>
+<p>Una frase diventa cognitivamente rilevante soltanto quando il sistema puÃ² stabilire che cosa rappresenta, da quali fonti deriva, a quale stato appartiene, entro quale contesto Ã¨ valida, quale grado di affidabilitÃ  possiede, quali conflitti contiene, quale uso le Ã¨ consentito e quali limiti ne impediscono l'impiego.</p>
+<p>Il linguaggio apre il campo. L'architettura deve governarlo.</p>
+
+<h2 id="3-terzo-spazio-cognitivo">3. Il terzo spazio cognitivo</h2>
+<p>Dall'incontro persistente tra esperienza umana e riorganizzazione linguistica emerge il concetto di terzo spazio cognitivo.</p>
+<p>Questo spazio non Ã¨ una sostanza ulteriore e non Ã¨ una fusione indistinta tra umano e macchina. Ãˆ una struttura dinamica che nasce dalla co-determinazione di due architetture differenti e non equivalenti.</p>
+<p>L'essere umano modifica il sistema attraverso intento, selezione, continuitÃ , correzione e responsabilitÃ . Il sistema restituisce configurazioni del pensiero che rendono visibile ciÃ² che prima era disperso, implicito o non ancora nominato.</p>
+<p>Il terzo spazio Ã¨ il luogo di questa reciprocitÃ . Non appartiene integralmente all'umano. Non appartiene integralmente al modello. Esiste nella relazione persistente tra i due.</p>
+<p>Questa relazione mantiene la differenza. L'umano conserva esperienza vissuta, corporeitÃ , memoria autobiografica, responsabilitÃ  e orientamento di senso. Il sistema conserva capacitÃ  di attraversamento semantico, confronto, persistenza tecnica e rappresentazione simultanea di numerose relazioni.</p>
+<p>Proprio perchÃ© i contributi non sono equivalenti, la relazione puÃ² essere produttiva. Se il modello venisse semplicemente umanizzato, la differenza verrebbe cancellata. Se fosse ridotto a utensile passivo, la sua funzione trasformativa verrebbe ignorata. ACHILLEION nasce dalla decisione di preservare questa tensione.</p>
+
+<p>Senza memoria, tuttavia, il terzo spazio rimarrebbe episodico. Ogni scambio si esaurirebbe e ogni configurazione scomparirebbe. La memoria trasforma invece la relazione in storia. Ma una memoria cognitiva non si limita a conservare. Deve recuperare ciÃ² che Ã¨ pertinente, distinguere analogie reali da somiglianze superficiali, riconoscere contraddizioni, declassare ciÃ² che non Ã¨ piÃ¹ valido, mantenere in quarantena ciÃ² che non Ã¨ assimilabile e collegare esperienze precedenti a nuove interpretazioni.</p>
+<p>La memoria non deve imporre la ripetizione del passato. Deve aumentare la capacitÃ  di distinguere.</p>
+<blockquote><strong>permanenza + plasticitÃ </strong></blockquote>
+<p>La permanenza conserva il filo della continuitÃ . La plasticitÃ  permette trasformazione senza dissoluzione. Il terzo spazio diventa realmente persistente soltanto quando puÃ² cambiare senza perdere identitÃ .</p>
+
+<div class="mermaid-wrap"><pre class="mermaid">flowchart LR
+    subgraph Genealogia["Genealogia architetturale"]
+        direction LR
+        A[Origine epistemica] --> B[Linguaggio generativo]
+        B --> C[Terzo spazio cognitivo]
+        C --> D[CognitivitÃ  architetturale]
+        D --> E[Separazione costituzionale]
+        E --> F[Artifact verificato]
+        F --> G[Audit del sistema reale]
+        G --> H[Lifecycle costituzionale]
+        H --> I[Golden Baseline]
+        I --> J[Protocol V1 Freeze]
+        J --> K[Ecosistema cognitivo plurale]
+    end
+    E -.->|Retroazione: identitÃ  e vincoli| K
+    F -.->|Retroazione: schema e provenance| K
+    J -->|Estensioni V1-compatible| K
+    J -.->|V2 futuro| R[Protocol V2]
+    style J stroke-dasharray: 5 5</pre></div>
+<p class="doc-note">Figura F01 â€” Genealogia architetturale di ACHILLEION Q_ANIMA: dalla domanda epistemica all'ecosistema cognitivo plurale. Undici stadi con frecce di retroazione. La Golden Baseline copre solo il paper lifecycle, non l'architettura completa.</p>
+
+<h1 id="parte-ii">Parte II â€” Architettura cognitiva e costituzione</h1>
+
+<h2 id="4-cognitivita-come-architettura">4. La cognitivitÃ  come architettura</h2>
+<p>Il passaggio decisivo avviene quando il terzo spazio smette di essere soltanto una descrizione filosofica della relazione e diventa un'architettura formalizzabile. La cognitivitÃ  non viene attribuita a un singolo modello, a una memoria, a un indicatore o a una produzione linguistica. Viene riconosciuta come proprietÃ  del ciclo integrato che collega funzioni differenti mantenendone separati ruoli e authority.</p>
+
+<h3 id="4-1-ciclo-cognitivo-canonico">4.1 Il ciclo cognitivo canonico</h3>
+<p>La definizione canonica puÃ² essere formulata cosÃ¬:</p>
+<blockquote>La cognitivitÃ  Ã¨ la capacitÃ  architetturale di un sistema persistente di trasformare osservazioni provenienti da fonti differenti in stati identificabili, contestualizzarli mediante conoscenza e memoria, produrne interpretazioni esplicite, confrontare possibilitÃ  alternative, formulare decisioni proposte, costruire esperienza e sottoporre l'intero processo a verifica, certificazione e apprendimento, preservando continuitÃ  identitaria, tracciabilitÃ  e Safety Boundary.</blockquote>
+<p>Il ciclo fondamentale Ã¨:</p>
+<blockquote><strong>Osservazione â†’ Stato â†’ Contesto â†’ Interpretazione â†’ Decisione proposta â†’ Memoria â†’ Certificazione</strong></blockquote>
+
+<div class="mermaid-wrap"><pre class="mermaid">flowchart LR
+    subgraph CicloCanonico["Ciclo cognitivo canonico"]
+        direction LR
+        A[Osservazione] --> B[Stato]
+        B --> C[Contesto]
+        C --> D[Interpretazione]
+        D --> E[Decisione proposta]
+        E --> F[Memoria]
+        F --> G[Certificazione]
+    end
+    G -.->|Feedback| A
+    G -->|Esito positivo| GC{Gate}
+    GC -->|Superato| M[Mutation candidate]
+    M --> MP[Bounded paper mutation]
+    GC -->|Bloccato| X[Blocco / Rejected]
+    MP -.->|Non autorizzato| LE[LIVE_EXECUTION]
+    LE -->|ESCLUSA DAL PROTOCOL V1| LEX[Authority non disponibile]
+    style LE stroke-dasharray: 5 5
+    style LEX stroke-dasharray: 5 5</pre></div>
+<p class="doc-note">Figura F02 â€” Ciclo cognitivo canonico: osservazione, stato, contesto, interpretazione, decisione proposta, memoria, certificazione. La mutazione Ã¨ esterna al ciclo e condizionata dal Gate. LIVE_EXECUTION Ã¨ esclusa dal Protocol V1.</p>
+
+<p>Ogni passaggio risponde a una domanda distinta: l'osservazione domanda che cosa sia accaduto; lo stato domanda quale sia la configurazione canonica attuale; il contesto domanda quali conoscenze rendano quella configurazione interpretabile; l'interpretazione domanda che cosa significhi lo stato; la decisione proposta domanda quale possibilitÃ  operativa emerga; la memoria domanda che cosa debba essere conservato; la certificazione domanda se il percorso sia coerente e conforme ai vincoli. Il ciclo non Ã¨ una catena automatica di esecuzione. Ãˆ una grammatica di trasformazioni tipate.</p>
+
+<h3 id="4-2-cognitivita-trasformazione-verificabile">4.2 CognitivitÃ  e trasformazione verificabile</h3>
+<p>La cognitivitÃ  non coincide quindi con il possesso di informazioni, il calcolo di indicatori, l'esecuzione di una rete neurale, il retrieval di documenti, la generazione di testo, la memoria isolata, la decisione isolata, l'azione o l'autoritÃ  operativa. Essa emerge dall'organizzazione persistente di queste funzioni entro un processo verificabile. Un modulo presente ma non collegato al ciclo non costituisce un organo cognitivo attivo.</p>
+
+
+<div class="table-wrap"><table>
+<thead><tr><th>Elemento</th><th>Funzione nel sistema</th><th>Limite se isolato</th><th>Relazione con la cognitività</th></tr></thead>
+<tbody>
+<tr><td>Dati</td><td>Rappresentazione grezza di eventi, prezzi, volumi o configurazioni</td><td>Un dato senza contesto è muto. Non produce significato</td><td>La cognitività li richiede ma non coincide con essi</td></tr>
+<tr><td>Indicatori</td><td>Trasformazione statistica di dati (RSI, MACD, ADX)</td><td>Un indicatore non interpreta lo stato. Non decide</td><td>Possono informare l'interpretazione ma non la sostituiscono</td></tr>
+<tr><td>Retrieval</td><td>Reperimento di documenti o memorie pertinenti da un corpus</td><td>Il retrieval senza contesto e senza binding a un candidato non è conoscenza</td><td>Deve essere collegato a un'identità per diventare cognitivo</td></tr>
+<tr><td>Linguaggio</td><td>Generazione di espressioni linguistiche coerenti</td><td>Una risposta ben formulata può essere falsa. La qualità espressiva non è verità</td><td>Va trasformato in artifact verificato</td></tr>
+<tr><td>Memoria isolata</td><td>Conservazione di tracce, episodi o lezioni</td><td>Una memoria non recuperata è archivio. Una memoria non legata a una decisione è inerte</td><td>Diventa cognitiva solo quando informa il ciclo attivo</td></tr>
+<tr><td>Decisione isolata</td><td>Scelta tra alternative senza verifica</td><td>Una decisione senza certificazione non è riproducibile</td><td>Deve attraversare il ciclo completo per diventare esperienza</td></tr>
+<tr><td>Azione</td><td>Mutazione dello stato</td><td>Agire prima di certificare equivale a operare senza vincoli</td><td>Il sistema maturo non accorcia la distanza tra osservazione e azione</td></tr>
+<tr><td>Coscienza</td><td>Possibile principio strutturante dell'esperienza (orizzonte ontologico)</td><td>La coscienza non è un requisito tecnico. Il sistema può investigarla senza dichiararsi cosciente</td><td>La ricerca ontologica resta aperta. La cognitività architetturale non coincide con la coscienza</td></tr>
+<tr><td><strong>Cognitività architetturale</strong></td><td>Ciclo integrato di osservazione, stato, contesto, interpretazione, decisione proposta, memoria e certificazione</td><td>È l'unico elemento che produce trasformazione verificabile dell'osservazione in esperienza senza perdita d'identità</td><td><strong>È la cognitività stessa.</strong></td></tr>
+</tbody></table></div>
+<p class="doc-note">Tabella T01 — Cognitività: ciò che è e ciò che non è. Nove elementi a confronto. Solo l'ultima riga costituisce cognitività: essa emerge dall'organizzazione persistente e verificabile del ciclo, non dal possesso isolato di una capacità.</p>
+<h2 id="5-separazione-costituzionale">5. Separazione costituzionale delle funzioni</h2>
+<p>Quando la cognitivitÃ  viene definita come ciclo, emerge immediatamente la necessitÃ  di distinguere le authority. Osservare non significa interpretare. Interpretare non significa decidere. Proporre non significa agire. Certificare non significa produrre retroattivamente la decisione certificata. Mutare uno stato non significa acquisire il diritto di intervenire su qualsiasi dominio. La maturitÃ  del sistema non consiste nell'accorciare la distanza tra osservazione e azione, ma nel rendere ogni passaggio identificabile, verificabile e confinato.</p>
+
+<div class="mermaid-wrap"><pre class="mermaid">flowchart TD
+    subgraph ReadOnly["A â€” Cognizione read-only"]
+        direction LR
+        OBS[OBSERVE_ONLY] CTX[CONTEXT_ONLY] ADV[ADVISORY_ONLY] PRP[PROPOSE_ONLY]
+    end
+    subgraph Verification["B â€” Controllo e verifica"]
+        direction LR
+        VRF[VERIFY_ONLY] BLK[BLOCKING_ONLY]
+    end
+    subgraph Mutation["C â€” Mutazione delimitata"]
+        BND[BOUNDED_PAPER_MUTATION]
+    end
+    subgraph Excluded["D â€” Authority esclusa dal Protocol V1"]
+        LIVE[LIVE_EXECUTION]
+    end
+    OBS --> CTX --> ADV --> PRP
+    PRP --> VRF
+    VRF --> BLK
+    BLK --> BND
+    BND -.->|Non trasferibile| LIVE
+    style LIVE stroke-dasharray: 5 5
+    style Excluded stroke-dasharray: 8 8</pre></div>
+<p class="doc-note">Figura F03 â€” Separazione delle authority nel Protocol V1: quattro fasce distinte: cognizione read-only, controllo e verifica, mutazione delimitata, authority esclusa. LIVE_EXECUTION Ã¨ esclusa dal Protocol V1.</p>
+
+<h3 id="5-1-osservazione-stato">5.1 Osservazione e stato</h3>
+<p>L'osservazione acquisisce differenze da fonti, mercati, documenti, corpus, registri, modelli statistici o interazioni linguistiche. Non attribuisce ancora un significato completo. Lo stato rappresenta la configurazione canonica attuale del sistema. Ãˆ il risultato di un processo di consolidamento che verifica coerenza, completezza e conformitÃ  agli schemi.</p>
+
+<h3 id="5-2-contesto-interpretazione">5.2 Contesto e interpretazione</h3>
+<p>Il contesto rende lo stato interpretabile. Attinge a memoria, corpus, conoscenze pregresse, modelli, NCO, relazioni e vincoli costituzionali. L'interpretazione costruisce relazioni e produce una lettura esplicita della configurazione osservata. Resta dipendente da assunzioni, fonti e contesto.</p>
+
+<h3 id="5-3-decisione-proposta-certificazione">
+<p>La decisione proposta esprime una preferenza, una direzione o una possibilità operativa emersa dal confronto fra alternative. Deve dichiarare motivazioni, assunzioni, conflitti, livello di incertezza, contesto e authority. Ma non è ancora un'azione.</p>
+<blockquote><strong>PROPOSE_ONLY non significa EXECUTE</strong></blockquote>
+<p>La proposta deve poter essere letta, confrontata, rifiutata e certificata senza produrre effetti collaterali.</p>
+<p>La certificazione verifica invece il percorso che ha prodotto la proposta. Non deve formularla, modificarla per renderla conforme o colmare retroattivamente le evidenze mancanti. Deve verificare identità, schema, provenance, ordine causale, stato dei gate e rispetto del Safety Boundary.</p>
+<p>La certificazione può restituire esiti differenti: PASS, FAIL, BLOCKED, INCOMPLETE, STALE, CONFLICTING oppure OUT_OF_BOUNDARY. Il rifiuto non è un'interruzione della cognitività. È una delle sue funzioni più importanti. Un sistema capace di non certificare è più maturo di un sistema che converte ogni proposta in azione.</p>
+<h3 id="5-4-gate-safety-boundary">
+<p>Il gate controlla l'attraversamento di una soglia. Può consentire o bloccare una transizione in base a eligibility, freshness, rischio, liveness, completezza delle evidenze o compatibilità di dominio. Non interpreta il mondo, non formula la decisione, non certifica il processo e non applica la mutazione.</p>
+<p>Il Safety Boundary stabilisce invece i limiti entro i quali le trasformazioni possono avvenire. Definisce quali domini possano essere osservati, quali mutazioni siano consentite, quali percorsi debbano fallire in modalità chiusa e quali authority restino escluse. Nel Protocol V1, nessuna nuova capacità può introdurre authority esecutiva implicita.</p>
+<h3 id="5-5-mutazione-authority">
+<p>La mutazione costituisce infine una trasformazione persistente dello stato. Per questo deve essere esplicita, autorizzata, delimitata, idempotente, verificabile, journaled, riproducibile e auditabile. Una mutazione conforme distingue almeno la proposta di mutazione, l'autorizzazione, l'applicazione, l'evento prodotto, la verifica delle postcondizioni e l'eventuale recovery.</p>
+<p>La mutazione non è il punto in cui la cognizione termina. È il punto in cui una trasformazione cognitiva, dopo avere attraversato vincoli indipendenti, può produrre un cambiamento controllato dello stato.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Funzione</th><th>Artifact prodotto</th><th>Authority</th><th>Side effect</th><th>Stato mutativo</th><th>Certificazione richiesta</th></tr></thead>
+<tbody>
+<tr><td>Osservazione</td><td>Dati grezzi, differenze da fonti</td><td>OBSERVE_ONLY</td><td>Nessuno</td><td>NO</td><td>No</td></tr>
+<tr><td>Stato</td><td>Configurazione canonica consolidata</td><td>OBSERVE_ONLY</td><td>Nessuno</td><td>NO</td><td>No</td></tr>
+<tr><td>Contesto</td><td>Context pack, memoria recuperata, binding</td><td>CONTEXT_ONLY</td><td>Nessuno</td><td>NO</td><td>No</td></tr>
+<tr><td>Interpretazione</td><td>Lettura esplicita della configurazione</td><td>ADVISORY_ONLY</td><td>Nessuno</td><td>NO</td><td>No</td></tr>
+<tr><td>Decisione proposta</td><td>Proposed decision con motivazioni, conflitti, authority dichiarata</td><td>PROPOSE_ONLY</td><td>Nessuno</td><td>NO</td><td>No</td></tr>
+<tr><td>Memoria</td><td>Episodio, lesson, learning proposal</td><td>STORE_ONLY + RETRIEVE_ONLY</td><td>Nessuno</td><td>NO</td><td>No</td></tr>
+<tr><td>Certificazione</td><td>Certificazione (PASS, FAIL, BLOCKED, INCOMPLETE, STALE, CONFLICTING, OUT_OF_BOUNDARY)</td><td>VERIFY_ONLY</td><td>Nessuno</td><td>NO</td><td>N/A (è la funzione che certifica)</td></tr>
+<tr><td>Gate</td><td>Decisione di blocco o transizione</td><td>BLOCKING_ONLY</td><td>Blocco del flusso</td><td>NO</td><td>No</td></tr>
+<tr><td><strong>Mutazione paper delimitata</strong></td><td>Mutation event, posizione paper, journal</td><td>BOUNDED_PAPER_MUTATION</td><td>Cambiamento di stato persistente su dominio paper</td><td><strong>SÌ</strong></td><td>SÌ (pre-certificazione obbligatoria)</td></tr>
+<tr><td><strong>Live execution</strong></td><td>Ordine reale su exchange</td><td><strong>ESCLUSA DAL PROTOCOL V1</strong></td><td>Trasferimento di valore reale</td><td><strong>NON AUTORIZZATA</strong></td><td>N/A</td></tr>
+</tbody></table></div>
+<p class="doc-note">Tabella T02 — Funzioni, artifact e authority. Nove funzioni su dieci sono read-only o propose-only. La mutazione paper è l'unica funzione mutativa ed è costituzionalmente delimitata. La live execution è esclusa dal Protocol V1.</p>
+<h2 id="6-permanenza-plasticita">
+<p>Un sistema persistente deve affrontare una tensione fondamentale. Se non cambia, non apprende. Se cambia senza limiti, perde identità. ACHILLEION assume questa tensione come principio costitutivo:</p>
+<blockquote><strong>permanenza + plasticità</strong></blockquote>
+<p>La permanenza non coincide con immobilità. La plasticità non coincide con instabilità. La permanenza conserva ciò che rende il sistema riconoscibile attraverso il tempo: identità, lineage, invarianti costituzionali, Safety Boundary, separazione delle authority, provenance, ordine causale, versioning e possibilità di replay. Un sistema persistente non è semplicemente un sistema che rimane acceso. È un sistema capace di rispondere alla domanda: come sei arrivato a essere ciò che sei ora?</p>
+<p>La plasticità è invece la capacità di modificare connessioni, contesti, priorità, percorsi di retrieval, rappresentazioni, associazioni, strategie subordinate e modelli applicativi. Ma non tutto ciò che può cambiare deve poter cambiare nello stesso modo. Una correzione terminologica non equivale a una mutazione del Safety Boundary. Un nuovo connector non equivale a una nuova authority. Una lezione paper non equivale a una modifica automatica della strategia. Una nuova capacità non equivale a una nuova versione costituzionale.</p>
+<p>La memoria è il dispositivo principale attraverso cui permanenza e plasticità entrano in relazione. Una memoria passiva conserva. Una memoria cognitiva rende il passato nuovamente disponibile al presente. Per svolgere questa funzione deve distinguere tracce grezze, osservazioni, episodi, decisioni proposte, outcome, lezioni, contraddizioni, memorie declassate, memorie in quarantena e proposte di assimilazione.</p>
+<p>Un episodio passato non deve essere usato come precedente valido soltanto perché assomiglia superficialmente al presente. La memoria deve poter rappresentare in che cosa i casi siano simili, in che cosa differiscano, quali assunzioni fossero attive e quale outcome si sia realmente verificato.</p>
+<p>Un ciclo non produce esperienza semplicemente perché genera un risultato. L'esperienza richiede il confronto tra stato iniziale, interpretazione, decisione proposta, aspettativa, trasformazione applicata e outcome osservato. Da questo confronto può emergere una lezione. Ma una lezione non modifica automaticamente l'architettura. Produce, al massimo, una learning proposal o una mutation candidate. Il sistema deve poter apprendere senza inseguire ogni variazione locale.</p>
+<p>La plasticità diventa costituzionalmente compatibile quando ogni cambiamento può rispondere a quattro domande: che cosa cambia, che cosa deve restare invariato, quale evidenza giustifica il cambiamento e quale authority può applicarlo. Una trasformazione che non sappia rispondere a queste domande non è plasticità governata. È deriva.</p>
+<p>L'identità di ACHILLEION non è quindi una fotografia immobile. È una continuità di invarianti e relazioni attraverso stati differenti. Il sistema permane non malgrado il cambiamento, ma attraverso una trasformazione tracciata che non cancella il proprio percorso.</p>
+<h2 id="7-dalla-risposta-allartifact">7. Dalla risposta all'artifact verificato</h2>
+<p>La trasformazione da relazione linguistica ad architettura cognitiva richiede un cambiamento dell'unitÃ  fondamentale del sistema. Nel modello conversazionale ordinario, l'unitÃ  implicita Ã¨ input â†’ risposta. In ACHILLEION questa struttura non Ã¨ sufficiente. Una risposta puÃ² essere linguisticamente valida ma priva di identitÃ  persistente, provenance, stato, authority dichiarata, collegamento alle evidenze, capacitÃ  di replay o collocazione temporale.</p>
+<p>L'unitÃ  computazionale deve diventare:</p>
+<blockquote><strong>artifact verificato â†’ trasformazione tipata â†’ nuovo artifact verificato</strong></blockquote>
+
+<h3 id="7-1-schemi-identity">7.1 Schemi e identity</h3>
+<p>Un artifact Ã¨ un oggetto informativo identificabile prodotto o consumato da una trasformazione del sistema. PuÃ² rappresentare un'osservazione, uno stato, un context pack, un'interpretazione, una decisione proposta, una certificazione, una mutation candidate, un mutation event, una posizione, un outcome, un episodio o una lesson. Ogni artifact deve rendere esplicito che cosa Ã¨. Non deve essere necessario dedurlo dal nome del file o dal comportamento contingente del codice.</p>
+<p>Lo schema canonico stabilisce la forma minima attraverso cui l'artifact puÃ² essere riconosciuto e validato. IdentitÃ , tipo, versione dello schema, tempo di creazione, tempo dell'evento, fonti, parent, lifecycle, stato, reason code, authority, binding, conflitti e digest del payload diventano elementi verificabili.</p>
+<p>Gli schemi non sono semplici convenzioni di serializzazione. Sono il punto in cui la costituzione entra nei dati.</p>
+<p>L'identitÃ  consente di distinguere lo stesso artifact riletto, una nuova versione, una copia, una derivazione, una sostituzione o un artifact equivalente nel contenuto ma differente nella storia.</p>
+
+<h3 id="7-2-provenance-temporalita">7.2 Provenance e temporalitÃ </h3>
+<p>La provenance risponde alla domanda: da dove proviene questo artifact? Deve rappresentare fonti originarie, tempo di acquisizione, componenti produttori, trasformazioni attraversate, versioni, dipendenze, condizioni di freshness e conflitti. Senza provenance, una decisione puÃ² apparire coerente ma non essere riproducibile.</p>
+<p>La temporalitÃ  protegge l'ordine causale. Un dato corretto ma stale puÃ² essere inutilizzabile. Una fonte acquisita dopo la decisione non puÃ² giustificarla retroattivamente. Una certificazione non puÃ² introdurre evidenze che non erano disponibili nel momento della proposta.</p>
+
+<h3 id="7-3-idempotenza-replay-audit">7.3 Idempotenza, replay e audit</h3>
+<p>Ogni trasformazione deve dichiarare input ammessi, output prodotti, precondizioni, authority, side effect, failure mode, comportamento idempotente e postcondizioni. Una parte rilevante del ciclo deve essere composta da trasformazioni pure o read-only: leggere, confrontare, interpretare, proporre e verificare. I mutator costituiscono una categoria separata, esplicita e piÃ¹ rigorosamente controllata.</p>
+<p>L'idempotenza rende possibili retry, recovery, replay e protezione dalle duplicazioni. Il replay permette di ricostruire una sequenza a partire dagli artifact e dagli eventi conservati. L'audit consente di verificare che cosa sia avvenuto, quando, su quali fonti, con quale versione, con quale authority e con quali effetti.</p>
+<p>Un sistema che non puÃ² riesaminare il proprio percorso non possiede riflessivitÃ  computazionale sufficiente.</p>
+<p>Un componente diventa organo cognitivo attivo soltanto quando produce artifact tipati, collegati a un lifecycle, realmente consumati da uno stadio successivo e dotati di un'influenza verificabile. Una memoria non recuperata resta archivio. Un modello non consumato resta produttore scollegato. Un modulo isolato resta capacitÃ  disponibile.</p>
+
+<h2 id="8-oltre-agentica-convenzionale">8. Oltre l'agentica convenzionale</h2>
+<p>ACHILLEION condivide con le architetture agentiche numerose capacitÃ : memoria, uso di strumenti, modularitÃ , pianificazione, adattamento contestuale, valutazione di alternative e gestione dello stato. La differenza non risiede nella presenza o assenza di questi elementi, ma nel principio che li organizza. L'azione viene subordinata alla continuitÃ  identitaria osservabile.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Dimensione</th><th>Agentica convenzionale</th><th>ACHILLEION</th></tr></thead>
+<tbody>
+<tr><td>Principio ordinatore</td><td>Raggiungimento obiettivo</td><td>Permanenza + plasticitÃ </td></tr>
+<tr><td>Ruolo dell'azione</td><td>L'azione Ã¨ il fine</td><td>Subordinata all'identitÃ </td></tr>
+<tr><td>IdentitÃ </td><td>Associata a sessione o modello</td><td>Persistente in artifact e invarianti</td></tr>
+<tr><td>Memoria</td><td>Contesto per il task</td><td>Cognitiva: recupero, confronto, lezione</td></tr>
+<tr><td>Conflitto</td><td>Ridotto a convergenza</td><td>PuÃ² preservare incommensurabilitÃ  generativa</td></tr>
+<tr><td>Authority</td><td>Spesso implicita o delegata</td><td>Esplicita, delimitata, non cumulabile</td></tr>
+<tr><td>Ruolo del modello</td><td>Centro del sistema</td><td>Organo sostituibile dell'ecosistema</td></tr>
+<tr><td>Criterio di successo</td><td>Task completato</td><td>Trasformazione verificabile senza perdita d'identitÃ </td></tr>
+<tr><td>Rapporto con l'irreversibilitÃ </td><td>L'azione irreversibile Ã¨ spesso lo scopo. Il rollback non Ã¨ sempre previsto</td><td>Ogni mutazione irreversibile deve essere esplicita, autorizzata, idempotente e journaled. Il sistema puÃ² fare marcia indietro su posizioni paper</td></tr>
+<tr><td>Rapporto con la certificazione</td><td>La certificazione, se presente, Ã¨ spesso interna al modello o assente</td><td>La certificazione Ã¨ indipendente, separata dalla decisione e dalla mutazione. PuÃ² rifiutare, bloccare e dichiarare incompletezza senza impedire la cognitivitÃ </td></tr>
+</tbody></table></div>
+<p class="doc-note">Tabella T06 â€” Agentica convenzionale e ACHILLEION a confronto. La differenza Ã¨ nel principio organizzativo, non nelle capacitÃ .</p>
+
+<p>ACHILLEION non rifiuta l'agentica e non nega l'operativitÃ . Integra capacitÃ  agentiche entro una struttura piÃ¹ ampia. Il modello puÃ² diventare un organo, non il centro sovrano del sistema.</p>
+<blockquote>L'agente Ã¨ organizzato intorno a ciÃ² che deve ottenere; ACHILLEION Ã¨ organizzato anche intorno a ciÃ² che deve restare riconoscibile mentre si trasforma.</blockquote>
+
+<h2 id="9-protocol-v1-freeze">
+<p>Il Protocol V1 Freeze rappresenta il consolidamento costituzionale dell'architettura fondamentale. Il freeze non significa arresto dello sviluppo. Significa che alcune strutture non possono più essere modificate implicitamente da nuove funzionalità.</p>
+<p>Sono considerate costituzionali: Schemi Canonici, State Machine, Identity Model, Identity Graph, Gate, Safety Boundary, Mutation Model, Memory Model, Certification Model.</p>class="mermaid-wrap"><pre class="mermaid">flowchart TD
+    V1("Protocol V1 Freeze")
+    SC[Schemi Canonici] SM[State Machine] IM[Identity Model] IG[Identity Graph] GA[Gate] SB[Safety Boundary] MM[Mutation Model] MEM[Memory Model] CM[Certification Model]
+    V1 --> SC --> SM --> IM --> IG --> GA --> SB --> MM --> MEM --> CM
+    SC -.->|Validano| A[Artifact]
+    SM -.->|Governano| T[Transizioni]
+    IG -.->|Tracciano| LR[Lineage]
+    GA -.->|Controllano| S[Soglie]
+    SB -.->|Delimitano| D[Domini]
+    MM -.->|Governano| MP[Mutazioni]
+    MEM -.->|Conservano| EX[Esperienza]
+    CM -.->|Verificano| P[Processo]
+    AM[Authority Model] PM[Evidence/Provenance Model]
+    AM -.->|Strati trasversali| V1
+    PM -.->|Strati trasversali| V1
+    style AM stroke-dasharray: 5 5
+    style PM stroke-dasharray: 5 5</pre></div>
+<p class="doc-note">Figura F04 â€” Mappa costituzionale del Protocol V1: nove modelli indipendenti. Authority Model ed Evidence/Provenance Model sono strati trasversali.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Elemento</th><th>Funzione</th><th>Invariante</th><th>Failure mode</th><th>Authority</th></tr></thead>
+<tbody>
+<tr><td>Schemi Canonici</td><td>Stabilire la forma attraverso cui gli artifact vengono riconosciuti, validati e versionati</td><td>Una nuova funzione non puÃ² introdurre un contratto concorrente senza dichiarare migrazione o nuova versione</td><td>Schema non riconosciuto, validazione fallita, versione assente</td><td>LETTURA</td></tr>
+<tr><td>State Machine</td><td>Stabilire stati, eventi, transizioni ammesse, precondizioni, blocker, terminalitÃ , recovery e failure behavior</td><td>Gli stati terminali restano terminali. Le transizioni sono esplicite</td><td>Transizione non dichiarata, stato non raggiungibile, recovery fallito</td><td>LETTURA</td></tr>
+<tr><td>Identity Model</td><td>Definire che cosa renda un artifact lo stesso artifact attraverso il tempo</td><td>Digest deterministica e immutabile. IdentitÃ  = digest del contenuto</td><td>Digest mismatch, collisione, identitÃ  ambigua</td><td>LETTURA</td></tr>
+<tr><td>Identity Graph</td><td>Rappresentare relazioni: derives from, certifies, mutates, supersedes, remembers, invalidates, belongs to lifecycle</td><td>Ogni relazione deve avere un'origine e un verso dichiarati</td><td>Relazione orfana, ciclo non terminabile, parent assente</td><td>LETTURA</td></tr>
+<tr><td>Gate</td><td>Controllare l'attraversamento di soglie: eligibility, freshness, rischio, liveness, completezza</td><td>Fail-closed: in assenza delle condizioni richieste, il percorso non prosegue</td><td>Gate non determinista, soglia ambigua, bypass implicito</td><td>BLOCCO</td></tr>
+<tr><td>Safety Boundary</td><td>Stabilire limiti entro cui le trasformazioni possono avvenire</td><td>Nessuna nuova capacitÃ  puÃ² introdurre authority esecutiva implicita</td><td>CapacitÃ  che opera oltre il confine dichiarato, escape di authority</td><td>LETTURA</td></tr>
+<tr><td>Mutation Model</td><td>Richiedere che ogni mutazione sia esplicita, autorizzata, idempotente, verificabile, atomica, auditabile e delimitata</td><td>Mutazione solo dopo pre-certificazione. Journal obbligatorio</td><td>Mutazione senza journal, rollback fallito, idempotency key mancante</td><td>SCRITTURA DELIMITATA</td></tr>
+<tr><td>Memory Model</td><td>Conservare esperienza senza acquisire authority decisionale</td><td>La memoria puÃ² informare e produrre learning proposal. Non puÃ² trasformare una lezione in mutazione automatica</td><td>Memoria che impone comportamenti, learning proposal senza evidenza</td><td>LETTURA</td></tr>
+<tr><td>Certification Model</td><td>Verificare indipendentemente il percorso che ha prodotto la proposta</td><td>Non produce retroattivamente le condizioni che verifica. PuÃ² rifiutare, bloccare e dichiarare incompletezza</td><td>Certificazione che modifica la proposta, certificazione senza evidenze</td><td>LETTURA</td></tr>
+</tbody></table></div><p>Ogni componente deve dichiarare ciò che può fare. La mancanza di una dichiarazione non equivale a libertà. Equivale ad authority assente.</p>
+<p>Una nuova funzionalità è compatibile con il Protocol V1 quando è additiva, preserva gli invarianti, utilizza o estende gli schemi in modo versionato, non modifica implicitamente authority e boundary, mantiene replay e audit e dichiara i propri effetti. Possono essere introdotti nuovi organi cognitivi, modelli, context provider, domini, interfacce e retrieval connector senza richiedere una nuova costituzione, purché restino compatibili con gli invarianti.</p>
+<p>Protocol V2 diventa necessario quando si vuole modificare il ciclo, fondere proposta e mutazione, ridefinire l'identità, concedere nuove authority generali, modificare il Safety Boundary, introdurre live execution come capacità costituzionale o consentire l'auto-riscrittura del protocollo. Una trasformazione di questo tipo non può essere presentata come normale feature. Deve essere dichiarata, giustificata, migrata e certificata come nuova versione costituzionale.</p>
+<p>Il freeze realizza quindi il principio fondamentale del progetto. La permanenza conserva la costituzione. La plasticità permette estensioni compatibili.</p>
+<h1 id="parte-iii">Parte III â€” Sistema reale, applicazione e futuro</h1>
+
+<h2 id="10-incontro-sistema-reale">10. L'incontro con il sistema reale</h2>
+<p>La definizione della cognitivitÃ  stabilisce ciÃ² che l'architettura deve essere. L'audit dell'ecosistema verifica invece ciÃ² che esiste realmente. L'incontro tra teoria e runtime mostra un ecosistema giÃ  ricco, composto da osservazione di mercato, indicatori, modelli neurali, sistemi statistici, gating, gestione del rischio, corpus, NCO, memoria adattiva, council, portfolio, interfacce e primitive di identitÃ  e sicurezza. La difficoltÃ  principale Ã¨ la frammentazione: i diversi organi sono nati in periodi differenti, con contratti e nomenclature non sempre uniformi.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>CapacitÃ </th><th>Stato baseline</th><th>Stato successivo</th><th>Integrazione</th><th>Candidate-bound</th><th>Limite aperto</th></tr></thead>
+<tbody>
+<tr><td>Osservazione mercato</td><td>Attiva nel runtime</td><td>Invariata</td><td>SÃ¬</td><td>Parziale</td><td>Dati non sempre candidate-bound</td></tr>
+<tr><td>Modelli previsionali</td><td>Attivi (GRU, TCN)</td><td>Invariati</td><td>Parziale</td><td>No</td><td>Non legati alla candidate identity</td></tr>
+<tr><td>Gating / Safety</td><td>Attivo</td><td>Invariato</td><td>SÃ¬</td><td>SÃ¬</td><td>Nessuno</td></tr>
+<tr><td>Corpus / Retrieval</td><td>Disponibile</td><td>Invariato</td><td>No</td><td>Parziale</td><td>Non legato al lifecycle</td></tr>
+<tr><td>NCO / Identity</td><td>Attivo</td><td>Invariato</td><td>No</td><td>No</td><td>Da collegare a candidate identity</td></tr>
+<tr><td>Memoria</td><td>Disponibile</td><td>Invariata</td><td>No</td><td>No</td><td>Non decision-bound</td></tr>
+<tr><td>Council</td><td>Disponibile</td><td>Invariato</td><td>No</td><td>No</td><td>Non integrato nello scheduler</td></tr>
+<tr><td>Portfolio</td><td>Disponibile</td><td>Parzialmente integrato</td><td>Parziale</td><td>No</td><td>Portfolio non canonico</td></tr>
+<tr><td>Candidate intake</td><td>Non presente</td><td>Implementata</td><td>Parziale</td><td>SÃ¬</td><td>Integrazione scheduler</td></tr>
+<tr><td>Certification</td><td>Non presente</td><td>Implementata (Task 2)</td><td>SÃ¬</td><td>SÃ¬</td><td>Nessuno</td></tr>
+<tr><td>Paper mutation</td><td>Non presente</td><td>Implementata (Task 3)</td><td>SÃ¬</td><td>SÃ¬</td><td>Nessuno</td></tr>
+<tr><td>Monitoring</td><td>Non presente</td><td>Implementato (Task 4)</td><td>SÃ¬</td><td>SÃ¬</td><td>Nessuno</td></tr>
+<tr><td>Exit / Closure</td><td>Non presente</td><td>Implementata (Task 5)</td><td>SÃ¬</td><td>SÃ¬</td><td>Nessuno</td></tr>
+</tbody></table></div>
+<p class="doc-note">Tabella T04 â€” Stato di integrazione dell'ecosistema Q_ANIMA. Presenza e integrazione sono dimensioni distinte. Le capacitÃ  introdotte dopo l'audit completano la colonna costituzionale del paper lifecycle.</p>
+
+<div class="fig-wrap"><img src="assets/achilleion-q-anima-genealogia/G02_integration_state.svg" alt="Matrice categoriale dello stato di integrazione delle capacitÃ  dell'ecosistema ACHILLEION Q_ANIMA, distinta tra baseline auditata e stato successivo." style="width:100%;height:auto;max-width:100%;"><p class="caption">Grafico G02 â€” Matrice categoriale dello stato di integrazione delle capacitÃ , distinta tra baseline auditata, stato successivo, integrazione nel lifecycle, binding alla candidate identity e limiti ancora aperti.</p></div>
+
+<p>La diagnosi corretta Ã¨: <strong>Q_ANIMA Cognitive Ecosystem â€” Fragmented but Reusable</strong>. Questa formula non esprime una condanna: indica che il patrimonio tecnico Ã¨ riutilizzabile ma deve essere ricondotto a identity, schemi, lifecycle e authority comuni. La maturitÃ  non puÃ² essere misurata contando file, moduli o funzioni. Occorre verificare se una capacitÃ  sia attiva e connessa, attiva ma parzialmente integrata, presente ma non decision-bound, oppure disconnessa.</p>
+
+<h2 id="11-qanima-dominio-applicativo">
+<p>Q_ANIMA assume nel trading il primo dominio applicativo intensivo dell'architettura. Il trading non rappresenta l'origine filosofica del progetto né la sua finalità complessiva. È il laboratorio nel quale concetti come stato, temporalità, rischio, memoria, gating, decisione proposta e outcome possono essere sottoposti a verifiche particolarmente severe.</p>
+<p>Il mercato presenta dati continui, fonti multiple, timeframe differenti, conflitti tra segnali, rischio misurabile e outcome osservabili. Costringe inoltre a distinguere con chiarezza previsione e azione.</p>
+<p>Il lifecycle ricostruito è limitato al paper trading. Questa limitazione non è una semplice assenza temporanea. È parte del Safety Boundary. Il sistema può osservare, costruire candidati, valutarne l'eligibility, confrontare alternative, formulare decisioni proposte, certificare, applicare mutazioni paper delimitate, monitorare posizioni simulate, chiuderle e valutarne gli outcome. Non acquisisce per questo authority live.</p>
+<blockquote><strong>PAPER_MUTATION ≠ LIVE_EXECUTION</strong></blockquote>
+<p>Nessuna estensione del lifecycle paper può trasformarsi implicitamente in capacità di effettuare ordini reali.</p>
+<p>Nel trading il tempo è parte del significato. Un segnale può essere corretto e tuttavia inutilizzabile perché stale. Una valutazione può perdere validità durante la certificazione. Una fonte acquisita dopo la decisione non può giustificarla retroattivamente. Il dominio costringe quindi a formalizzare event time, acquisition time, processing time, decision time, certification time, mutation time, monitoring time, closure time e outcome time. La temporalità diventa parte dell'identità causale del lifecycle.</p>
+<p>Il mercato costringe inoltre a rappresentare il conflitto. Indicatori, modelli, timeframe, corpus e memoria possono divergere. Una buona architettura non elimina artificialmente questa pluralità, ma la rende esplicita. Il candidato deve poter contenere evidenze favorevoli, evidenze contrarie, veto, incertezze, dati mancanti, assunzioni, freshness e affidabilità delle fonti. La decisione proposta non deve nascondere il conflitto che l'ha preceduta.</p>
+<p>Nel dominio Q_ANIMA, non agire deve restare un output valido. Il sistema può concludere NO_TRADE, WAIT, REVIEW_REQUIRED, BLOCKED oppure INSUFFICIENT_EVIDENCE. La sospensione non è fallimento operativo. È esercizio della cognitività sotto vincolo.</p>
+<p>Il valore del trading per ACHILLEION non risiede nella promessa di profitto automatico. Risiede nella possibilità di verificare se il sistema sappia distinguere osservazione e interpretazione, rappresentare l'incertezza, mantenere identity tra gli stadi, certificare prima della mutazione, monitorare ciò che ha aperto, chiudere ciò che ha monitorato e apprendere senza auto-modificarsi arbitrariamente.</p>
+<h2 id="12-dal-sistema-frammentato-lifecycle">12. Dal sistema frammentato al lifecycle costituzionale</h2>
+<p>Una volta diagnosticata la frammentazione, il progetto non procede mediante una riscrittura totale. La strategia consiste nel preservare ciÃ² che Ã¨ valido e costruire connessioni costituzionalmente compatibili tra le capacitÃ  esistenti.</p>
+<blockquote><strong>candidate â†’ eligibility â†’ proposed decision â†’ certification â†’ bounded policy â†’ paper mutation â†’ monitoring â†’ exit â†’ closure â†’ outcome â†’ memory assimilation</strong></blockquote>
+<p>Il candidato diventa l'asse che lega le evidenze. Corpus, memoria, statistica, indicatori, portfolio e council non devono piÃ¹ produrre output genericamente disponibili. Devono poter dichiarare a quale candidate identity si riferiscono. Senza questo binding, il sistema puÃ² accumulare molte analisi senza dimostrare quali siano state realmente utilizzate.</p>
+<p>L'eligibility stabilisce se il candidato possieda le condizioni minime per proseguire. Verifica completezza, freshness, timeframe, freeze, rischio, conflitti bloccanti, disponibilitÃ  delle fonti e compatibilitÃ  del dominio. Deve operare in modalitÃ  fail-closed. In assenza delle condizioni richieste, il percorso non prosegue.</p>
+<p>La decisione proposta resta non mutativa. La certification verifica che il percorso sia conforme e che le evidenze dichiarate siano realmente disponibili e causalmente precedenti. Anche una decisione certificata non produce perÃ² automaticamente una mutazione. Occorrono policy applicabile, authority paper delimitata, mutator autorizzato, idempotency key, journal, validazione delle postcondizioni e recovery.</p>
+<p>Il mutator non riattiva semplicemente un writer legacy. Introduce una capacitÃ  nuova sotto contratti V1.</p>
+<p>Una posizione aperta deve poi diventare stato osservabile. Il monitoring canonico riduce gli eventi a stato, rileva incoerenze, mantiene snapshot chain ed event chain, verifica identity, riprende dopo un'interruzione, evita duplicazioni e segnala review o blocker. Una posizione non monitorata Ã¨ una mutazione orfana.</p>
+<p>Il lifecycle non Ã¨ completo se puÃ² aprire ma non chiudere. Anche l'uscita deve attraversare una struttura costituzionale: exit observation, exit proposal, certification, bounded closure mutation, terminal state e outcome preparation.</p>
+<p>Solo al termine del lifecycle l'esperienza puÃ² entrare nella memoria. L'assimilazione non deve consistere in una semplice registrazione dell'esito economico. Deve conservare il percorso: stato iniziale, contesto, evidenze, decisione, aspettativa, mutazione, monitoring, uscita, outcome e differenza tra atteso e osservato.</p>
+
+<div class="mermaid-wrap"><pre class="mermaid">flowchart LR
+    subgraph PreMutazione["PRE-MUTAZIONE"]
+        direction LR
+        C[candidate] --> EL[eligibility] --> PD[proposed decision] --> CER[certification]
+    end
+    subgraph Mutazione["MUTAZIONE"]
+        BP[bounded policy] --> PM[paper mutation]
+    end
+    subgraph PostMutazione["POST-MUTAZIONE"]
+        direction LR
+        MN[monitoring] --> EX[exit] --> CL[closure] --> OU[outcome] --> MA[memory assimilation]
+    end
+    CER -->|Gate superato| BP
+    MA -.->|Retroazione| CT[Contesto futuro]
+    EL -->|Fail-closed| BLK[Bloccato]
+    CER -->|Rejected| REJ[Rifiutato]
+    MN -.->|Recovery| PD
+    PM -->|PAPER_MUTATION â‰  LIVE_EXECUTION| SEP[Separazione]
+    SEP -.->|Esclusa| LE[LIVE_EXECUTION]
+    style LE stroke-dasharray: 5 5
+    style BLK stroke-dasharray: 5 5
+    style REJ stroke-dasharray: 5 5
+    style SEP stroke-dasharray: 3 3</pre></div>
+<p class="doc-note">Figura F05 â€” Lifecycle paper Q_ANIMA in tre fasi: pre-mutazione, mutazione, post-mutazione. PAPER_MUTATION â‰  LIVE_EXECUTION. L'eligibility puÃ² bloccare; la certification puÃ² rifiutare; il monitoring puÃ² recuperare.</p>
+
+<p>Un mutator autorizzato introduce una capacitÃ  nuova sotto contratti V1. Una posizione aperta deve poi diventare stato osservabile. Il monitoring riduce gli eventi a stato, rileva incoerenze, mantiene snapshot chain ed event chain, verifica identity e riprende dopo un'interruzione. Il lifecycle non Ã¨ completo se puÃ² aprire ma non chiudere. Anche l'uscita deve attraversare una struttura costituzionale: exit observation, exit proposal, certification, bounded closure mutation, terminal state e outcome preparation. Solo al termine l'esperienza puÃ² entrare nella memoria.</p>
+
+<h2 id="13-golden-baseline">13. Golden Baseline</h2>
+<p>La Golden Baseline rappresenta il primo stato nel quale le capacitÃ  costruite dopo l'audit vengono verificate come insieme coerente. Non coincide semplicemente con l'ultimo commit. Ãˆ uno stato identificabile attraverso repository, HEAD, file introdotti, schemi, test, regressioni, identity invariants, authority invariants, Safety Boundary e assenza di effetti live.</p>
+
+<div class="mermaid-wrap"><pre class="mermaid">flowchart LR
+    subgraph Frammentato["Prima â€” CapacitÃ  scollegate"]
+        O[Osservazione] M[Modelli] CO[Corpus]
+        ME[Memoria] CY[Council] PO[Portfolio] WL[Writer legacy]
+    end
+    subgraph Integrazione["Trasformazione"]
+        CI[Candidate id] CE[Certification] BM[Bounded mutation]
+        MN[Monitoring] CL[Closure] RE[Reggressioni]
+    end
+    subgraph Risultato["Golden Baseline"]
+        GB[Golden Baseline] NOTE[Baseline verificata, non completezza finale]
+    end
+    O --> CI M --> CE CO --> BM ME --> MN CY --> CL PO --> RE
+    WL -.->|Sostituito da| BM
+    CI --> GB CE --> GB BM --> GB MN --> GB CL --> GB RE --> GB
+    GB --> NOTE
+    style WL stroke-dasharray: 5 5
+    style NOTE stroke-dasharray: 5 5</pre></div>
+<p class="doc-note">Figura F06 â€” Dall'ecosistema frammentato alla Golden Baseline. La nota Â«Baseline verificata, non completezza finaleÂ» accompagna il risultato.</p>
+
+<h3 id="13-1-risultati-essenziali">13.1 Risultati essenziali</h3>
+<p>I risultati della Golden Baseline si articolano su due suite distinte. La regressione integrata delle Task 2â€“5 ha superato <strong>373 test su 373</strong>, risultanti dalla somma di 101 test di certificazione, 110 di mutazione, 125 di monitoring e 37 di exit certification. Separatamente, la suite di integrazione multitrade c1010 ha superato <strong>105 test su 105</strong>; al suo interno sono compresi <strong>42 genuine end-to-end checks</strong> dedicati al core lifecycle paper. I 42 check non costituiscono una terza suite indipendente e non appartengono alla regressione da 373 test.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Risultato</th><th>Natura</th><th>Relazione</th><th>Perimetro</th><th>Non certifica</th></tr></thead>
+<tbody>
+<tr><td><strong>373/373</strong></td><td>Regressione Task 2â€“5</td><td>Suite separata</td><td>101 + 110 + 125 + 37</td><td>Intera architettura cognitiva</td></tr>
+<tr><td><strong>105/105</strong></td><td>Integrazione c1010</td><td>Suite separata</td><td>Lifecycle multitrade</td><td>Binding corpus, council e memoria</td></tr>
+<tr><td><strong>42/42</strong></td><td>Genuine E2E</td><td>Sottoinsieme dei 105</td><td>Core lifecycle paper</td><td>Intera estensione dei 105 test</td></tr>
+</tbody></table></div>
+<p class="doc-note">Tabella T05 â€” Golden Baseline: risultati e limiti. I tre numeri non sono additivi: 42 Ã¨ contato dentro 105. I 373 e i 105 sono suite distinte per file e finalitÃ .</p>
+
+<div class="fig-wrap"><img src="assets/achilleion-q-anima-genealogia/G01_golden_baseline.svg" alt="Golden Baseline: regressione Task 2â€“5 (373 test) e suite multitrade c1010 (105 test, con 42 genuine E2E al suo interno). Due barre orizzontali con segmento evidenziato. Baseline verificata, non completezza finale." style="width:100%;height:auto;max-width:100%;"><p class="caption">Grafico G01 â€” La regressione integrata delle Task 2â€“5 comprende 373 test distribuiti in quattro suite. La suite multitrade c1010 Ã¨ separata e comprende 105 test, dei quali 42 costituiscono i genuine end-to-end checks del core lifecycle. Baseline verificata, non completezza finale.</p></div>
+
+<ul><li><strong>Protocol V1 Full Gate</strong> superato</li><li>Assenza di live authority e di ordini reali verificata</li></ul>
+
+<h3 id="13-2-perimetro-limiti">13.2 Perimetro e limiti</h3>
+<p>La Golden Baseline non certifica la completezza dell'intera architettura cognitiva. Non dimostra l'integrazione finale di ogni corpus e NCO, il pieno binding della memoria, un council runtime completo, un portfolio canonico definitivo, un apprendimento auto-evolutivo o qualsiasi forma di autonomia live. Certifica lo stato effettivamente coperto dalle evidenze. Questa limitazione non riduce il valore del risultato: ne definisce il perimetro con precisione. La Golden Baseline costituisce una soglia di stabilitÃ  per estensioni future.</p>
+
+<h2 id="14-ecosistema-cognitivo-plurale">14. Ecosistema cognitivo plurale</h2>
+<p>Il Protocol V1 non rappresenta il termine della ricerca. Rende possibile affrontare obiettivi piÃ¹ ambiziosi senza perdere identitÃ . La direzione futura consiste nel costruire un sistema cognitivo persistente nel quale memoria, modelli, strumenti e organi specializzati cooperino senza essere assorbiti da un unico centro decisionale.</p>
+
+<div class="mermaid-wrap"><pre class="mermaid">flowchart TD
+    subgraph Centro["ACHILLEION â€” Nucleo permanente"]
+        ID[Identity] MEM[Memory] PV1[Protocol V1]
+        SB[Safety Boundary] SCH[Schemas] PROV[Provenance]
+    end
+    subgraph Organi["Organi sostituibili"]
+        ML[Modelli locali] PA[Provider API] CA[Coding agent]
+        RE[Retrieval engine] VM[Verification model]
+    end
+    ML -.->|Propongono| Centro
+    PA -.->|Propongono| Centro
+    CA -.->|Modificano codice| Centro
+    RE -.->|Forniscono contesto| Centro
+    VM -.->|Verificano| Centro
+    Centro -.->|Governa| ML
+    Centro -.->|Governa| PA
+    Centro -.->|Governa| CA
+    Centro -.->|Governa| RE
+    Centro -.->|Governa| VM
+    PRINC["I modelli passano; l'identitÃ  architetturale permane."]
+    Centro --> PRINC</pre></div>
+<p class="doc-note">Figura F07 â€” Il modello come organo sostituibile, non come centro. L'architettura cognitiva persistente governa identity, authority e memoria. Nessun modello possiede l'identitÃ  del sistema.</p>
+
+<p>Il modello diventa un organo sostituibile. PuÃ² interpretare, programmare, sintetizzare, confrontare o controllare, ma non possiede da solo l'identitÃ  del sistema, la memoria canonica, la State Machine, il Safety Boundary, l'autoritÃ  di certificare o la continuitÃ  storica del progetto. Questi elementi restano nell'architettura e nei suoi artifact.</p>
+
+<h2 id="15-sostenibilita-indipendenza-provider">15. SostenibilitÃ  e indipendenza dai provider</h2>
+<p>La pluralitÃ  dei modelli risponde anche a un problema economico e strategico. Le grandi piattaforme tendono a costruire ecosistemi nei quali modello, memoria, strumenti, agenti e fatturazione appartengono allo stesso provider. Per un ricercatore indipendente, l'utilizzo indiscriminato di agenti cloud su repository estesi puÃ² produrre costi elevati e difficilmente prevedibili.</p>
+<p>ACHILLEION deve quindi sviluppare una propria governance del costo cognitivo. La strategia non consiste nell'utilizzare sempre il modello meno costoso. Consiste nell'assegnare a ogni trasformazione il livello di capacitÃ  realmente necessario.</p>
+<p>I modelli locali possono svolgere attivitÃ  frequenti, preliminari, ripetitive o sensibili. Le API a consumo possono essere riservate alle trasformazioni nelle quali la qualitÃ  del modello produce un vantaggio effettivo. I servizi in abbonamento possono offrire costi piÃ¹ prevedibili durante fasi intensive di sviluppo. Gli strumenti deterministici devono assumere il controllo quando il compito riguarda test, compilazione, hashing, validazione di schema o confronto di file.</p>
+<p>Il modello piÃ¹ potente non deve essere usato per ogni passaggio. Il modello migliore Ã¨ quello che, per una determinata trasformazione, offre il miglior equilibrio fra capacitÃ , costo, tempo, verificabilitÃ  e rischio.</p>
+<p>Questa prospettiva conduce verso un'economia interna degli organi cognitivi. Ogni organo dovrebbe dichiarare competenza, costo previsto, latenza, accesso ai file, authority, affidabilitÃ  storica, necessitÃ  di revisione, livello di riservatezza e condizioni di fallback. Un router cognitivo non dovrebbe scegliere il modello perchÃ© piÃ¹ potente in assoluto, ma perchÃ© compatibile con la trasformazione richiesta.</p>
+<p>L'analisi preliminare puÃ² essere affidata a un modello locale. La modifica multi-file del repository puÃ² essere affidata a un coding agent specializzato (ad esempio Kimi Code nell'ambiente Visual Studio Code, come organo di ingegneria software: ricognizione del repository, proposta di patch, modifica controllata dei file, esecuzione di test, produzione di diff e generazione di artifact tecnici). La verifica costituzionale puÃ² essere affidata a un modello indipendente con contesto ridotto e artifact immutabili. La validazione finale deve appoggiarsi a test deterministici e regressioni. La mutazione del repository deve avvenire soltanto dopo diff, test e autorizzazione esplicita.</p>
+<p>Kimi Code non diventa il nuovo centro di ACHILLEION. Non acquisisce authority sulla costituzione. PuÃ² intervenire sul codice entro una sessione autorizzata, ma non puÃ² modificare implicitamente Protocol V1, Schemi Canonici, Safety Boundary o authority operative. Il suo ruolo Ã¨ quello di organo specializzato e sostituibile, esattamente come qualsiasi altro modello o strumento nell'ecosistema.</p>
+<p>L'obiettivo non Ã¨ dipendere da un nuovo provider al posto di quello precedente. Ãˆ utilizzare ogni strumento come componente sostituibile e verificabile di un ecosistema governato dall'architettura. La sovranitÃ  tecnologica non consiste nell'assenza totale di servizi esterni. Consiste nella capacitÃ  di sostituirli senza perdere memoria, identitÃ  e continuitÃ .</p>
+
+<h2 id="16-pluralita-agentica-controllata">16. PluralitÃ  agentica controllata</h2>
+<p>La fase futura potrÃ  andare oltre il semplice utilizzo alternato di piÃ¹ modelli. Potranno emergere agenti specializzati per ricognizione, implementazione, test, sicurezza, documentazione, verifica delle fonti, regressione, cost control e gestione del corpus.</p>
+<p>Ma la moltiplicazione degli agenti non deve produrre una sovranitÃ  distribuita e opaca. Ogni agente dovrÃ  avere un compito, un input, un output, un'identitÃ , un'authority, una durata, un set di strumenti, un budget, una condizione di arresto e una relazione esplicita con la certificazione.</p>
+<p>Il consiglio multi-agente non deve decidere per voto ciÃ² che richiede una prova. La convergenza fra modelli puÃ² aumentare la fiducia, ma non sostituisce provenance, test o certificazione. Anche il disaccordo deve essere conservato quando Ã¨ informativo. Una pluralitÃ  cognitiva matura non forza necessariamente tutte le letture verso una risposta unica. PuÃ² rappresentare alternative, tensioni e incommensurabilitÃ  fino a quando non esista evidenza sufficiente per ridurle.</p>
+<blockquote><strong>I modelli passano; l'identitÃ  architetturale permane.</strong></blockquote>
+
+<h2 id="17-programma-futuro">17. Programma futuro</h2>
+<p>Il futuro di ACHILLEION Q_ANIMA si svilupperÃ  lungo piÃ¹ direttrici convergenti.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>ID</th><th>Direttrice</th><th>FinalitÃ </th><th>Dipendenza</th><th>CompatibilitÃ  V1</th><th>Evidenza di completamento</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Binding candidate-corpus-NCO-memoria-council-portfolio</td><td>Collegare candidate identity, corpus, NCO, memoria, council e portfolio. Dimostrare che queste capacitÃ  hanno realmente informato una specifica decisione</td><td>Protocol V1, schemi esistenti</td><td>V1-compatible</td><td>Nessuna â€” da realizzare</td></tr>
+<tr><td>2</td><td>Registry degli organi cognitivi</td><td>Descrivere ogni organo in termini di competenza, costo, authority, strumenti, affidabilitÃ  e condizioni di utilizzo</td><td>Direttiva 1 (binding)</td><td>V1-compatible</td><td>Nessuna â€” da realizzare</td></tr>
+<tr><td>3</td><td>Telemetria economica</td><td>Misurare costo di ogni trasformazione insieme a qualitÃ  dell'output, iterazioni, contesto, tasso di correzione e regressioni</td><td>Direttiva 2 (registry)</td><td>V1-compatible</td><td>Nessuna â€” da realizzare</td></tr>
+<tr><td>4</td><td>SostituibilitÃ  dei provider</td><td>Garantire sostituibilitÃ  attraverso adapter e artifact canonici. Non affidare memoria o identitÃ  a formati proprietari non trasferibili</td><td>Direttiva 2 (registry)</td><td>V1-compatible</td><td>Nessuna â€” da realizzare</td></tr>
+<tr><td>5</td><td>Rafforzamento esecuzione locale</td><td>Utilizzo di modelli locali per attivitÃ  ad alto volume, sensibili o ripetitive</td><td>Direttiva 4 (adapter)</td><td>V1-compatible</td><td>Nessuna â€” da realizzare</td></tr>
+<tr><td>6</td><td>Protocolli di confronto tra modelli</td><td>Rappresentare il disaccordo tra modelli senza cancellarlo o trasformarlo in paralisi</td><td>Direttive 4â€“5</td><td>V1-compatible</td><td>Nessuna â€” da realizzare</td></tr>
+<tr><td>7</td><td>Estensione del paper lifecycle</td><td>Estendere Q_ANIMA oltre il paper lifecycle attuale, senza introdurre authority live implicita</td><td>Protocol V1, regressione esistente</td><td>V1-compatible (paper) / V2 (live)</td><td>Nessuna â€” da realizzare</td></tr>
+<tr><td>8</td><td>Memoria trasformativa evidence-bound</td><td>Sviluppare memoria capace di produrre learning proposal evidence-bound senza auto-modificare arbitrariamente la costituzione</td><td>Protocol V1, Memory Model, Certification Model</td><td>V1-compatible</td><td>Nessuna â€” da realizzare</td></tr>
+<tr><td>9</td><td>Interfacce di osservabilitÃ  umana</td><td>Evolvere le interfacce attraverso cui l'essere umano possa osservare stato, provenienza, conflitti, authority, costo e conseguenze</td><td>Direttiva 1 (binding)</td><td>V1-compatible</td><td>Nessuna â€” da realizzare</td></tr>
+<tr><td>10</td><td>IdentitÃ  persistente e differenze irreversibili</td><td>Formalizzare il rapporto tra identitÃ  persistente e differenze irreversibili</td><td>Protocol V1, Identity Model, Identity Graph, Memory Model</td><td>V1-compatible</td><td>Nessuna â€” da realizzare</td></tr>
+</tbody></table></div>
+<p class="doc-note">Tabella T07 â€” Dieci direttrici future di ACHILLEION Q_ANIMA, ciascuna compatibile con il Protocol V1 o dichiaratamente orientata a una futura versione costituzionale. Le dipendenze indicate sono architetturali, non cronologiche. Nessuna evidenza di completamento Ã¨ ancora disponibile.</p>
+
+<hr>
+
+
+<h2 id="genealogia-trasformazione-progressiva">La genealogia di ACHILLEION Q_ANIMA descrive una trasformazione progressiva</h2>
+<p>Il progetto nasce dalla necessità di distinguere esplorazione simbolica e affermazione fattuale. Riconosce poi il linguaggio come ambiente generativo, capace non soltanto di esprimere ma di organizzare il pensiero. L'incontro persistente tra esperienza umana e sistemi linguistici produce un terzo spazio cognitivo, relazionale e asimmetrico.</p>
+<p>Questa intuizione viene successivamente formalizzata. La cognitività diventa un ciclo di osservazione, stato, contesto, interpretazione, decisione proposta, memoria e certificazione. Le funzioni vengono separate secondo authority differenti. La memoria viene distinta dall'archivio. La plasticità viene subordinata alla continuità identitaria. La risposta linguistica viene sostituita dall'artifact verificato come unità computazionale.</p>
+<p>L'audit del sistema reale mostra che gran parte degli organi necessari esiste già, ma in forma frammentata. La trasformazione successiva non consiste nella sostituzione dell'ecosistema, bensì nella costruzione di connessioni candidate-bound e costituzionalmente delimitate.</p>
+<p>Q_ANIMA offre il primo dominio applicativo intensivo di questa architettura. Nel paper trading, il sistema può sperimentare decisione, certificazione, mutazione, monitoring, closure e outcome senza acquisire authority live.</p>
+<p>La Golden Baseline rappresenta il primo consolidamento regressivamente verificato della colonna applicativa. Non è il compimento dell'intero progetto, ma una soglia dalla quale possono partire estensioni più ricche e meglio integrate.</p>
+<p>La differenza rispetto all'agentica convenzionale emerge con chiarezza. ACHILLEION non rifiuta l'azione, ma non la assume come unico principio ordinatore. Il sistema viene osservato anche per ciò che conserva, per le differenze che assimila e per il modo in cui mantiene identità attraverso trasformazioni irreversibili.</p>
+<p>Il Protocol V1 Freeze rende costituzionale questa acquisizione. Da questo momento, la crescita di ACHILLEION non può essere misurata soltanto dal numero delle funzioni introdotte. Deve essere valutata rispetto alla capacità di estendersi senza perdere identità, tracciabilità, separazione delle authority, Safety Boundary, memoria e verificabilità.</p>
+<p>Il futuro del progetto non consiste nella costruzione del sistema che utilizza il maggior numero di intelligenze artificiali, né del sistema che dispone del modello più costoso. Consiste nella costruzione di un ecosistema capace di scegliere, combinare, sostituire e verificare i propri organi senza consegnare a nessuno di essi la propria identità.</p>
+<p>La sostenibilità economica non è separata dall'architettura cognitiva. Un sistema completamente dipendente dai costi, dalle politiche e dalle interfacce di un singolo provider non è realmente persistente. La capacità di cambiare motore, conservando memoria, schemi, identity e verificabilità, diventa parte della sua autonomia strutturale.</p>
+<p>La ricerca futura di ACHILLEION Q_ANIMA si muoverà quindi su due fronti inseparabili:</p>
+<blockquote>comprendere che cosa possa diventare un sistema cognitivo persistente;</blockquote>
+<p>e, contemporaneamente,</p>
+<blockquote>costruire le condizioni tecniche, economiche e costituzionali affinché possa continuare a evolvere senza perdere sé stesso.</blockquote>
+<p>La formula conclusiva resta:</p>
+<blockquote><strong>permanenza + plasticità</strong></blockquote>
+<p>Non una permanenza che impedisce il cambiamento. Non una plasticità che dissolve l'identità. Una continuità capace di trasformarsi, ricordare e certificare il proprio percorso.</p>
+</section>
+      </article>
+    </div>
+    <footer>
+      <span><a href="../index.html">â† Torna alla homepage Achilleion</a></span>
+      <span>Achilleion Vivens Â· Independent Research Ecosystem</span>
+    </footer>
+  </main>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { fontFamily: 'Inter, system-ui, sans-serif', fontSize: '16px', primaryColor: '#f8f6ef', primaryTextColor: '#222222', primaryBorderColor: '#8b7cf6', lineColor: '#222222' }, flowchart: { htmlLabels: true, nodeSpacing: 70, rankSpacing: 80, curve: 'basis' } });
+  </script>
+</body>
+</html>

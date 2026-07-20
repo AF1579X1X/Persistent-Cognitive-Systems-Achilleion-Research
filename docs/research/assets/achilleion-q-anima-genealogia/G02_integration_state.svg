@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="508" viewBox="0 0 840 508">
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; }
+    .title { font-size: 14px; font-weight: bold; }
+    .header { font-size: 10px; font-weight: bold; opacity: 0.65; }
+    .cell { font-size: 11px; }
+    .note { font-size: 10px; font-style: italic; opacity: 0.55; }
+    .state-yes { font-weight: bold; }
+    .state-partial { opacity: 0.65; }
+    .state-no { opacity: 0.5; }
+    .state-avail { opacity: 0.75; }
+  </style>
+  <text x="20" y="25" class="title">Ecosystem integration state</text>
+  <text x="30" y="64" class="header">Capability</text>
+  <text x="210" y="64" class="header">Baseline</text>
+  <text x="210" y="77" class="header">state</text>
+  <text x="320" y="64" class="header">Current</text>
+  <text x="320" y="77" class="header">state</text>
+  <text x="460" y="64" class="header">Lifecycle</text>
+  <text x="460" y="77" class="header">integr.</text>
+  <text x="560" y="64" class="header">Candidate-</text>
+  <text x="560" y="77" class="header">bound</text>
+  <text x="650" y="64" class="header">Open limit</text>
+  <line x1="20" y1="92" x2="820" y2="92" stroke="currentColor" stroke-width="1" opacity="0.3" />
+  <rect x="20" y="96" width="800" height="30" fill="currentColor" opacity="0.04" rx="1" />
+  <line x1="20" y1="126" x2="820" y2="126" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="115" class="cell">osservazione mercato</text>
+  <text x="210" y="115" class="cell state-yes">&gt;&gt; attiva</text>
+  <text x="320" y="115" class="cell state-no">-- invariata</text>
+  <text x="460" y="115" class="cell state-yes">&gt;&gt; si</text>
+  <text x="560" y="115" class="cell state-partial">~&gt; parziale</text>
+  <text x="650" y="115" class="cell">dati non sempre candidate-bound</text>
+  <line x1="20" y1="156" x2="820" y2="156" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="145" class="cell">modelli previsionali</text>
+  <text x="210" y="145" class="cell state-yes">&gt;&gt; attivi</text>
+  <text x="320" y="145" class="cell state-no">-- invariati</text>
+  <text x="460" y="145" class="cell state-partial">~&gt; parziale</text>
+  <text x="560" y="145" class="cell state-no">-- no</text>
+  <text x="650" y="145" class="cell">non legati alla candidate identity</text>
+  <rect x="20" y="156" width="800" height="30" fill="currentColor" opacity="0.04" rx="1" />
+  <line x1="20" y1="186" x2="820" y2="186" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="175" class="cell">gating/safety</text>
+  <text x="210" y="175" class="cell state-yes">&gt;&gt; attivo</text>
+  <text x="320" y="175" class="cell state-no">-- invariato</text>
+  <text x="460" y="175" class="cell state-yes">&gt;&gt; si</text>
+  <text x="560" y="175" class="cell state-yes">&gt;&gt; si</text>
+  <text x="650" y="175" class="cell">nessuno</text>
+  <line x1="20" y1="216" x2="820" y2="216" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="205" class="cell">corpus/retrieval</text>
+  <text x="210" y="205" class="cell state-avail">:: disponibile</text>
+  <text x="320" y="205" class="cell state-no">-- invariato</text>
+  <text x="460" y="205" class="cell state-no">-- no</text>
+  <text x="560" y="205" class="cell state-partial">~&gt; parziale</text>
+  <text x="650" y="205" class="cell">non legato al lifecycle</text>
+  <rect x="20" y="216" width="800" height="30" fill="currentColor" opacity="0.04" rx="1" />
+  <line x1="20" y1="246" x2="820" y2="246" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="235" class="cell">NCO/identity</text>
+  <text x="210" y="235" class="cell state-yes">&gt;&gt; attivo</text>
+  <text x="320" y="235" class="cell state-no">-- invariato</text>
+  <text x="460" y="235" class="cell state-no">-- no</text>
+  <text x="560" y="235" class="cell state-no">-- no</text>
+  <text x="650" y="235" class="cell">da collegare a candidate identity</text>
+  <line x1="20" y1="276" x2="820" y2="276" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="265" class="cell">memoria</text>
+  <text x="210" y="265" class="cell state-avail">:: disponibile</text>
+  <text x="320" y="265" class="cell state-no">-- invariata</text>
+  <text x="460" y="265" class="cell state-no">-- no</text>
+  <text x="560" y="265" class="cell state-no">-- no</text>
+  <text x="650" y="265" class="cell">memoria non decision-bound</text>
+  <rect x="20" y="276" width="800" height="30" fill="currentColor" opacity="0.04" rx="1" />
+  <line x1="20" y1="306" x2="820" y2="306" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="295" class="cell">council</text>
+  <text x="210" y="295" class="cell state-avail">:: disponibile</text>
+  <text x="320" y="295" class="cell state-no">-- invariato</text>
+  <text x="460" y="295" class="cell state-no">-- no</text>
+  <text x="560" y="295" class="cell state-no">-- no</text>
+  <text x="650" y="295" class="cell">non integrato nello scheduler</text>
+  <line x1="20" y1="336" x2="820" y2="336" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="325" class="cell">portfolio</text>
+  <text x="210" y="325" class="cell state-avail">:: disponibile</text>
+  <text x="320" y="325" class="cell state-partial">~&gt; parzialmente integrato</text>
+  <text x="460" y="325" class="cell state-partial">~&gt; parziale</text>
+  <text x="560" y="325" class="cell state-no">-- no</text>
+  <text x="650" y="325" class="cell">portfolio non canonico</text>
+  <rect x="20" y="336" width="800" height="30" fill="currentColor" opacity="0.04" rx="1" />
+  <line x1="20" y1="366" x2="820" y2="366" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="355" class="cell">candidate intake</text>
+  <text x="210" y="355" class="cell state-no">-- non presente</text>
+  <text x="320" y="355" class="cell">implementata e invocabile</text>
+  <text x="460" y="355" class="cell state-partial">~&gt; parziale</text>
+  <text x="560" y="355" class="cell state-yes">&gt;&gt; si</text>
+  <text x="650" y="355" class="cell">integrazione scheduler</text>
+  <line x1="20" y1="396" x2="820" y2="396" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="385" class="cell">certification</text>
+  <text x="210" y="385" class="cell state-no">-- non presente</text>
+  <text x="320" y="385" class="cell state-yes">&gt;&gt; implementata</text>
+  <text x="460" y="385" class="cell state-yes">&gt;&gt; si</text>
+  <text x="560" y="385" class="cell state-yes">&gt;&gt; si</text>
+  <text x="650" y="385" class="cell">nessuno</text>
+  <rect x="20" y="396" width="800" height="30" fill="currentColor" opacity="0.04" rx="1" />
+  <line x1="20" y1="426" x2="820" y2="426" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="415" class="cell">paper mutation</text>
+  <text x="210" y="415" class="cell state-no">-- non presente</text>
+  <text x="320" y="415" class="cell state-yes">&gt;&gt; implementata</text>
+  <text x="460" y="415" class="cell state-yes">&gt;&gt; si</text>
+  <text x="560" y="415" class="cell state-yes">&gt;&gt; si</text>
+  <text x="650" y="415" class="cell">nessuno</text>
+  <line x1="20" y1="456" x2="820" y2="456" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="445" class="cell">monitoring</text>
+  <text x="210" y="445" class="cell state-no">-- non presente</text>
+  <text x="320" y="445" class="cell state-yes">&gt;&gt; implementato</text>
+  <text x="460" y="445" class="cell state-yes">&gt;&gt; si</text>
+  <text x="560" y="445" class="cell state-yes">&gt;&gt; si</text>
+  <text x="650" y="445" class="cell">nessuno</text>
+  <rect x="20" y="456" width="800" height="30" fill="currentColor" opacity="0.04" rx="1" />
+  <line x1="20" y1="486" x2="820" y2="486" stroke="currentColor" stroke-width="1" opacity="0.15" />
+  <text x="30" y="475" class="cell">exit/closure</text>
+  <text x="210" y="475" class="cell state-no">-- non presente</text>
+  <text x="320" y="475" class="cell state-yes">&gt;&gt; implementata</text>
+  <text x="460" y="475" class="cell state-yes">&gt;&gt; si</text>
+  <text x="560" y="475" class="cell state-yes">&gt;&gt; si</text>
+  <text x="650" y="475" class="cell">nessuno</text>
+  <text x="20" y="504" class="note">Presence and integration are distinct dimensions. Being present in the repository does not equal being cognitively active.</text>
+  <text x="20" y="524" class="note" font-weight="bold">State encoding (color-free):</text>
+  <text x="30" y="540" class="state-yes">&gt;&gt;   implemented / fully present — bold text</text>
+  <text x="30" y="556" class="state-partial">~&gt;   partial — reduced opacity</text>
+  <text x="30" y="572" class="state-no">--   not present / unchanged — lower opacity</text>
+  <text x="30" y="588" class="state-avail">::   available but not active — medium opacity</text>
+</svg>
