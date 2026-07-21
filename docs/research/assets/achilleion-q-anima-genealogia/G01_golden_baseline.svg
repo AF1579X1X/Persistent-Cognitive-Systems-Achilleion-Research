@@ -1,27 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="340" viewBox="0 0 720 340">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380">
   <style>
-    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; }
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     .title { font-size: 16px; font-weight: bold; }
     .label { font-size: 13px; }
-    .value { font-size: 14px; font-weight: bold; }
-    .note { font-size: 11px; opacity: 0.6; }
-    .caption { font-size: 11px; font-style: italic; opacity: 0.55; }
-    .marker { font-size: 12px; font-weight: bold; }
+    .num { font-size: 22px; font-weight: bold; }
+    .desc { font-size: 11px; }
+    .legend { font-size: 11px; }
+    .note { font-size: 11px; font-style: italic; fill: #888; }
   </style>
-  <text x="20" y="28" class="title">Golden Baseline — Test results</text>
-  <text x="210" y="88" class="label" text-anchor="end">Task 2-5 regression</text>
-  <rect x="220" y="60" width="420.00000000000006" height="56" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
-  <text x="648.0" y="88" class="value">373</text>
-  <text x="220" y="130" class="note">101 certification + 110 mutation + 125 monitoring + 37 exit</text>
-  <text x="210" y="212" class="label" text-anchor="end">c1010 multitrade</text>
-  <rect x="220" y="180" width="118.23056300268098" height="56" rx="3" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="8 4" />
-  <text x="346.230563002681" y="212" class="value">105</text>
-  <rect x="220" y="180" width="47.29222520107239" height="56" rx="3" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 3" />
-  <text x="243.0" y="212" class="marker" text-anchor="middle">42 genuine E2E</text>
-  <text x="220" y="250" class="note">42 genuine E2E checks are included within the 105 tests. They are not a third independent suite.</text>
-  <rect x="220" y="295" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
-  <text x="240" y="306" class="note">Task 2-5 regression (separate suite) — solid contour</text>
-  <rect x="500" y="295" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 3" />
-  <text x="520" y="306" class="note">42 genuine E2E (subset of 105) — dotted contour</text>
-  <text x="20" y="325" class="caption">Baseline verified, not final completeness.</text>
+  <text x="20" y="28" class="title">Golden Baseline</text>
+
+  <!-- Bar 1: 373 -->
+  <text x="20" y="75" class="label">Task 2-5 regression</text>
+  <rect x="20" y="84" width="420" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="450" y="106" class="num">373</text>
+  <text x="20" y="130" class="desc">101 + 110 + 125 + 37 (certification, mutation, monitoring, exit)</text>
+
+  <!-- Bar 2: 105 -->
+  <text x="20" y="175" class="label">c1010 multitrade integration</text>
+  <rect x="20" y="184" width="200" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 3"/>
+  <text x="230" y="206" class="num">105</text>
+
+  <!-- 42 annotation below bar 2 -->
+  <rect x="20" y="184" width="80" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/>
+  <text x="35" y="206" class="label" font-weight="bold">42</text>
+  <text x="108" y="200" class="desc">42 genuine E2E</text>
+  <text x="108" y="214" class="desc">checks included</text>
+  <text x="108" y="228" class="desc">within the 105 suite</text>
+
+  <!-- Legend -->
+  <text x="20" y="280" class="legend" font-weight="bold">Legend:</text>
+  <rect x="20" y="290" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="40" y="302" class="legend">Task 2-5 regression (separate suite) — solid contour</text>
+  <rect x="20" y="310" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 3"/>
+  <text x="40" y="322" class="legend">42 genuine E2E (subset of 105) — dotted contour</text>
+
+  <text x="20" y="360" class="note">Baseline verified, not final completeness.</text>
 </svg>
