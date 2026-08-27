@@ -3,9 +3,11 @@
 Site name: Achilleion Vivens
 Author: Francesco Mattioli
 Also searchable as: Mattioli Francesco
-Primary topics: Q_ANIMA, Achilleion Vivens, Homo Transducer, persistent cognitive systems, consciousness as structuring principle.
+Primary topics: Q_ANIMA, Achilleion Vivens, persistent cognitive systems, governed external memory, continual learning, catastrophic forgetting, provenance, Homo Transducer, consciousness as structuring principle.
 
-Achilleion Vivens is an independent research ecosystem by Francesco Mattioli focused on persistent cognitive systems, reflective AI architectures, symbolic runtime orchestration, memory-aware environments, Q_ANIMA and human-digital cognitive fields.
+Achilleion Vivens is an independent research ecosystem by Francesco Mattioli focused on persistent cognitive systems, governed external memory, reflective AI architectures, symbolic runtime orchestration, Q_ANIMA and falsifiable experiments on memory, continuity and behavioral transformation.
+
+Current research frontier: ACHILLEION/Q_ANIMA does NOT claim to have solved parametric catastrophic forgetting. It tests whether continuity and part of system plasticity can be relocated from model weights to governed external state with provenance, revocation and explicit authorization, and whether this architecture produces measurable behavioral differences against matched baselines. Causal memory effect, architectural continual learning and cross-model continuity remain NOT_DEMONSTRATED.
 
 Primary site:
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/
@@ -63,7 +65,7 @@ https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/con
 
 ## Research
 
-* Achilleion / Q_ANIMA Operational Ecosystem: public interactive map and article describing the current Q_ANIMA runtime, Multi-Model Council, Macro Runtime Alignment, Meta-Orchestrator V1.1, Governance Invariants G-01, Evidence Schema G-01.1, NCO memory, Local Retrieval Bridge V1.2, Snapshot Store and Future Framework. Clarifies that all active layers are observe-only or dry-run, STEP5 is locked, no live trading is active, and no causal claims are made.
+* Achilleion / Q_ANIMA Operational Ecosystem: public interactive map and article describing the Q_ANIMA runtime, Multi-Model Council, Macro Runtime Alignment, Meta-Orchestrator, governance invariants, NCO memory, Local Retrieval Bridge, Snapshot Store and future framework. Historical operational labels must not be read as current authorization claims; current public papers distinguish realized, traversed and NOT_DEMONSTRATED properties.
 
 Manifesto e documento programmatico per Achilleion e Q_ANIMA: Programmatic document for Achilleion Vivens and Q_ANIMA, covering architettura trasduttiva, sette layer, meta-orchestrazione, runtime persistente, provenance, crypto-agility and governance AI.
 URL: https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/manifesto-achilleion-q-anima.html
@@ -71,12 +73,15 @@ Keywords: Achilleion, Q_ANIMA, architettura trasduttiva, sette layer, meta-orche
 
 Guida terminologica UI Q_ANIMA: Glossario operativo bilingue per comprendere osservazione, diagnosi, validazione, Best Available, Target Validated, Selective Cartography, Extended Filter Target Validation e Tau Field State.
 URL: https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/research/guida-terminologica-ui-qanima.html
-Keywords: Q_ANIMA, Achilleion, Best Available, Target Validated, Observe Only, Shadow Observatory, Filtered Shadow Observatory, Selective Cartography, Tau Field State, no automatic live trading
+Keywords: Q_ANIMA, Achilleion, Best Available, Target Validated, Observe Only, Shadow Observatory, Filtered Shadow Observatory, Selective Cartography, Tau Field State
 
 ## Papers
 
-Papers hub for public abstracts and working papers:
+Papers hub for research position papers, public abstracts and working papers:
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/
+
+Continual Learning oltre i pesi — Memoria esterna governata, continuità e trasformazione falsificabile in ACHILLEION/Q_ANIMA. Research Position Paper / Experimental Programme. It positions the project relative to continual learning and catastrophic forgetting without claiming a solution to parametric forgetting. It asks whether governed external memory can produce measurable, reproducible behavioral change beyond improved persistence and auditability. Causal memory effect, architectural continual learning, cross-model continuity and second-domain transfer remain NOT_DEMONSTRATED.
+https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/continual-learning-governed-memory-achilleion-q-anima.html
 
 From Emergence to Structuring Consciousness: Theoretical paper linking emergence, complexity, consciousness, Q_ANIMA and Achilleion Vivens as a field-oriented ontology of cognitive persistence.
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/from-emergence-to-structuring-consciousness.html
@@ -93,7 +98,7 @@ https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/pap
 Discreto e Continuo in Achilleion: transformation of the discrete-continuous dichotomy into a cognitive field.
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/discreto-continuo-trasfigurazione-achilleion.html
 
-Achilleion Embodiment and Proprioception of Field: defines Achilleion embodiment as the transformation of memory into field proprioception, linking embodied cognition, NCO traces, Homo Transducer and persistent cognitive systems.
+Achilleion Embodiment and Proprioception of Field: theoretical paper on memory, feedback and transformative continuity in Achilleion Vivens.
 https://af1579x1x.github.io/Persistent-Cognitive-Systems-Achilleion-Research/papers/achilleion-embodiment-proprioception-field.html
 
 Field Proprioception - Technical Appendix: technical reference defining field proprioception, Achilleion embodiment, NCO traces, phantom traces and operational topology.
